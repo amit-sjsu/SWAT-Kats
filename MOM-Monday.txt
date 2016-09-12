@@ -6,16 +6,16 @@ Learn and setup github. Document your learning on github (optional).
 Create Team github repo. - done.
 
 
-Learn and Setup Greenfoot. Document (optional)
+Learn and Setup Greenfoot. Document (optional)  ---Done by Amit 
 
-Learn and Setup Processing. Document (optional)
+Learn and Setup Processing. Document (optional)   
 
 
 Book meeting room.
 
 Week 1 submission - PDF . 
 
-Read about and decide on the Agile practice.
+Read about and decide on the Agile practice. --- Done by Amit.
 
 Decide on Greenfoot vs Processing 
 
