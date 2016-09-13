@@ -17,8 +17,8 @@ Week 1 submission - PDF .
 
 Read about and decide on the Agile practice. --- Done by Amit.
 
-Decide on Greenfoot vs Processing 
+Decide on Greenfoot vs Processing --- Done by Swathi.
 
-Divide the cs unplugged activities between team members.
+Divide the cs unplugged activities between team members --- Done by Swathi.
 
 Get Info on avg backlogs from TA
