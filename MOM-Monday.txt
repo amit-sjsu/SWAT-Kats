@@ -10,9 +10,9 @@ Learn and Setup Greenfoot. Document (optional)  ---Done by Amit
 Added to Waffle(Shafi)!!! - Learn and Setup Processing. Document (optional)   
 
 
-Book meeting room.
+Book meeting room -- No need to add this to the backlog list
 
-Week 1 submission - PDF . 
+Week 1 submission - PDF Done by Navneet
 
 Read about and decide on the Agile practice. --- Done by Amit.
 
