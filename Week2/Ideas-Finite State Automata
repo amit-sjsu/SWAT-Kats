@@ -1,0 +1,20 @@
+
+The activity is about the finite set of instruction which computer has to follow to perform day to day activities.
+FSA, is used in many devices, lie digital watch , where pressing the button changes the mode of display and if we 
+keep on pressing finally we come to initial state.
+
+Our goal is to find Treasure Island. Friendly pirate ships sail along a fixed set of routes
+between the islands in this part of the world, offering rides to travellers. Each island has
+two departing ships, A and B, which you can choose to travel on. You need to find the
+best route to Treasure Island. At each island you arrive at you may ask for either ship A
+or B (not both). The person at the island will tell you where your ship will take you to
+next, but the pirates don’t have a map of all the islands available. Use your map to keep
+track of where you are going and which ship you have travelled on. 
+
+This could be extanded to many island making is tough for user to find the shortest path easily.
+
+It can also be implemented as multiplayer game, where  every has to find the shortest distance  to reach to the treasure island, 
+the first one to find the shortest distance first wins the game.
+
+link for vedio representation of the game:- https://www.youtube.com/watch?v=8kagtp2gWhU
+
