@@ -1,5 +1,18 @@
 
 
+This activity is intended to expose students to the idea that computers follow instructions very precisely, which can be frustrating at times. 
+
+In this game, the user types in commands into a textbox to make the robot perform some actions such as move, walk, lift or jump.
+The objective is the make the robot perform some task such as going from A to B and B to C, or going over an obstacle path.
+The trick here is, the user does not know which commands will work and which wont.
+The robot understands a limited vocabulary of words that are very specifiy.
+This in a way, stimulates how programming works.
+
+
+We could provide some sample commands to get the users started out on.
+
+This can also be extended into a multiplayer game, where multiple players compete to reach a destination or goal with the robots.
+
 References:
 
 http://csunplugged.org/wp-content/uploads/2014/12/haroldtherobot.pdf
