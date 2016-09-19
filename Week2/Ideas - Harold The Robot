@@ -6,7 +6,7 @@ In this game, the user types in commands into a textbox to make the robot perfor
 The objective is the make the robot perform some task such as going from A to B and B to C, or going over an obstacle path.
 The trick here is, the user does not know which commands will work and which wont.
 The robot understands a limited vocabulary of words that are very specifiy.
-This in a way, stimulates how programming works.
+This in a way, simmulates how programming works.
 
 
 We could provide some sample commands to get the users started out on.
