@@ -1,4 +1,4 @@
-Lets follow any one algorith for our game to get minimum spanning tree.
+Lets follow any one algorithm for our game to get minimum spanning tree.
 - As we had discussion on kruskal's algorithm and found it to be good. We can use Kruskal's algorithm for our game.
 
 - Discription on how we can built the game:-
