@@ -1,3 +1,14 @@
+Using this game puzzle, students will make decisions and try to connect the all cities in short distance.
+
+Pre Requiste for game is :
+- Mathematics: Geometry Level 2/3 and up
+- Exploring shape and space
+- Age: 10+
+
+Areas Covered with this game:
+- Problem Solving
+- Algorimthms
+
 Lets follow any one algorithm for our game to get minimum spanning tree.
 - As we had discussion on kruskal's algorithm and found it to be good. We can use Kruskal's algorithm for our game.
 
