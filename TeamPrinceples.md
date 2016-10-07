@@ -17,6 +17,7 @@ All team members must have this all qualities:
 Kanban:
 We will be use http://waffle.io as kanban board to maintain tasklist and following are the kanban policies that must be followed:
 - Backlog
+  User story
 - Ready
 - Inprogress
 - Testing 
