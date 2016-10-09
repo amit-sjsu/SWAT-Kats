@@ -1,0 +1,11 @@
+Journal Entry for Courage(XP values) by Mohamed Shafi Dayatar
+
+“With courage you will dare to take risks, have the strength to be compassionate, and the wisdom to be humble. Courage is the foundation of integrity.” perfect quote by Mark Twain which matches for our team last week.
+
+During this week we had couple of review and structural design meetings. First we came up with Diagrams and for starting we create three diagrams, which were Use Case Diagram, Activity Diagram and Class Diagram. In the review meeting every member contributed their views, which were as follows:
+Use case were kind of action base and we changed it to more scenario base. Also we remove many unwanted actor which were making system too complex.
+Regarding the activity diagram it was easy to understand. But we had considered to out of the scope and we divided this into two phases.
+
+Regarding the class diagram we nearly discussed about which classes to include and which one shouldn’t be class. Each member had it own perspective about it the implementation, one was hesitant to create new class where one was more emphasizing on more classes. Be we chose which was modular for our team. We had a lot of argue this week, and that's because we had courage to present our views and hold it until we are convinced with other good points. So with help of courage, we indeed good wisdom and also taught us to be humble.
+
+Again our team shows tremendous courage during this week and nails very problem on our way.
