@@ -6,7 +6,7 @@ This document descibes the following thing :
 
 So starting with framework and models we will be usin XP Team Values, KanBan board to track our progress and Sprint methodologies to accomplish our goals.
 
-XP TEAM VAlues:
+XP TEAM Values:
 All team members must have this all qualities:
 1) Simplicity
 2) Courage
@@ -34,4 +34,7 @@ We will be use http://waffle.io as kanban board to maintain tasklist and followi
 - Review
 - Done 
 
+Coding Standards:
+
+Add recommended coding standards here.
 
