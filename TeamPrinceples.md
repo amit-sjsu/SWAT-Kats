@@ -8,11 +8,11 @@ So starting with framework and models we will be usin XP Team Values, KanBan boa
 
 XP TEAM Values:
 All team members must have this all qualities:
-1) Simplicity
-2) Courage
-3) Respect
-4) Communication
-5) Feedback
+1. Simplicity
+2. Courage
+3. Respect
+4. Communication
+5. Feedback
 
 Kanban:
 We will be useing http://waffle.io as kanban board to maintain tasklist and following are the kanban policies that must be followed:
@@ -29,12 +29,12 @@ We will be useing http://waffle.io as kanban board to maintain tasklist and foll
   Then <<Expected outcome(s)>>
 
   Also for good user story it should have following attibutes:
-  1)Independent
-  2)Negotiable
-  3)Valuable
-  4)Estimable
-  5)Small
-  6)Testable
+  1. Independent
+  2. Negotiable
+  3. Valuable
+  4. Estimable
+  5. Small
+  6. Testable
   
 - Ready
   Once a Member has been looking or started to take up backlog task goes into ready state. To get backlog into ready state, team member shouldnt have anything in inprogress, testing or review mode.
