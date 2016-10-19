@@ -6,7 +6,7 @@ This document descibes the following thing :
 
 So starting with framework and models we will be usin XP Team Values, KanBan board to track our progress and Sprint methodologies to accomplish our goals.
 
-XP TEAM VAlues:
+XP TEAM Values:
 All team members must have this all qualities:
 1) Simplicity
 2) Courage
@@ -50,6 +50,9 @@ We will be useing http://waffle.io as kanban board to maintain tasklist and foll
 
 Also the task in done phase can get back to inprogess, if we find that it was not completed before.
 
+Coding Standards:
+
+Add recommended coding standards here.
 
 So we limit are WIP limit to 4 which means that we dont have more than 4 tasks
 across Inprogress, Testing and Review part. So to finish backlog we must complete the current task rather then taking new one. 
