@@ -50,9 +50,9 @@ We will be useing http://waffle.io as kanban board to maintain tasklist and foll
 
 Also the task in done phase can get back to inprogess, if we find that it was not completed before.
 
-Coding Standards:
+So we limit are WIP limit to 4backlogs, which means that we dont have more than 4 tasks across Inprogress, 
+Testing and Review part. So to finish other backlog we must complete the current current backlog before moving towards new one. 
 
-Add recommended coding standards here.
+-**Coding Standards:**
 
-So we limit are WIP limit to 4 which means that we dont have more than 4 tasks
-across Inprogress, Testing and Review part. So to finish backlog we must complete the current task rather then taking new one. 
+  1. Add recommended coding standards here.
