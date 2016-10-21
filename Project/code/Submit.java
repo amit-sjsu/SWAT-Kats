@@ -8,7 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Submit extends Buttons
 {
-    Path path =new Path();
     public void act() 
     {
         if(Greenfoot.mouseClicked(this))
