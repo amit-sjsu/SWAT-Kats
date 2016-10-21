@@ -16,10 +16,9 @@ public class NextLevel extends Buttons
     {
         if(Greenfoot.mouseClicked(this))
         {
-            Greenfoot.setWorld(new Background());
-             new Path().setCount(0);
-            GameOver_Win world = (GameOver_Win)getWorld();
-            world.stopBackgroundMusic();
+            //Greenfoot.setWorld(new Background());
+            //GameOver_Win world = (GameOver_Win)getWorld();
+            //world.stopBackgroundMusic();
         }
     }     
 }

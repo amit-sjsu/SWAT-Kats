@@ -16,10 +16,10 @@ public class Replay extends Buttons
     {
         if(Greenfoot.mouseClicked(this))
         {
-            Greenfoot.setWorld(new Background());
-            new Path().setCount(0);
-            GameOver_Lose world = (GameOver_Lose)getWorld();
-            world.stopBackgroundMusic();
+            //Greenfoot.setWorld(new Background());
+            //new Path().setCount(0);
+            //GameOver_Lose world = (GameOver_Lose)getWorld();
+            //world.stopBackgroundMusic();
         }// Add your action code here.
     }    
 }

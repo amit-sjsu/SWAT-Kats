@@ -17,16 +17,16 @@ public class Path extends Actor
        if(Greenfoot.mouseClicked(this))
         { 
           count++;
-          World world;
+          /*World world;
           world = getWorld();
-          Background background = (Background)world;
+          //Background background = (Background)world;
           getWorld().addObject(new Red(), getX(), getY());
           getWorld().removeObjects(getWorld().getObjects(Player.class));
           getWorld().addObject(new Player(), getX(), getY());
           getWorld().addObject(new Message("Move " + count), 69,40);
           
           
-          getWorld().removeObject(this);
+          getWorld().removeObject(this);*/
           
         }
     }    
@@ -35,9 +35,7 @@ public class Path extends Actor
     {
         return count;
     }
-    public void setCount(int val)
-    {
-        count=val;
-    }
-     
+      
+  
+    
 }
