@@ -1,3 +1,4 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Write a description of class House here.
@@ -7,29 +8,12 @@
  */
 public class House extends Actor
 {
-    
-    public int xcoor;
-    public int ycoor;
-
-    public House()
-    {
-        GreenfootImage image = getImage();
-        image.scale(150,180);
-    }
-
-    public void act()
-    {
-    	
-    }
     /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * Act - do whatever the House wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public void connectByPath()
+    public void act() 
     {
-        // put your code here
-        
-    }
+        // Add your action code here.
+    }    
 }
