@@ -7,7 +7,7 @@ This document descibes the following thing :
 So starting with framework and models we will be usin XP Team Values, KanBan board to track our progress and Sprint methodologies to accomplish our goals.
 
 - XP TEAM Values:
-All team members must have this all qualities:
+All team members must have all these qualities:
   1. Simplicity
   2. Courage
   3. Respect
