@@ -9,8 +9,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Path extends Actor
 {
     private static int count=0;
+    private House startPoint;
+    private House endPoint;
     //private int sum=0;
       
+    public Path(House start, House end){
+        startPoint = start;
+        endPoint = end;
+    }
+    
+    public void layoutBlock(){
+        
+    }
+    
        public void act() 
     {
            
