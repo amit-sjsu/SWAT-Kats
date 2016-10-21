@@ -35,7 +35,9 @@ public class Path extends Actor
     {
         return count;
     }
-      
-  
-    
+    public void setCount(int val)
+    {
+        count=val;
+    }
+     
 }
