@@ -29,12 +29,12 @@ public class Level1 extends Level
         house[2] = new House();
         addObject(house[2],830,293);
         house[3] = new House();
-        addObject(house[3],496,392);
+        addObject(house[3],391,488);
         house[4] = new House();
         addObject(house[4],154,323);
         Block block = new Block();
         addObject(block, 100, 100);
-        Path p = new Path(house[0], house[1]);
+        Path p = new Path(house[3], house[1]);
         addObject(p,200,200);
         p.layoutBlock();
         
