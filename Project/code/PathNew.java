@@ -6,14 +6,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Path extends Actor
+public class PathNew extends Actor
 {
     private static int count=0;
     private House startPoint;
     private House endPoint;
     //private int sum=0;
       
-    public Path(House start, House end){
+    public PathNew(House start, House end){
         startPoint = start;
         endPoint = end;
     }
