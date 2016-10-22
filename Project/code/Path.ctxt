@@ -1,10 +1,12 @@
 #BlueJ class context
 comment0.target=Path
 comment0.text=\n\ Write\ a\ description\ of\ class\ Path\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
-comment1.params=
-comment1.target=Path()
+comment1.params=start\ end
+comment1.target=Path(House,\ House)
 comment2.params=
-comment2.target=void\ act()
+comment2.target=void\ layoutBlock()
 comment3.params=
-comment3.target=int\ getCount()
-numComments=4
+comment3.target=void\ act()
+comment4.params=
+comment4.target=int\ getCount()
+numComments=5

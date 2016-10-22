@@ -19,6 +19,28 @@ public class Path extends Actor
     }
     
     public void layoutBlock(){
+        double startX = startPoint.getX();
+        double startY = startPoint.getY();
+        double endX = endPoint.getX();
+        double endY = endPoint.getY();
+        System.out.println("Starting House X : " + startX + " Y:" + startY);
+        System.out.println("Ending House X : " + endX + " Y:"+ endY);
+        System.out.println("Slope  y2-y1: " + (endY-startY));
+        System.out.println("Slope  x2-x1: " + (endX-startX));
+        System.out.println("Slope  x2-x1: " + (endY-startY)/(endX-startX));
+        //Math.toDegrees(Math.atan((y2-y1)/(x2-x1)))
+        System.out.println("Degree to rotate using atan is : " + Math.atan((endY-startY)/(endX-startX))) ;
+        System.out.println("Degree to rotate using atan2 is : " + Math.atan2((endY-startY), (endX-startX))) ;
+        double rotateDegree = Math.toDegrees(Math.atan((endY-startY)/(endX-startX)));
+        System.out.println("Degree to rotate is : " + rotateDegree) ;
+        Block  block = new Block();
+        block.turn((int)rotateDegree);
+        getWorld().addObject(block, (int) startX, (int)startY);
+        Block  block2 = new Block();
+        block2.turn((int)rotateDegree);
+        getWorld().addObject(block2, (int)endX, (int)endY);
+        
+        
         
     }
     

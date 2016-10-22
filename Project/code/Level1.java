@@ -14,6 +14,7 @@ public class Level1 extends Level
      * 
      */
     private House house[]= new House[5];
+    private Path path[] = new Path[8];
     
     public Level1()
     {
@@ -31,12 +32,11 @@ public class Level1 extends Level
         addObject(house[3],496,392);
         house[4] = new House();
         addObject(house[4],154,323);
-        Path path1 = new Path();
-        addObject(path1,614,511);
-        Path path2 = new Path();
-        addObject(path2,671,486);
-        Path path3 = new Path();
-        addObject(path3,719,461);
+        Block block = new Block();
+        addObject(block, 100, 100);
+        Path p = new Path(house[0], house[1]);
+        addObject(p,200,200);
+        p.layoutBlock();
         
     }
 }
