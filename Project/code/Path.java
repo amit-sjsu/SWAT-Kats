@@ -31,7 +31,9 @@ public class Path extends Actor
         //Math.toDegrees(Math.atan((y2-y1)/(x2-x1)))
         System.out.println("Degree to rotate using atan is : " + Math.atan((endY-startY)/(endX-startX))) ;
         System.out.println("Degree to rotate using atan2 is : " + Math.atan2((endY-startY), (endX-startX))) ;
-        double rotateDegree = Math.toDegrees(Math.atan((endY-startY)/(endX-startX)));
+        double rotateDegree = Math.toDegrees(Math.atan((endY-startY)/(endX-startX))); 
+        System.out.println("Degree turn is : " + rotateDegree);
+        System.out.println("Degree turn is : " +  Math.toDegrees(Math.atan2((endY-startY), (endX-startX))));
         Block  block = new Block();
         block.turn((int)rotateDegree);
         getWorld().addObject(block, (int) startX+50, (int)startY-40);
