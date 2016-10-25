@@ -1,0 +1,18 @@
+As a player, 
+when I select the paths between houses and click on validate, 
+I should get a response on the UI indicating whether my path was the shortest or not #UserStories
+
+Contract:
+
+interface PathSetter{
+  public boolean IsShortesPath(List<Path> SelectedPath);
+
+  public Collection GetShortestPath(List<Path> AllPaths);
+  
+}
+
+
+Required:
+
+Class path should contain x-y coordinates for starting point of a path and ending point of a path.
+Class path should contain the two House objects that the path contains 
