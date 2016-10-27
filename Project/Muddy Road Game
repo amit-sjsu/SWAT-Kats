@@ -12,7 +12,7 @@ Areas Covered with this game:
 Lets follow any one algorithm for our game to get minimum spanning tree.
 - As we had discussion on kruskal's algorithm and found it to be good. We can use Kruskal's algorithm for our game.
 
-- Discription on how we can built the game:-
+- Discription on how we can build the game:-
   At the begining of the game we will give number of moves to the user which will be equivalent to minimum moves required to connect all 
   nodes. Hence In-order to connect all the nodes user has to follow minimum path else he/she will be out of move and the game would be over.
 
