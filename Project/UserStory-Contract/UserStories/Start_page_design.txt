@@ -1,0 +1,8 @@
+As a player, when user runs the game, I should be able to see two buttons on the home screen . "Start" and "Help".
+	1.On clicking on the "Start" button, I should be able to navigate to the Level 1 screen of the game and the game should start.
+	2.On clicking on the "Help" button, I should be able to navigate to a help page on which there will be a description of the game and
+		a Audio file which will speak out the instructions to play the game.
+
+Required:-
+1. Background image for the home page.
+2. Interface of the Level 1 of the game.  
