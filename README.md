@@ -4,8 +4,8 @@
 
 ###CMPE 202 - Software System Engineering Team Project 
 ####Team Members
-Navneet Jain
-Anudeep Rentala
-Amit Pandey
-Shafi Dayatar
-Swathi Koduri
+Navneet Jain<br />
+Anudeep Rentala<br />
+Amit Pandey<br />
+Shafi Dayatar<br />
+Swathi Koduri<br />
