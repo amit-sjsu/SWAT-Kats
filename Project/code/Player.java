@@ -12,12 +12,12 @@ public class Player extends Actor
     public void act() 
     {
        
-        Actor path;
+       /* Actor path;
         path = getOneIntersectingObject(Path.class);  
        if (path != null)
         {
             
-        }    
+        }  */  
 
     }    
 }

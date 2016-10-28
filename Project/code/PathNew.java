@@ -9,37 +9,75 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class PathNew extends Actor
 {
     private static int count=0;
-    private House startPoint;
-    private House endPoint;
+    private House startHouse;
+    private House endHouse;
+    private Block [] blocks;
     //private int sum=0;
       
     public PathNew(House start, House end){
-        startPoint = start;
-        endPoint = end;
+        startHouse = start;
+        endHouse = end;
     }
     
+    
+   
+    public Integer [] findRangeXY(int xShift, int yShift, int quadrant){
+        Integer [] range  = new Integer[4];
+        if (quadrant == 1){
+            
+        }
+        return range;
+    }
+    
+    public int findQuadrant(int startPosX, int startPosY, int endPosX, int endPosY){
+        if (((endPosX - startPosX) > 0) && ((endPosY - startPosY) > 0))
+           return 1;
+        else if ((endPosX - startPosX) < 0 && (endPosY - startPosY) > 0)
+           return 2;
+        else if ((endPosX - startPosX) < 0 && (endPosY - startPosY) < 0)
+           return 3;
+        else if ((endPosX - startPosX) > 0 && (endPosY - startPosY) < 0)
+           return 4;
+        else if ((endPosY - startPosY) == 0)
+           return 5; // parallel to Y axis;
+        else if ((endPosX - startPosX) == 0)
+           return 6; // parallel to X axis;
+        return 10; // point is outof the box;
+    }
+    
+    public Integer [] findPointThruExtraPolate(int startPosX, int startPosY, int startRangeX, 
+          int startRangeY, int endRangeX, int endRangeY, double slope){
+        Integer [] point = new Integer [2];
+        double newSlope = 0.0;
+        
+        for(; startRangeX<endRangeX; startRangeX++){
+            for(; startRangeY<endRangeY; startRangeY++){
+                newSlope = Math.toDegrees(Math.atan((startRangeY-startPosY)/(startRangeX-startPosX)));
+                if (newSlope == slope){
+                    point[0] = startRangeX;
+                    point[1] = startRangeY;
+                    break;
+                }
+            }            
+        }
+        
+        return point;
+        
+    }
+          
+    
     public void layoutBlock(){
-        double startX = startPoint.getX();
-        double startY = startPoint.getY();
-        double endX = endPoint.getX();
-        double endY = endPoint.getY();
-        System.out.println("Starting House X : " + startX + " Y:" + startY);
-        System.out.println("Ending House X : " + endX + " Y:"+ endY);
-        System.out.println("Slope  y2-y1: " + (endY-startY));
-        System.out.println("Slope  x2-x1: " + (endX-startX));
-        System.out.println("Slope  x2-x1: " + (endY-startY)/(endX-startX));
-        //Math.toDegrees(Math.atan((y2-y1)/(x2-x1)))
-        System.out.println("Degree to rotate using atan is : " + Math.atan((endY-startY)/(endX-startX))) ;
-        System.out.println("Degree to rotate using atan2 is : " + Math.atan2((endY-startY), (endX-startX))) ;
-        double rotateDegree = Math.toDegrees(Math.atan((endY-startY)/(endX-startX))); 
-        System.out.println("Degree turn is : " + rotateDegree);
-        System.out.println("Degree turn is : " +  Math.toDegrees(Math.atan2((endY-startY), (endX-startX))));
+        Point startPoint = startHouse.getPoint();
+        Point endPoint = endHouse.getPoint();
+        
+        double rotateDegree = startPoint.findSlope(endPoint);
+
         Block  block = new Block();
         block.turn((int)rotateDegree);
-        getWorld().addObject(block, (int) startX+50, (int)startY-40);
+        getWorld().addObject(block, (int) startPoint.getX() + 50, (int)startPoint.getY() - 40);
         Block  block2 = new Block();
         block2.turn((int)rotateDegree);
-        getWorld().addObject(block2, (int)endX, (int)endY);
+        getWorld().addObject(block2, (int)endPoint.getX(), (int)endPoint.getY());
         
         
         

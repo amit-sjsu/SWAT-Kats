@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Point
+comment0.text=\n\ Write\ a\ description\ of\ class\ Location\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=x\ y
+comment1.target=Point(int,\ int)
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Location\n
+comment2.params=
+comment2.target=int\ getX()
+comment3.params=
+comment3.target=int\ getY()
+comment4.params=y
+comment4.target=void\ setY(int)
+comment5.params=x
+comment5.target=void\ setX(int)
+comment6.params=startX\ startY\ endX\ endY
+comment6.target=double\ slope(double,\ double,\ double,\ double)
+comment7.params=start\ end
+comment7.target=double\ findSlope(Point,\ Point)
+comment7.text=\n\ this\ helps\ to\ find\ slope\ between\ two\ point,\ \n\ First\ parameters\ take\ is\ starting\ point\ and\ second\ one\ is\ ending\ point\n
+comment8.params=end
+comment8.target=double\ findSlope(Point)
+numComments=9

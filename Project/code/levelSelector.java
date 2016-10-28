@@ -14,11 +14,11 @@ public class levelSelector extends Actor
      */
     public void act() 
     {
-       if(Greenfoot.mouseClicked(this))
+       /*if(Greenfoot.mouseClicked(this))
         {
             Greenfoot.setWorld(new Background());
             Background world = (Background)getWorld();
           
-        }
+        }*/
     }    
 }

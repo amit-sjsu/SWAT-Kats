@@ -22,20 +22,18 @@ public class Level1 extends Level
     }
     
     public void setupObjects(){
-        house[0] = new House();
-        addObject(house[0],350,235);
-        house[1] = new House();
-        addObject(house[1],581,291);
-        house[2] = new House();
+        house[0] = new House(350, 235);
+        addObject(house[0],350, 235);
+        house[1] = new House(400, 351);
+        addObject(house[1],400,351);
+        house[2] = new House(830, 293);
         addObject(house[2],830,293);
-        house[3] = new House();
+        house[3] = new House(391, 488);
         addObject(house[3],391,488);
-        house[4] = new House();
+        house[4] = new House(154, 323);
         addObject(house[4],154,323);
-        Block block = new Block();
-        addObject(block, 100, 100);
-        PathNew p = new PathNew(house[1], house[3]);
-        addObject(p,200,200);
+        PathNew p = new PathNew(house[3], house[1]);
+        addObject(p, 0,0);
         p.layoutBlock();
         
     }
