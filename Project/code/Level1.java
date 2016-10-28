@@ -28,7 +28,7 @@ public class Level1 extends Level
         addObject(house[1],400,351);
         house[2] = new House(830, 293);
         addObject(house[2],830,293);
-        house[3] = new House(391, 488);
+        house[3] = new House(500, 488);
         addObject(house[3],391,488);
         house[4] = new House(154, 323);
         addObject(house[4],154,323);

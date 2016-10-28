@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Fri Oct 28 00:53:32 PDT 2016
+#Fri Oct 28 13:28:08 PDT 2016
 target16.name=House
 editor.swing.0.y=24
 editor.swing.0.x=65
@@ -49,8 +49,8 @@ target27.typeParameters=
 target27.showInterface=false
 target18.width=80
 editor.fx.0.height=700
-class.House.image=house-07.png
 project.charset=UTF-8
+class.House.image=house-07.png
 target12.typeParameters=
 class.Submit.superclass=Buttons
 dependency15.to=Player
@@ -101,7 +101,6 @@ target1.width=160
 dependency7.type=UsesDependency
 dependency4.from=Replay
 target28.height=50
-class.PathNew.image=path-white.png
 target26.y=130
 target26.x=190
 dependency20.to=Red
@@ -285,8 +284,8 @@ target1.x=100
 target19.typeParameters=
 target29.showInterface=false
 target25.name=Block
-target5.typeParameters=
 dependency13.type=UsesDependency
+target5.typeParameters=
 dependency10.from=Background
 target7.showInterface=false
 target3.width=80
