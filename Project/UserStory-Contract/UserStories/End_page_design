@@ -1,0 +1,11 @@
+##As a player,
+when user submit his score , he should be able to see whether  he looses or wins. He should be able to see "Replay" buttons 
+if he looses and "Continue" button if he wins.
+##So that,
+he is able to navigate in the game.
+##I want 
+on clicking on the "Replay" button, player should be able to navigate to the start screen and be able to start new game. On clicking on the "Continue " button,
+he should be able to navigate to a the next level page .
+#contract
+1.Design layout required for the end page
+2.Game level interface will provide score details and players status (Win/loose).
