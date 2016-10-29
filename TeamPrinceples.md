@@ -50,9 +50,24 @@ We will be useing http://waffle.io as kanban board to maintain tasklist and foll
 
 Also the task in done phase can get back to inprogess, if we find that it was not completed before.
 
+1) Scrum - 
+Sprint starts on Monday
+Sprint cycle(1 Week)
+Sprint planning hour(1 hour) - saturday before class!! 11:00am-12:00pm
+Sprint review (every week 1 hour - call conference) - Tuesday - 1:00PM-2:00PM
+Sprint retrospect(every 2 weeks -  1hour)
+daily stand up meeting (Asynchronous)
+
+2) We have three roles in scrum:
+1) Scrum master (The one who submits the report is a scrum master)Swathi/Shafi/Navneet/Amit/Anudeep
+2) Project manager/owner Shafi/Navneet/Amit/Anudeep/Swathi
+3) core team members 
+
 Coding Standards:
 
 Add recommended coding standards here.
+
+Code Review Tools recommendation?
 
 So we limit are WIP limit to 4 which means that we dont have more than 4 tasks
 across Inprogress, Testing and Review part. So to finish backlog we must complete the current task rather then taking new one. 
