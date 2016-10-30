@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Fri Oct 28 13:44:48 PDT 2016
+#Sun Oct 30 10:56:31 PDT 2016
 target16.name=House
 editor.swing.0.y=24
 editor.swing.0.x=65
@@ -16,6 +16,7 @@ dependency18.type=UsesDependency
 dependency15.from=Path
 target21.showInterface=false
 target19.width=90
+class.Test.superclass=greenfoot.Actor
 dependency8.to=Background
 class.Path.superclass=greenfoot.Actor
 target14.type=ClassTarget
@@ -34,6 +35,7 @@ target28.type=ClassTarget
 target1.typeParameters=
 target20.showInterface=false
 dependency2.to=PathNew
+class.IGraph.superclass=
 dependency1.type=UsesDependency
 target30.type=ClassTarget
 target16.y=70
@@ -98,6 +100,7 @@ class.Level1.superclass=Level
 target17.typeParameters=
 dependency3.to=PathNew
 target1.width=160
+class.IEdge.superclass=
 dependency7.type=UsesDependency
 dependency4.from=Replay
 target28.height=50
@@ -156,6 +159,7 @@ target26.typeParameters=
 target17.showInterface=false
 target8.showInterface=false
 dependency27.to=Replay
+class.Edge.superclass=
 target30.height=50
 target29.width=80
 dependency3.from=NextLevel
@@ -395,5 +399,6 @@ target19.showInterface=false
 class.StartGameScreen.superclass=MSTGame
 target29.naviview.expanded=true
 target1.height=50
+class.Graph.superclass=
 target4.typeParameters=
 mainWindow.width=1301
