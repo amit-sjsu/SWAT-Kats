@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=Path
+comment0.text=\n\ Write\ a\ description\ of\ class\ Path\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=start\ end
+comment1.target=Path(House,\ House)
+comment2.params=xShift\ yShift\ quadrant
+comment2.target=java.lang.Integer[]\ findRangeXY(int,\ int,\ int)
+comment3.params=startPosX\ startPosY\ endPosX\ endPosY
+comment3.target=int\ findQuadrant(int,\ int,\ int,\ int)
+comment4.params=startPosX\ startPosY\ startRangeX\ startRangeY\ endRangeX\ endRangeY\ slope
+comment4.target=java.lang.Integer[]\ findPointThruExtraPolate(int,\ int,\ int,\ int,\ int,\ int,\ double)
+comment5.params=
+comment5.target=void\ layoutBlock()
+comment6.params=
+comment6.target=void\ act()
+comment7.params=
+comment7.target=int\ getCount()
+numComments=8
