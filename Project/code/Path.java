@@ -12,37 +12,17 @@ public class Path extends Actor
     private House startHouse;
     private House endHouse;
     private Block [] blocks;
-    //private int sum=0;
+    private int widthOfBlock = 50 + 10 + 10; // 50 is width and 10 is padding towards left and other 10 for padding towards right
       
     public Path(House start, House end){
         startHouse = start;
         endHouse = end;
     }
     
-    
-   
-    public Integer [] findRangeXY(int xShift, int yShift, int quadrant){
-        Integer [] range  = new Integer[4];
-        if (quadrant == 1){
-            
-        }
-        return range;
-    }
-    
-    public int findQuadrant(int startPosX, int startPosY, int endPosX, int endPosY){
-        if (((endPosX - startPosX) > 0) && ((endPosY - startPosY) > 0))
-           return 1;
-        else if ((endPosX - startPosX) < 0 && (endPosY - startPosY) > 0)
-           return 2;
-        else if ((endPosX - startPosX) < 0 && (endPosY - startPosY) < 0)
-           return 3;
-        else if ((endPosX - startPosX) > 0 && (endPosY - startPosY) < 0)
-           return 4;
-        else if ((endPosY - startPosY) == 0)
-           return 5; // parallel to Y axis;
-        else if ((endPosX - startPosX) == 0)
-           return 6; // parallel to X axis;
-        return 10; // point is outof the box;
+    public int findNoOfBlocks(){
+        int distance = (int) Point.distance(startHouse.getPoint(), endHouse.getPoint());
+        int noOfBlocks =  distance/widthOfBlock;
+        return noOfBlocks; 
     }
     
     public Integer [] findPointThruExtraPolate(int startPosX, int startPosY, int startRangeX, 
@@ -65,7 +45,6 @@ public class Path extends Actor
         
     }
           
-    
     public void layoutBlock(){
         Point startPoint = startHouse.getPoint();
         Point endPoint = endHouse.getPoint();
