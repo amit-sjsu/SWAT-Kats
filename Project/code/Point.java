@@ -51,6 +51,22 @@ public class Point
         System.out.println("Degree turn using atan2 is : " +  Math.toDegrees(Math.atan2((endY-startY), (endX-startX))));
         return rotateDegree;
     }
+    //temporary
+    // neeed to delete after testing 
+    private static double slope(double startX, double startY, double endX, double endY, int distance){
+        if (distance == 110){
+          System.out.println("Starting House X : " + startX + " Y:" + startY);
+          System.out.println("Ending House X : " + endX + " Y:"+ endY);
+          System.out.println("Y2-Y1: " + (endY-startY));
+          System.out.println("x2-X1: " + (endX-startX));
+          System.out.println("(Y2-Y1)-(X2-X1): " + (endY-startY)/(endX-startX));
+          System.out.println("Radians to rotate using atan is : " + Math.toDegrees(Math.atan((endY-startY)/(endX-startX)))) ;
+        }
+        double rotateDegree = Math.toDegrees(Math.atan((endY-startY)/(endX-startX)));
+        //System.out.println("Degree turn using atan is : " + rotateDegree);
+        //System.out.println("Degree turn using atan2 is : " +  Math.toDegrees(Math.atan2((endY-startY), (endX-startX))));
+        return rotateDegree;
+    }
     
     /**
      * this helps to find slope between two point, 
@@ -65,8 +81,8 @@ public class Point
         return slope(getX(), getY(), end.getX(), end.getY());        
     }
     
-    public double findSlope(int x, int y){
-        return slope(getX(), getY(), x, y);        
+    public double findSlope(int x, int y, int distance){
+        return slope(getX(), getY(), x, y, distance);        
     }
     
     private int findQuadrant(int startPosX, int startPosY, int endPosX, int endPosY){
@@ -85,20 +101,25 @@ public class Point
         return 10; // point is outof the box;
     }
     
-    public Point findPointThruExtraPolate(Point a, Point startRange, Point endRange, int distance, double slope){
+    public Point findPointThruExtraPolate(Point a,  Point endRange, int distance, double slope){
         Point xy = new Point();
-        int startX = a.getX() + startRange.getX();
+       
         int endX = a.getX() + endRange.getX();
-        int startY = a.getY() + startRange.getY();
-        int endY = a.getY()+ endRange.getY();
+        int endY = a.getY();
         
-        for (; startX <= endX; startX++){
-            for (;startY <= endY; startY++){
+        //System.out.println("start range =( " + startX + ", " + startY + ")" ) ;
+        //System.out.println("end range =( " + endX + ", " + endY + ")" ) ;
+        
+        for (int startX = a.getX()+10; startX <= endX; startX++){
+            for (int startY = endY - endRange.getY();startY <= endY; startY++){
                 int dist = (int)a.distance(startX, startY);
-                double testSlope = a.findSlope(startX, startY);
-                if (dist == distance && slope == testSlope){
+                int testSlope = (int)a.findSlope(startX, startY, dist);
+                
+                if (dist == distance && (int)slope == testSlope){
                     xy.setX(startX);
                     xy.setY(startY);
+                    System.out.println("range =( " + startX + ", " + startY + "), Distance : " + dist + ", slope: " + testSlope +
+                "action Slope: " + slope);
                     
                 }
             }

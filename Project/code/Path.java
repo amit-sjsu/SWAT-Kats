@@ -13,6 +13,7 @@ public class Path extends Actor
     private House endHouse;
     private Block [] blocks;
     private int widthOfBlock = 50 + 10 + 10; // 50 is width and 10 is padding towards left and other 10 for padding towards right
+    //should try to get my image
       
     public Path(House start, House end){
         startHouse = start;
@@ -24,39 +25,27 @@ public class Path extends Actor
         int noOfBlocks =  distance/widthOfBlock;
         return noOfBlocks; 
     }
-    
-    public Integer [] findPointThruExtraPolate(int startPosX, int startPosY, int startRangeX, 
-          int startRangeY, int endRangeX, int endRangeY, double slope){
-        Integer [] point = new Integer [2];
-        double newSlope = 0.0;
-        
-        for(; startRangeX<endRangeX; startRangeX++){
-            for(; startRangeY<endRangeY; startRangeY++){
-                newSlope = Math.toDegrees(Math.atan((startRangeY-startPosY)/(startRangeX-startPosX)));
-                if (newSlope == slope){
-                    point[0] = startRangeX;
-                    point[1] = startRangeY;
-                    break;
-                }
-            }            
-        }
-        
-        return point;
-        
-    }
-          
+             
     public void layoutBlock(){
         Point startPoint = startHouse.getPoint();
         Point endPoint = endHouse.getPoint();
-        
+        int noOfBlocks = findNoOfBlocks();
         double rotateDegree = startPoint.findSlope(endPoint);
-
-        Block  block = new Block();
-        block.turn((int)rotateDegree);
-        getWorld().addObject(block, (int) startPoint.getX() + 50, (int)startPoint.getY() - 40);
-        Block  block2 = new Block();
-        block2.turn((int)rotateDegree);
-        getWorld().addObject(block2, (int)endPoint.getX(), (int)endPoint.getY());
+        //System.out.println("Total no of blocks along the path :" + findNoOfBlocks());
+        blocks = new Block[noOfBlocks];
+        Point p = startHouse.getPoint();
+        Point endRange = new Point(100,100);
+        for(int i =0 ;i<noOfBlocks; i++){
+            blocks[i] = new Block();
+            blocks[i].turn((int)rotateDegree);
+           
+             p= p.findPointThruExtraPolate(p, endRange, 65, rotateDegree);
+            System.out.println("New x is : " + p.getX());
+            System.out.println("New Y is : " + p.getY());
+            getWorld().addObject(blocks[i], p.getX(), p.getY());
+        }
+        
+        //     )
         
         
         
