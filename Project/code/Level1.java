@@ -15,12 +15,13 @@ public class Level1 extends Level
      */
     private House house[]= new House[5];
     private Path path[] = new Path[8];
-    
+
     public Level1()
     {
         setupObjects();
+        prepare();
     }
-    
+
     public void setupObjects(){
         house[0] = new House(350, 235);
         addObject(house[0], house[0].getPoint().getX(), house[0].getPoint().getY());
@@ -47,7 +48,13 @@ public class Level1 extends Level
         path[2].layoutBlock();
         path[3].layoutBlock();
         path[4].layoutBlock();
-        
-        
+
+    }
+    /**
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
+     */
+    private void prepare()
+    {
     }
 }
