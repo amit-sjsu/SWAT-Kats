@@ -1,16 +1,16 @@
 #BlueJ class context
 comment0.target=Path
-comment0.text=\n\ Write\ a\ description\ of\ class\ Path\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ to\ be\ done\ \n\ 1)\ Block\ placing\ should\ not\ be\ calculated\ using\ fixed\ house\ width/hieght,\ \n\ for\ now\ logic\ is\ total\ distance(from\ starthouse\ to\ endhouse)\ -\ 2(width\ of\ house\ /2)\ \n\ and\ divide\ total\ distance\ by\ width\ of\ block\ image.\ Ideally\ it\ should\ find\ a\ end\ point\ \n\ on\ the\ house\ using\ distance\ and\ extrapolate\ function,\ \ *\ and\ add\ some\ initial\ spacing\ \n\ to\ point\ which\ gives\ proper\ spacing\ for\ each\ house.\ I\ think\ it\ wont\ take\ more\ than\ a\ hour.\n\ \n\ 2)\ for\ now\ paths\ are\ in\ a\ straing\ line,\ add\ more\ function\ so\ that\ it\ can\ be\ created\ in\ \n\ different\ shapes\ like\ S\ or\ Arc\ or\ Circle\ or\ Z.\ *\ this\ can\ be\ done\ at\ last\n\ \n
 comment1.params=start\ end
 comment1.target=Path(House,\ House)
 comment2.params=
 comment2.target=int\ findNoOfBlocks()
 comment3.params=noOfBlocks
-comment3.target=void\ blockDist(int)
+comment3.target=int\ blockDist(int)
 comment4.params=
 comment4.target=void\ layoutBlock()
 comment5.params=
 comment5.target=void\ act()
 comment6.params=
-comment6.target=int\ getCount()
+comment6.target=int\ getWeigth()
 numComments=7

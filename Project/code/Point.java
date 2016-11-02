@@ -83,10 +83,11 @@ public class Point
         for (int startX = a.getX()+10; startX <= endX; startX++){
             for (int startY = endY - endRange.getY();startY <= endY; startY++){
                 int dist = (int)a.distance(startX, startY);
-                int testSlope = (int)a.findSlope(startX, startY);
-                if (dist == distance && (int)slope == testSlope){
+                int testSlope = (int)a.findSlope(startX, startY);              
+                if (( dist - 1 < distance && distance < dist + 2) && (int)slope == testSlope){
                     xy.setX(startX);
-                    xy.setY(startY);                    
+                    xy.setY(startY);
+                    break;
                 }
             }
         }
@@ -108,6 +109,10 @@ public class Point
     public double distance(int x, int y){
         Point b = new Point(x,y);
         return calculateDistance(this, b);
+    }
+    
+    public String toString(){
+        return "Point : (" + getX() + ", " + getY() +")";
     }
     
 }
