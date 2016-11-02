@@ -38,38 +38,36 @@ public class Path extends Actor
     }
     
     public int findNoOfBlocks(){
-        int distance = (int) Point.distance(startHouse.getPoint(), endHouse.getPoint());
-        int widthofhouse = startHouse.getImage().getWidth()/2;
-        this.pathLength = (distance - widthofhouse*2);
-        int noOfBlocks =  pathLength/widthOfBlock;
-        return noOfBlocks; 
+        int distance = Point.distance(startHouse.getPoint(), endHouse.getPoint());
+        int widthofhouse = startHouse.getImage().getWidth() / 2;
+        pathLength = (distance - widthofhouse * 2);
+        return pathLength / widthOfBlock;
     }
     
     private int blockDist(int noOfBlocks){
-        return pathLength/noOfBlocks;
-        
+        return pathLength / noOfBlocks;
     }
              
     public void layoutBlock(){
         Point startPoint = startHouse.getPoint();
         Point endPoint = endHouse.getPoint();
-        double rotateDegree = startPoint.findSlope(endPoint);
+        int slopeAngle = 0;
+        Point p = startPoint;
+        Point endRange = new Point(100,100);
+        slopeAngle = startPoint.findSlope(endPoint);
         pathWeight = findNoOfBlocks();
         blockDistance = blockDist(pathWeight);        
         blocks = new Block[pathWeight];
-        Point p = startPoint;
-        Point endRange = new Point(100,100);
-        System.out.println("testing");
         for(int i = 0 ;i<pathWeight; i++){
             blocks[i] = new Block(this);
-            blocks[i].turn((int)rotateDegree);
+            blocks[i].turn(slopeAngle);
             int distance = 70;// initial house distance should get from house width/2 I calculated it on my own
             if (i != 0){
                 distance = blockDistance;
                 endRange.setX(widthOfBlock+20);
                 endRange.setY(widthOfBlock+20);
             }
-            p = p.findPointThruExtraPolate(p, endRange, distance, rotateDegree);
+            p = p.findPointThruExtraPolate(p, endRange, distance, slopeAngle);
             getWorld().addObject(blocks[i], p.getX(), p.getY());
         }        
     }
@@ -83,7 +81,6 @@ public class Path extends Actor
     public void remove(){
         for(int i = 0; i < getWeigth(); i++){
             blocks[i].setImage("path-white.png");
-            
         }
     }
     

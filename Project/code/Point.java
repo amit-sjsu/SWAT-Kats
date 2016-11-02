@@ -39,8 +39,8 @@ public class Point
         xcoord = x;
     }
     
-    private static double slope(double startX, double startY, double endX, double endY){
-       return Math.toDegrees(Math.atan((endY-startY)/(endX-startX)));
+    private static int slope(double startX, double startY, double endX, double endY){
+       return (int) Math.toDegrees(Math.atan((endY-startY)/(endX-startX)));
     }
    
     /**
@@ -48,15 +48,15 @@ public class Point
      * First parameters take is starting point and second one is ending point
      */
     
-    public static double findSlope(Point start, Point end){  
+    public static int findSlope(Point start, Point end){  
         return slope(start.getX(), start.getY(), end.getX(), end.getY());
     }
     
-    public double findSlope(Point end){
+    public int findSlope(Point end){
         return slope(getX(), getY(), end.getX(), end.getY());        
     }
     
-    public double findSlope(int x, int y){
+    public int findSlope(int x, int y){
         return slope(getX(), getY(), x, y);        
     }
     
@@ -76,14 +76,15 @@ public class Point
         return 10; // point is outof the box;
     }
     
-    public Point findPointThruExtraPolate(Point a,  Point endRange, int distance, double slope){
+    public Point findPointThruExtraPolate(Point a,  Point endRange, int distance, int slope){
         Point xy = new Point();
         int endX = a.getX() + endRange.getX();
-        int endY = a.getY();        
+        int endY = a.getY();
+        int dist =0, testSlope =0;
         for (int startX = a.getX()+10; startX <= endX; startX++){
             for (int startY = endY - endRange.getY();startY <= endY; startY++){
-                int dist = (int)a.distance(startX, startY);
-                int testSlope = (int)a.findSlope(startX, startY);              
+                dist = a.distance(startX, startY);
+                testSlope = a.findSlope(startX, startY);              
                 if (( dist - 1 < distance && distance < dist + 2) && (int)slope == testSlope){
                     xy.setX(startX);
                     xy.setY(startY);
@@ -93,20 +94,20 @@ public class Point
         }
         return xy;
     }
-    private static double calculateDistance(Point a, Point b){
+    private static int calculateDistance(Point a, Point b){
         double diffX = a.getX()-b.getX();
         double diffY = a.getY()-b.getY();
-        return Math.sqrt(Math.pow(diffX,2) + Math.pow(diffY,2));
+        return (int) Math.sqrt(Math.pow(diffX,2) + Math.pow(diffY,2));
     }
     
-    public static double distance(Point a, Point b){
+    public static int distance(Point a, Point b){
         return calculateDistance(a, b);
     }
     
-    public double distance(Point b){
+    public int distance(Point b){
         return calculateDistance(this, b);
     }
-    public double distance(int x, int y){
+    public int distance(int x, int y){
         Point b = new Point(x,y);
         return calculateDistance(this, b);
     }
