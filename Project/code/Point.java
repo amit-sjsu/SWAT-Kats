@@ -40,34 +40,9 @@ public class Point
     }
     
     private static double slope(double startX, double startY, double endX, double endY){
-        System.out.println("Starting House X : " + startX + " Y:" + startY);
-        System.out.println("Ending House X : " + endX + " Y:"+ endY);
-        System.out.println("Y2-Y1: " + (endY-startY));
-        System.out.println("x2-X1: " + (endX-startX));
-        System.out.println("(Y2-Y1)-(X2-X1): " + (endY-startY)/(endX-startX));
-        System.out.println("Radians to rotate using atan is : " + Math.atan((endY-startY)/(endX-startX))) ;
-        double rotateDegree = Math.toDegrees(Math.atan((endY-startY)/(endX-startX)));
-        System.out.println("Degree turn using atan is : " + rotateDegree);
-        System.out.println("Degree turn using atan2 is : " +  Math.toDegrees(Math.atan2((endY-startY), (endX-startX))));
-        return rotateDegree;
+       return Math.toDegrees(Math.atan((endY-startY)/(endX-startX)));
     }
-    //temporary
-    // neeed to delete after testing 
-    private static double slope(double startX, double startY, double endX, double endY, int distance){
-        if (distance == 110){
-          System.out.println("Starting House X : " + startX + " Y:" + startY);
-          System.out.println("Ending House X : " + endX + " Y:"+ endY);
-          System.out.println("Y2-Y1: " + (endY-startY));
-          System.out.println("x2-X1: " + (endX-startX));
-          System.out.println("(Y2-Y1)-(X2-X1): " + (endY-startY)/(endX-startX));
-          System.out.println("Radians to rotate using atan is : " + Math.toDegrees(Math.atan((endY-startY)/(endX-startX)))) ;
-        }
-        double rotateDegree = Math.toDegrees(Math.atan((endY-startY)/(endX-startX)));
-        //System.out.println("Degree turn using atan is : " + rotateDegree);
-        //System.out.println("Degree turn using atan2 is : " +  Math.toDegrees(Math.atan2((endY-startY), (endX-startX))));
-        return rotateDegree;
-    }
-    
+   
     /**
      * this helps to find slope between two point, 
      * First parameters take is starting point and second one is ending point
@@ -81,8 +56,8 @@ public class Point
         return slope(getX(), getY(), end.getX(), end.getY());        
     }
     
-    public double findSlope(int x, int y, int distance){
-        return slope(getX(), getY(), x, y, distance);        
+    public double findSlope(int x, int y){
+        return slope(getX(), getY(), x, y);        
     }
     
     private int findQuadrant(int startPosX, int startPosY, int endPosX, int endPosY){
@@ -103,24 +78,15 @@ public class Point
     
     public Point findPointThruExtraPolate(Point a,  Point endRange, int distance, double slope){
         Point xy = new Point();
-       
         int endX = a.getX() + endRange.getX();
-        int endY = a.getY();
-        
-        //System.out.println("start range =( " + startX + ", " + startY + ")" ) ;
-        //System.out.println("end range =( " + endX + ", " + endY + ")" ) ;
-        
+        int endY = a.getY();        
         for (int startX = a.getX()+10; startX <= endX; startX++){
             for (int startY = endY - endRange.getY();startY <= endY; startY++){
                 int dist = (int)a.distance(startX, startY);
-                int testSlope = (int)a.findSlope(startX, startY, dist);
-                
+                int testSlope = (int)a.findSlope(startX, startY);
                 if (dist == distance && (int)slope == testSlope){
                     xy.setX(startX);
-                    xy.setY(startY);
-                    System.out.println("range =( " + startX + ", " + startY + "), Distance : " + dist + ", slope: " + testSlope +
-                "action Slope: " + slope);
-                    
+                    xy.setY(startY);                    
                 }
             }
         }
@@ -129,12 +95,10 @@ public class Point
     private static double calculateDistance(Point a, Point b){
         double diffX = a.getX()-b.getX();
         double diffY = a.getY()-b.getY();
-        double sumofsquare = Math.pow(diffX,2) + Math.pow(diffY,2);
-        return Math.sqrt(sumofsquare);
+        return Math.sqrt(Math.pow(diffX,2) + Math.pow(diffY,2));
     }
     
     public static double distance(Point a, Point b){
-                
         return calculateDistance(a, b);
     }
     

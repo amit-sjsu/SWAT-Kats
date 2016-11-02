@@ -11,8 +11,10 @@ public class Path extends Actor
     private static int count=0;
     private House startHouse;
     private House endHouse;
+    private int pathLength = 0;
+    private int blockDistance = 0;
     private Block [] blocks;
-    private int widthOfBlock = 50 + 10 + 10; // 50 is width and 10 is padding towards left and other 10 for padding towards right
+    private int widthOfBlock = 50; // 50 is width and 10 is padding towards left and other 10 for padding towards right
     //should try to get my image
       
     public Path(House start, House end){
@@ -22,26 +24,36 @@ public class Path extends Actor
     
     public int findNoOfBlocks(){
         int distance = (int) Point.distance(startHouse.getPoint(), endHouse.getPoint());
-        int noOfBlocks =  distance/widthOfBlock;
+        int widthofhouse = 50;
+        this.pathLength = (distance - widthofhouse*2);
+        int noOfBlocks =  pathLength/widthOfBlock;
         return noOfBlocks; 
+    }
+    
+    private void blockDist(int noOfBlocks){
+        blockDistance = pathLength/noOfBlocks;
+        
     }
              
     public void layoutBlock(){
         Point startPoint = startHouse.getPoint();
         Point endPoint = endHouse.getPoint();
         int noOfBlocks = findNoOfBlocks();
+        blockDist(noOfBlocks);
         double rotateDegree = startPoint.findSlope(endPoint);
         //System.out.println("Total no of blocks along the path :" + findNoOfBlocks());
         blocks = new Block[noOfBlocks];
         Point p = startHouse.getPoint();
         Point endRange = new Point(100,100);
+        
         for(int i =0 ;i<noOfBlocks; i++){
             blocks[i] = new Block();
             blocks[i].turn((int)rotateDegree);
-           
-             p= p.findPointThruExtraPolate(p, endRange, 65, rotateDegree);
-            System.out.println("New x is : " + p.getX());
-            System.out.println("New Y is : " + p.getY());
+            int distance = 70;// initial house distance should get from house width/2 I calculated it on my own
+            if (i != 0)
+                distance = blockDistance; 
+            System.out.println("Distance is : " + distance);
+            p= p.findPointThruExtraPolate(p, endRange, distance, rotateDegree);
             getWorld().addObject(blocks[i], p.getX(), p.getY());
         }
         
