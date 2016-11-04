@@ -1,19 +1,32 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class EndGameScreen here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+
 public class EndGameScreen extends MSTGame
 {
+    private GreenfootSound backgroundMusic = new GreenfootSound("atebrains.wav");
+
+    public EndGameScreen()//int score)
+    {    
+        backgroundMusic.play(); 
+        int score=0; 
+        Counter counter = new Counter();
+        addObject(counter,300,430);
+        counter.setValue(score);
+        Replay replay = new Replay();
+        addObject(replay, 750, 425);
+        prepare();
+    }
+
+    public void stopBackgroundMusic()
+    {
+        backgroundMusic.stop();
+    }
 
     /**
-     * Constructor for objects of class EndGameScreen.
-     * 
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
      */
-    public EndGameScreen()
+    private void prepare()
     {
     }
 }

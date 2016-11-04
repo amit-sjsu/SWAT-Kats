@@ -1,10 +1,8 @@
-
-
 import greenfoot.*;
 
 
-public class PlayNowButton extends Buttons
-{   private GifImage gif = new GifImage("play_button.gif");
+public class Next_level extends Buttons
+{   private GifImage gif = new GifImage("continue.gif");
    
     public void act() 
     {
@@ -13,7 +11,7 @@ public class PlayNowButton extends Buttons
         if(Greenfoot.mouseClicked(this))
         {
             Greenfoot.setWorld(new StartGameScreen());
-            StartGameScreen world = (StartGameScreen)getWorld();
+            LevelChangeScreen world = (LevelChangeScreen)getWorld();
           
         }
     }    

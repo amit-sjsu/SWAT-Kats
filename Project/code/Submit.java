@@ -1,24 +1,18 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 
-/**
- * Write a description of class Submit here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+
 public class Submit extends Buttons
-{
+{   private GifImage gif = new GifImage("submit.gif");
+   
     public void act() 
     {
+        setImage(gif.getCurrentImage());
+        
         if(Greenfoot.mouseClicked(this))
         {
-            //Greenfoot.setWorld(new GameOver_Win());
-            //if(path.getCount()==0){
-            //    Greenfoot.setWorld(new GameOver_Lose());
-            //}
-            //else {
-            //    Greenfoot.setWorld(new GameOver_Win());
-            //}
-        }// Add your action code here.
+            Greenfoot.setWorld(new StartGameScreen());
+            Level1 world = ( Level1)getWorld();
+           
+        }
     }    
 }

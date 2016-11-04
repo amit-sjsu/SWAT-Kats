@@ -50,11 +50,19 @@ public class Level1 extends Level
         path[4].layoutBlock();
 
     }
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
      */
     private void prepare()
     {
+        Counter counter = new Counter();
+        addObject(counter,94,51);
+        Submit submit = new Submit();
+        addObject(submit,775,695);
+        removeObject(submit);
+        Submit submit2 = new Submit();
+        addObject(submit2,869,729);
     }
 }

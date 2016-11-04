@@ -1,19 +1,39 @@
+
+
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class LevelHoverScreen here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+
 public class LevelChangeScreen extends MSTGame
 {
+    private GreenfootSound backgroundMusic = new GreenfootSound("atebrains.wav");
+
+    public LevelChangeScreen()//int score)
+    {    
+        backgroundMusic.play(); 
+        int score=0; 
+        Counter counter = new Counter();
+        addObject(counter,500,530);
+        counter.setValue(score);
+      
+        prepare();
+    }
+
+    public void stopBackgroundMusic()
+    {
+        backgroundMusic.stop();
+    }
 
     /**
-     * Constructor for objects of class LevelHoverScreen.
-     * 
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
      */
-    public LevelChangeScreen()
+    private void prepare()
     {
+        smily smily = new smily();
+        addObject(smily,513,314);
+        Next_level next_level = new Next_level();
+        addObject(next_level,555,662);
+        smily.setLocation(496,309);
+        next_level.setLocation(529,674);
     }
 }

@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.target=Point
-comment0.text=\n\ Write\ a\ description\ of\ class\ Location\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Location\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
 comment1.target=Point()
-comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Location\n
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Location\r\n
 comment10.params=x\ y
 comment10.target=int\ findSlope(int,\ int)
 comment11.params=startPosX\ startPosY\ endPosX\ endPosY
@@ -34,7 +34,7 @@ comment7.params=startX\ startY\ endX\ endY
 comment7.target=int\ slope(double,\ double,\ double,\ double)
 comment8.params=start\ end
 comment8.target=int\ findSlope(Point,\ Point)
-comment8.text=\n\ this\ helps\ to\ find\ slope\ between\ two\ point,\ \n\ First\ parameters\ take\ is\ starting\ point\ and\ second\ one\ is\ ending\ point\n
+comment8.text=\r\n\ this\ helps\ to\ find\ slope\ between\ two\ point,\ \r\n\ First\ parameters\ take\ is\ starting\ point\ and\ second\ one\ is\ ending\ point\r\n
 comment9.params=end
 comment9.target=int\ findSlope(Point)
 numComments=18
