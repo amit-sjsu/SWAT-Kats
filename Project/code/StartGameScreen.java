@@ -41,6 +41,8 @@ public class StartGameScreen extends MSTGame
     private void prepare()
     {
         PlayNowButton playnowbutton = new PlayNowButton();
-        addObject(playnowbutton,526,580);
+        addObject(playnowbutton,298,495);
+        Help help = new Help();
+        addObject(help,639,495);
     }
 }

@@ -12,8 +12,8 @@ public class PlayNowButton extends Buttons
         
         if(Greenfoot.mouseClicked(this))
         {
-            Greenfoot.setWorld(new StartGameScreen());
-            StartGameScreen world = (StartGameScreen)getWorld();
+            Greenfoot.setWorld(new Level1());
+            //Level1 world = (Level1)getWorld();
           
         }
     }    
