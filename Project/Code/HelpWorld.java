@@ -7,7 +7,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 
-public class HelpWorld extends World
+public class HelpWorld extends MSTGame
 {
 
     /**
@@ -18,7 +18,7 @@ public class HelpWorld extends World
     public HelpWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1000, 800, 1); 
+        //super(1000, 800, 1); 
         prepare();
         //GreenfootSound sound = new GreenfootSound("MuddyRoadGame.wav");
     }
