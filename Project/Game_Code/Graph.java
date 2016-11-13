@@ -22,9 +22,9 @@ class Graph implements IGraph
     {
         V = v;
         E = e;
-        edge = new Edge[E];
+        edge = new Path[E];
         for (int i=0; i<e; ++i)
-            edge[i] = new Edge();
+            edge[i] = new Path();
     }
     public void setNoOfEdges(int noOfEs){
     	E = noOfEs;
@@ -71,11 +71,11 @@ class Graph implements IGraph
     // The main function to construct MST using Kruskal's algorithm
     public IEdge[] GetMinimalSpanningEdges()
     {
-        IEdge result[] = new Edge[V];  // This will store the resultant MST
+        IEdge result[] = new Path[V];  // This will store the resultant MST
         int e = 0;  // An index variable, used for result[]
         int i = 0;  // An index variable, used for sorted edges
         for (i=0; i<V; ++i)
-            result[i] = new Edge();
+            result[i] = new Path();
  
         // Step 1:  Sort all the edges in non-decreasing order of their
         // weight.  If we are not allowed to change the given graph, we
@@ -102,7 +102,7 @@ class Graph implements IGraph
         	System.out.println("V "+ V + " e "+e);
             // Step 2: Pick the smallest edge. And increment the index
             // for next iteration
-            IEdge next_edge = new Edge();
+            IEdge next_edge = new Path();
             System.out.println("i "+ i);
             next_edge = edge[i++];
  

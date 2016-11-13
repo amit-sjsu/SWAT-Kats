@@ -10,7 +10,7 @@ public class House extends Actor
 {
     // instance variables - replace the example below with your own
     private Point point;
-
+    private int id;
     /**
      * Constructor for objects of class House
      */
@@ -18,7 +18,14 @@ public class House extends Actor
     {
         point = new Point(x,y);
     }
-
+    public void setId(int i)
+    {
+        id = i;
+    }
+    public int getId()
+    {
+        return id;
+    }
     
     public Point getPoint(){
         return point;

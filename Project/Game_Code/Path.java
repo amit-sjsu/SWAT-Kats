@@ -19,7 +19,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * different shapes like S or Arc or Circle or Z. * this can be done at last
  * 
  */
-public class Path extends Actor
+public class Path extends Actor implements Comparable<IEdge>, IEdge
 {
     private House startHouse;
     private House endHouse;
@@ -36,7 +36,15 @@ public class Path extends Actor
         GreenfootImage i = null;
         setImage(i);
     }
-    
+    public Path(){}
+    public int getSrc()
+    {
+        return this.startHouse.getId();
+    }
+    public int getDest()
+    {
+        return this.endHouse.getId();
+    }
     public int findNoOfBlocks(){
         int distance = Point.distance(startHouse.getPoint(), endHouse.getPoint());
         int widthofhouse = startHouse.getImage().getWidth() / 2;
@@ -72,20 +80,24 @@ public class Path extends Actor
         }        
     }
         
-    public int getWeigth()
+    public int getWeight()
     {
         return pathWeight;
+    }
+    public int compareTo(IEdge compareEdge)
+    {
+        return this.getWeight()-compareEdge.getWeight();
     }
       
   
     public void remove(){
-        for(int i = 0; i < getWeigth(); i++){
+        for(int i = 0; i < getWeight(); i++){
             blocks[i].setImage("path-white.png");
         }
     }
     
     public void add(){
-        for(int i = 0; i < getWeigth(); i++){
+        for(int i = 0; i < getWeight(); i++){
             blocks[i].setImage("Red-path.png");
         }
     }

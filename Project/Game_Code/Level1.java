@@ -24,14 +24,19 @@ public class Level1 extends Level
 
     public void setupObjects(){
         house[0] = new House(350, 235);
+        house[0].setId(0);
         addObject(house[0], house[0].getPoint().getX(), house[0].getPoint().getY());
         house[1] = new House(700, 200);
+        house[1].setId(1);
         addObject(house[1], house[1].getPoint().getX(), house[1].getPoint().getY());
         house[2] = new House(830, 293);
+        house[2].setId(2);
         addObject(house[2], house[2].getPoint().getX(), house[2].getPoint().getY());
         house[3] = new House(500, 488);
+        house[3].setId(3);
         addObject(house[3], house[3].getPoint().getX(), house[3].getPoint().getY());
         house[4] = new House(154, 323);
+        house[4].setId(4);
         addObject(house[4], house[4].getPoint().getX(), house[4].getPoint().getY());
         path[0] = new Path(house[3], house[1]);
         path[1] = new Path(house[4], house[0]);
@@ -43,6 +48,32 @@ public class Level1 extends Level
         addObject(path[2], 0,0);
         addObject(path[3], 0,0);
         addObject(path[4], 0,0);
+        Graph graph = new Graph(5, 5);
+        graph.addEdges(path[0]);
+        graph.addEdges(path[1]);
+        graph.addEdges(path[2]);
+        graph.addEdges(path[3]);
+        graph.addEdges(path[4]);
+        IEdge[] paths = graph.GetMinimalSpanningEdges();
+        Path[] selectedPaths = new Path[3]; //test path
+        int totalLen = paths.length;
+        int counter = 0;
+        for(IEdge path : paths)
+        {
+            int src = path.getSrc();
+            int des = path.getDest();
+            for(Path selPath : selectedPaths)
+            {
+                if(src == selPath.getSrc() && des == selPath.getDest())
+                    counter++;
+                    
+            }
+            
+        }
+        String result= "Loose";
+        if(counter == totalLen && paths.length == selectedPaths.length)
+            result = "Win";
+        
         path[0].layoutBlock();
         path[1].layoutBlock();
         path[2].layoutBlock();
@@ -50,7 +81,8 @@ public class Level1 extends Level
         path[4].layoutBlock();
 
     }
-    
+    
+
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
