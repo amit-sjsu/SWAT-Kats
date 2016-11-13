@@ -90,4 +90,13 @@ public class Path extends Actor
         }
     }
     
+    public House startHouse()
+    {
+        return startHouse;
+    }
+    
+    public House endHouse()
+    {
+        return endHouse;
+    }
 }
