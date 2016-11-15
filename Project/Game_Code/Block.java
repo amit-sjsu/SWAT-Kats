@@ -6,9 +6,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Block extends Actor
+public class Block extends Actor implements PathComponent
 {
-    private Path fromPath;
+    private Path path;
     private Boolean pathSelected = false;
     /**
      * Act - do whatever the SingleBlock wants to do. This method is called whenever
@@ -18,7 +18,7 @@ public class Block extends Actor
     }
     
     public Block(Path path){
-        fromPath = path;
+        this.path = path;
     }
     
     public void act() 
@@ -27,13 +27,24 @@ public class Block extends Actor
         if(Greenfoot.mouseClicked(this))
         { 
           if (pathSelected) {
-              fromPath.remove();
+              path.unSelectPath();
               pathSelected = false;
           }
           else{
-              fromPath.add();
+              path.selectPath();
               pathSelected = true;
           }
         }
+    }
+    
+    public void selectPath(){
+        this.setImage("Red-path.png");
+        pathSelected = true;
+
+    }
+    
+    public void unSelectPath(){
+        this.setImage("path-white.png");
+        pathSelected = false;
     }
 }

@@ -48,7 +48,7 @@ public class Level1 extends Level
         addObject(path[2], 0,0);
         addObject(path[3], 0,0);
         addObject(path[4], 0,0);
-        Graph graph = new Graph(5, 5);
+        /*Graph graph = new Graph(5, 5);
         graph.addEdges(path[0]);
         graph.addEdges(path[1]);
         graph.addEdges(path[2]);
@@ -72,7 +72,7 @@ public class Level1 extends Level
         }
         String result= "Loose";
         if(counter == totalLen && paths.length == selectedPaths.length)
-            result = "Win";
+            result = "Win";*/
         
         path[0].layoutBlock();
         path[1].layoutBlock();

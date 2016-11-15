@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.ArrayList;
 /**
  * Write a description of class Path here.
  * 
@@ -19,16 +19,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * different shapes like S or Arc or Circle or Z. * this can be done at last
  * 
  */
-public class Path extends Actor implements Comparable<IEdge>, IEdge
+public class Path extends Actor implements Comparable<IEdge>, IEdge, PathComponent
 {
     private House startHouse;
     private House endHouse;
-    private Block [] blocks;
+    private ArrayList<PathComponent> blocks = new ArrayList<PathComponent>();  
     private int pathLength = 0;
     private int blockDistance = 0;
     private int pathWeight = 0;
     private int widthOfBlock = new Block().getImage().getWidth(); // 50 is width and 10 is padding towards left and other 10 for padding towards right
     //should try to get my image
+    public Path(){
+    }
       
     public Path(House start, House end){
         startHouse = start;
@@ -36,15 +38,17 @@ public class Path extends Actor implements Comparable<IEdge>, IEdge
         GreenfootImage i = null;
         setImage(i);
     }
-    public Path(){}
+
     public int getSrc()
     {
         return this.startHouse.getId();
     }
+    
     public int getDest()
     {
         return this.endHouse.getId();
     }
+    
     public int findNoOfBlocks(){
         int distance = Point.distance(startHouse.getPoint(), endHouse.getPoint());
         int widthofhouse = startHouse.getImage().getWidth() / 2;
@@ -64,11 +68,12 @@ public class Path extends Actor implements Comparable<IEdge>, IEdge
         Point endRange = new Point(100,100);
         slopeAngle = startPoint.findSlope(endPoint);
         pathWeight = findNoOfBlocks();
-        blockDistance = blockDist(pathWeight);        
-        blocks = new Block[pathWeight];
-        for(int i = 0 ;i<pathWeight; i++){
-            blocks[i] = new Block(this);
-            blocks[i].turn(slopeAngle);
+        blockDistance = blockDist(pathWeight);
+        
+        for(int i = 0 ;i< pathWeight; i++){
+            Block block = new Block(this);
+            addChild(block);
+            block.turn(slopeAngle);
             int distance = 70;// initial house distance should get from house width/2 I calculated it on my own
             if (i != 0){
                 distance = blockDistance;
@@ -76,7 +81,7 @@ public class Path extends Actor implements Comparable<IEdge>, IEdge
                 endRange.setY(widthOfBlock+20);
             }
             p = p.findPointThruExtraPolate(p, endRange, distance, slopeAngle);
-            getWorld().addObject(blocks[i], p.getX(), p.getY());
+            getWorld().addObject(block, p.getX(), p.getY());
         }        
     }
         
@@ -84,22 +89,10 @@ public class Path extends Actor implements Comparable<IEdge>, IEdge
     {
         return pathWeight;
     }
+    
     public int compareTo(IEdge compareEdge)
     {
         return this.getWeight()-compareEdge.getWeight();
-    }
-      
-  
-    public void remove(){
-        for(int i = 0; i < getWeight(); i++){
-            blocks[i].setImage("path-white.png");
-        }
-    }
-    
-    public void add(){
-        for(int i = 0; i < getWeight(); i++){
-            blocks[i].setImage("Red-path.png");
-        }
     }
     
     public House startHouse()
@@ -111,4 +104,29 @@ public class Path extends Actor implements Comparable<IEdge>, IEdge
     {
         return endHouse;
     }
+    
+    
+    
+    public void selectPath(){
+        for(PathComponent block : blocks){
+            block.selectPath();
+        }
+    }
+    
+    public void unSelectPath(){
+        for(PathComponent block : blocks){
+            block.unSelectPath();
+        }
+    }
+    private void addChild(PathComponent c){
+        blocks.add(c);
+    }
+    private void removeChild(PathComponent c){
+        blocks.remove(c);
+    }
+    private PathComponent getChild(int i){
+        return blocks.get(i);
+    }
+    
+    
 }
