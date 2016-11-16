@@ -14,7 +14,7 @@ public class Level1 extends Level
      * 
      */
     private House house[]= new House[5];
-    private Path path[] = new Path[8];
+    private Path path[] = new Path[5];
 
     public Level1()
     {
@@ -23,6 +23,7 @@ public class Level1 extends Level
     }
 
     public void setupObjects(){
+        System.out.println("Loading Level 1:");
         house[0] = new House(350, 235);
         house[0].setId(0);
         addObject(house[0], house[0].getPoint().getX(), house[0].getPoint().getY());
@@ -48,7 +49,21 @@ public class Level1 extends Level
         addObject(path[2], 0,0);
         addObject(path[3], 0,0);
         addObject(path[4], 0,0);
-        /*Graph graph = new Graph(5, 5);
+        
+        path[0].layoutBlock();
+        path[1].layoutBlock();
+        path[2].layoutBlock();
+        path[3].layoutBlock();
+        path[4].layoutBlock();
+        
+        int c = 0;
+        System.out.println("Initial");
+        for(IEdge pat : path)
+        {
+            c++;
+             System.out.println("count : " + c + " " + pat.getWeight() + " src: " + pat.getSrc()+ " dest: " + pat.getDest());
+        }
+        Graph graph = new Graph(5, 5);
         graph.addEdges(path[0]);
         graph.addEdges(path[1]);
         graph.addEdges(path[2]);
@@ -58,7 +73,14 @@ public class Level1 extends Level
         Path[] selectedPaths = new Path[3]; //test path
         int totalLen = paths.length;
         int counter = 0;
+        System.out.println("minimal spanning tree" + " len: "+ paths.length );
         for(IEdge path : paths)
+        {
+            counter++;
+             
+            System.out.println("count : " + counter + " " + path.getWeight() + " src: " + path.getSrc()+ " dest: " + path.getDest());
+        }
+        /*for(IEdge path : paths)
         {
             int src = path.getSrc();
             int des = path.getDest();
@@ -69,17 +91,11 @@ public class Level1 extends Level
                     
             }
             
-        }
+        }*/
         String result= "Loose";
         if(counter == totalLen && paths.length == selectedPaths.length)
-            result = "Win";*/
+            result = "Win";
         
-        path[0].layoutBlock();
-        path[1].layoutBlock();
-        path[2].layoutBlock();
-        path[3].layoutBlock();
-        path[4].layoutBlock();
-
     }
     
 
