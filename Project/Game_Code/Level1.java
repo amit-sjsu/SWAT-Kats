@@ -13,8 +13,8 @@ public class Level1 extends Level
      * Constructor for objects of class Level1.
      * 
      */
-    private House house[]= new House[5];
-    private Path path[] = new Path[5];
+    private House house[]= new House[7];
+    private Path path[] = new Path[7];
     Counter counter;
     Submit submit, submit2;
 
@@ -42,22 +42,34 @@ public class Level1 extends Level
         house[4] = new House(154, 323);
         house[4].setId(4);
         addObject(house[4], house[4].getPoint().getX(), house[4].getPoint().getY());
+        house[5] = new House(264, 609);
+        house[5].setId(5);
+        addObject(house[5], house[5].getPoint().getX(), house[5].getPoint().getY());
+        house[6] = new House(649, 693);
+        house[6].setId(6);
+        addObject(house[6], house[6].getPoint().getX(), house[6].getPoint().getY());
         path[0] = new Path(house[3], house[1]);
         path[1] = new Path(house[4], house[0]);
         path[2] = new Path(house[3], house[2]);
         path[3] = new Path(house[4], house[2]);
         path[4] = new Path(house[0], house[1]);
+        path[5] = new Path(house[5], house[3]);
+        path[6] = new Path(house[6], house[2]);
         addObject(path[0], 0,0);
         addObject(path[1], 0,0);
         addObject(path[2], 0,0);
         addObject(path[3], 0,0);
         addObject(path[4], 0,0);
+        addObject(path[5], 0,0);
+        addObject(path[6], 0,0);
         
         path[0].layoutBlock();
         path[1].layoutBlock();
         path[2].layoutBlock();
         path[3].layoutBlock();
         path[4].layoutBlock();
+        path[5].layoutBlock();
+        path[6].layoutBlock();
         
         int c = 0;
         System.out.println("Initial");
@@ -65,12 +77,14 @@ public class Level1 extends Level
         {
              pat.setSubmitObserver(submit2);
         }
-        Graph graph = new Graph(5, 5);
+        Graph graph = new Graph(7, 7);
         graph.addEdges(path[0]);
         graph.addEdges(path[1]);
         graph.addEdges(path[2]);
         graph.addEdges(path[3]);
         graph.addEdges(path[4]);
+        graph.addEdges(path[5]);
+        graph.addEdges(path[6]);
         IEdge[] paths = graph.GetMinimalSpanningEdges();
         Path[] selectedPaths = new Path[3]; //test path
         int totalLen = paths.length;
