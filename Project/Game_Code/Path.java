@@ -23,7 +23,8 @@ public class Path extends Actor implements Comparable<IEdge>, IEdge, PathCompone
 {
     private House startHouse;
     private House endHouse;
-    private ArrayList<PathComponent> blocks = new ArrayList<PathComponent>();  
+    private ArrayList<PathComponent> blocks = new ArrayList<PathComponent>();
+    private Submit submitObserver ;
     private int pathLength = 0;
     private int blockDistance = 0;
     private int pathWeight = 0;
@@ -111,22 +112,33 @@ public class Path extends Actor implements Comparable<IEdge>, IEdge, PathCompone
         for(PathComponent block : blocks){
             block.selectPath();
         }
+        submitObserver.addPath(this);
     }
     
     public void unSelectPath(){
         for(PathComponent block : blocks){
             block.unSelectPath();
         }
+        submitObserver.removePath(this);
     }
+    
     private void addChild(PathComponent c){
         blocks.add(c);
     }
+    
     private void removeChild(PathComponent c){
         blocks.remove(c);
     }
+    
     private PathComponent getChild(int i){
         return blocks.get(i);
     }
     
+    public String getId(){
+        return startHouse.getLocation() + endHouse.getLocation();
+    }
     
+    public void setSubmitObserver(Submit observer){
+        submitObserver = observer;
+    }
 }

@@ -12,4 +12,5 @@ public interface IEdge {
 	public int getDest();
 	public int getWeight();
 	public int compareTo(IEdge compareEdge);
+	public String getId();
 }

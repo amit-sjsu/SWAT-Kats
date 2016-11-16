@@ -18,10 +18,12 @@ public class House extends Actor
     {
         point = new Point(x,y);
     }
+    
     public void setId(int i)
     {
         id = i;
     }
+    
     public int getId()
     {
         return id;
@@ -30,8 +32,15 @@ public class House extends Actor
     public Point getPoint(){
         return point;
     }
+    
     public void setPoint(int x, int y){
         point.setX(x);
         point.setY(y);
+    }
+    
+    public String getLocation(){
+        String loc = "" + point.getX();
+        loc +=  point.getY();
+        return loc;
     }
 }

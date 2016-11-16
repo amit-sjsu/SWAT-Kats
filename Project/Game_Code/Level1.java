@@ -15,11 +15,14 @@ public class Level1 extends Level
      */
     private House house[]= new House[5];
     private Path path[] = new Path[5];
+    Counter counter;
+    Submit submit, submit2;
 
     public Level1()
     {
-        setupObjects();
         prepare();
+        setupObjects();
+
     }
 
     public void setupObjects(){
@@ -58,10 +61,9 @@ public class Level1 extends Level
         
         int c = 0;
         System.out.println("Initial");
-        for(IEdge pat : path)
+        for(Path pat : path)
         {
-            c++;
-             System.out.println("count : " + c + " " + pat.getWeight() + " src: " + pat.getSrc()+ " dest: " + pat.getDest());
+             pat.setSubmitObserver(submit2);
         }
         Graph graph = new Graph(5, 5);
         graph.addEdges(path[0]);
@@ -78,7 +80,7 @@ public class Level1 extends Level
         {
             counter++;
              
-            System.out.println("count : " + counter + " " + path.getWeight() + " src: " + path.getSrc()+ " dest: " + path.getDest());
+            System.out.println("count : " + counter + " " + path.getWeight() + " id: " + path.getId());
         }
         /*for(IEdge path : paths)
         {
@@ -92,9 +94,12 @@ public class Level1 extends Level
             }
             
         }*/
+        submit2.solution =  paths;
         String result= "Loose";
         if(counter == totalLen && paths.length == selectedPaths.length)
             result = "Win";
+            
+        
         
     }
     
@@ -105,12 +110,12 @@ public class Level1 extends Level
      */
     private void prepare()
     {
-        Counter counter = new Counter();
+        counter = new Counter();
         addObject(counter,94,51);
-        Submit submit = new Submit();
+        submit = new Submit();
         addObject(submit,775,695);
         removeObject(submit);
-        Submit submit2 = new Submit();
+        submit2 = new Submit();
         addObject(submit2,869,729);
     }
 }

@@ -72,10 +72,12 @@ class Graph implements IGraph
     public IEdge[] GetMinimalSpanningEdges()
     {
         IEdge result[] = new Path[V-1];  // This will store the resultant MST
+        Integer finalResult []  = new Integer[V-1];
         int e = 0;  // An index variable, used for result[]
         int i = 0;  // An index variable, used for sorted edges
-        for (i=0; i<V-1; ++i)
+        /*for (i=0; i<V-1; ++i)
             result[i] = new Path();
+            */
  
         // Step 1:  Sort all the edges in non-decreasing order of their
         // weight.  If we are not allowed to change the given graph, we
@@ -102,9 +104,8 @@ class Graph implements IGraph
         	System.out.println("V "+ V + " e "+e);
             // Step 2: Pick the smallest edge. And increment the index
             // for next iteration
-            IEdge next_edge = new Path();
-            System.out.println("i "+ i);
-            next_edge = edge[i++];
+                        System.out.println("i "+ i);
+            IEdge next_edge = edge[i++];
  
             int x = find(subsets, next_edge.getSrc());
             int y = find(subsets, next_edge.getDest());
