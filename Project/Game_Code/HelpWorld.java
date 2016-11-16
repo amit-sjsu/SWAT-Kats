@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.lang.Class;
 
 /**
  * Write a description of class HelpWorld here.
@@ -15,26 +16,52 @@ public class HelpWorld extends MSTGame
      * 
      */
     private GreenfootSound backgroundMusic = new GreenfootSound("MuddyRoadGame.wav");
+    private MouseInfo mouseinfo;
+    private Actor actor;
+    HelpPlayAudio audio;
+    HelpStopAudio stop;
+    HelpPauseAudio pause;
+    Back back;
     public HelpWorld()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        //super(1000, 800, 1); 
+        audio = new HelpPlayAudio();
+        stop= new HelpStopAudio();
+        pause= new HelpPauseAudio();
+        back = new Back();
         prepare();
-        //GreenfootSound sound = new GreenfootSound("MuddyRoadGame.wav");
     }
     private void prepare()
     {
         System.out.println("Entered Help World");
-        Back back = new Back();
         addObject(back,839,720);
-        HelpPlayAudio audio = new HelpPlayAudio();
         addObject(audio,239,720);
-        HelpStopAudio stop= new HelpStopAudio();
         addObject(stop,340,720);
-        HelpPauseAudio pause= new HelpPauseAudio();
         addObject(pause,139,720);
+        audio.setNextButton(stop);
+        stop.setNextButton(pause);
+        pause.setNextButton(back);
+        
         
     }
+    public void act() 
+    {
+        if(Greenfoot.mouseClicked(audio)){
+            System.out.println("Play Audio");
+            audio.handleRequest("Play");
+        }
+        else if(Greenfoot.mouseClicked(stop)){
+            System.out.println("Stop Audio");
+            audio.handleRequest("Stop");
+        }
+        else if(Greenfoot.mouseClicked(pause)){
+            System.out.println("Pause Audio");
+            audio.handleRequest("Pause");
+        }
+        else if(Greenfoot.mouseClicked(back)){
+            System.out.println("Back pressed");
+            audio.handleRequest("Back");
+        }
+    } 
     public void startHelpSound()
     {
         backgroundMusic.play();
