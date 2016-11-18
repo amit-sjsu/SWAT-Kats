@@ -6,6 +6,8 @@ import greenfoot.*;
 public class PlayNowButton extends Buttons
 {   private GifImage gif = new GifImage("play_button.gif");
    
+    
+    
     public void act() 
     {
         setImage(gif.getCurrentImage());
@@ -14,6 +16,8 @@ public class PlayNowButton extends Buttons
         {
             Greenfoot.setWorld(new Level1());
             //Level1 world = (Level1)getWorld();
+            
+            
           
         }
     }    

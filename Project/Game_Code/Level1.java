@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.ArrayList;
 /**
  * Write a description of class Level1 here.
  * 
@@ -8,11 +8,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Level1 extends Level
 {
+    
+    private ArrayList<IEdge> selectedPath  = new ArrayList<IEdge>();
+    public IEdge [] solution;
 
     /**
      * Constructor for objects of class Level1.
      * 
      */
+    private int timer=600;
+    Timer timerText = new Timer();
+   
     private House house[]= new House[7];
     private Path path[] = new Path[7];
     Counter counter;
@@ -124,12 +130,38 @@ public class Level1 extends Level
      */
     private void prepare()
     {
+        addObject(timerText, 874, 38);
+        timerText.setTime("Time left: " + (timer/60));
         counter = new Counter();
         addObject(counter,94,51);
+        //counter.setCounter("Score: " + (0));
+     
         submit = new Submit();
         addObject(submit,775,695);
         removeObject(submit);
         submit2 = new Submit();
         addObject(submit2,869,729);
+      
     }
+    
+    
+    public void act()
+    {
+        timer-=6;
+        if (timer%60==0) 
+        {
+            timerText.setTime("Time left: " + (timer/60));
+        }
+        if(timer==0)
+        {
+            
+           
+            Greenfoot.stop();
+          
+           
+        }
+        
+        
+    }
+    
 }
