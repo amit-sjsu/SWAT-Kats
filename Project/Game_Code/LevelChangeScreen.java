@@ -11,9 +11,7 @@ public class LevelChangeScreen extends MSTGame
     {    
         backgroundMusic.play(); 
         int score=0; 
-        Counter counter = new Counter();
-        addObject(counter,500,530);
-        counter.setValue(score);
+       
       
         prepare();
     }

@@ -10,6 +10,7 @@ public class Block extends Actor implements PathComponent
 {
     private Path path;
     private Boolean pathSelected = false;
+    private Counter counter=new Counter();
     /**
      * Act - do whatever the SingleBlock wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -27,10 +28,12 @@ public class Block extends Actor implements PathComponent
         if(Greenfoot.mouseClicked(this))
         { 
           if (pathSelected) {
+              counter.deleteScore(path.getWeight());
               path.unSelectPath();
               pathSelected = false;
           }
           else{
+              counter.addScore(path.getWeight());
               path.selectPath();
               pathSelected = true;
           }

@@ -9,9 +9,7 @@ public class EndGameScreen extends MSTGame
     {    
         backgroundMusic.play(); 
         int score=0; 
-        Counter counter = new Counter();
-        addObject(counter,300,430);
-        counter.setValue(score);
+       
         Replay replay = new Replay();
         addObject(replay, 750, 425);
         prepare();
