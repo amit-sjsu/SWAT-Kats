@@ -18,7 +18,7 @@ public class MuddyGameServer{
         Component component=new Component();
 
         // Add a new HTTP server listening on port 8080.  
-        component.getServers().add(Protocol.HTTP, 8090);  
+        component.getServers().add(Protocol.HTTP, 8091);  
 
         // Attach the sample application.  
         component.getDefaultHost().attach("/restlet", new InboundRoute());  

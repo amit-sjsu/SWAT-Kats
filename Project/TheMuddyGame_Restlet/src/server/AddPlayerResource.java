@@ -43,7 +43,7 @@ public class AddPlayerResource extends ServerResource {
         	
         	JSONObject response = new JSONObject();
         	response.put("users", users);
-        	response.put("gameState", game.getCurrentGameState());
+        	response.put("gameState", "TwoPlayerState");
         	
             return (new JsonRepresentation(response));
     	}
