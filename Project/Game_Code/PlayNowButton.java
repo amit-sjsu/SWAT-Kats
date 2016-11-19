@@ -9,7 +9,8 @@ import org.json.*;
 import java.lang.String;;
 import org.json.JSONObject;
 import org.restlet.ext.json.JsonRepresentation;
-
+import javax.swing.JOptionPane; 
+import javax.swing.JInternalFrame;
 
 public class PlayNowButton extends Buttons
 {   
@@ -41,17 +42,24 @@ public class PlayNowButton extends Buttons
                     System.out.println(jsonobject.getString("gameState"));
                     if(jsonobject.getString("gameState").equals("OnePlayerState")){
                         System.out.println("Player 1 Added");
-                        Greenfoot.setWorld(new PlayerWait());
+                        Greenfoot.setWorld(new PlayerWait("OnePlayerState",inputValue));
                         
                     }
                     else if(jsonobject.getString("gameState").equals("TwoPlayerState")){
+                        
+                        
+                        
                         System.out.println("Player 2 Added");
-                        Greenfoot.setWorld(new PlayerWait());
+                        Greenfoot.setWorld(new PlayerWait("TwoPlayerState",inputValue));
                         
                     }
                     else{
                         System.out.println("Cannot Add new Player");
-                    }
+                        JOptionPane.showMessageDialog(new JInternalFrame(), 
+                        "Game has been started with 2 players","Game Started", JOptionPane.INFORMATION_MESSAGE);
+
+                   
+                       }
                     
                     //System.out.println(result.getText());
                    // setMessage( result.getText() ) ;  ; 

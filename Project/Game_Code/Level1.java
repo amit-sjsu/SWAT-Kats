@@ -16,7 +16,7 @@ public class Level1 extends Level
      * Constructor for objects of class Level1.
      * 
      */
-    private int timer=600;
+    private int timer=1200;
     Timer timerText = new Timer();
    
     private House house[]= new House[7];

@@ -4,10 +4,6 @@ import java.util.ArrayList;
  
 public class Timer extends Actor
 {
-    
-    
-    
-    
     private int timer=60;
     public Timer()
     {
