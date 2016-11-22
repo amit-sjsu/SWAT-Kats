@@ -6,4 +6,6 @@ comment2.params=Time
 comment2.target=Timer(java.lang.String)
 comment3.params=Time
 comment3.target=void\ setTime(java.lang.String)
-numComments=4
+comment4.params=
+comment4.target=java.lang.String\ getTime()
+numComments=5
