@@ -124,10 +124,11 @@ public class LevelChangeScreen extends MSTGame
                 
                 
                 
-                            player1Name.setMessage("Player :  " +Player1Details[0]);
+                int timeleft = 20-Integer.parseInt(Player1Details[2]);            
+                player1Name.setMessage("Player :  " +Player1Details[0]);
                             player1Move.setMessage("Total Move :  "+Player1Details[1]);
-                            player1TimeTaken.setMessage("Time Taken :  "+ Player1Details[2]);
-                            player1Solution.setMessage("Minimum Path : " + decision);
+                            player1TimeTaken.setMessage("Time Taken :  "+ String.valueOf(timeleft));
+                            player1Solution.setMessage("Winner Is : " + decision);
                             if(this.state.equals("PlayerOneSubmiitedState"))
                             {
                               player2Waiting.setMessage ("Waiting for Player 2 to submit");
@@ -143,11 +144,12 @@ public class LevelChangeScreen extends MSTGame
             {  
                             part=score.split("-");
                             Player2Details=part[1].split(":");
+                            int timeleft = 20-Integer.parseInt(Player2Details[2]);
                             player2Name.setMessage("Player :  " +Player2Details[0]);
                             player2Move.setMessage("Total Move :  "+Player2Details[1]);
-                            player2TimeTaken.setMessage("Time Taken :  "+ Player2Details[2]);
+                            player2TimeTaken.setMessage("Time Taken :  "+ String.valueOf(timeleft));
                           
-                            player2Solution.setMessage("Minimum Path : " + decision);
+                            player2Solution.setMessage("Winner Is : " + decision);
                             
                             
                             
