@@ -26,12 +26,12 @@ public class PlayerWait extends MSTGame
     private int timer=600;
     private String playState;
     private String playerName;
-    private static String firstPlayer;
-    private static String secondPlayer;
-    private static int OnePlayerStateCounter=0;
-    private static int TwoPlayerStateCounter=0;
-    private static boolean flag=false;
-     private static String state="";
+    public  static String firstPlayer;
+    public  static String secondPlayer;
+    private  static int OnePlayerStateCounter=0;
+    private  static int TwoPlayerStateCounter=0;
+    private  boolean flag=false;
+    private  String state="";
     
     
     
@@ -46,9 +46,18 @@ public class PlayerWait extends MSTGame
          prepare();
     }
     
+    
+   /* public PlayerWait(String playState, String FirstplayerName, String SecondplayerName)
+    {
+         this.playState=playState;
+         this.firstPlayer=FirstplayerName;
+         this.secondPlayer=SecondplayerName;
+         prepare();
+    }*/
+    
     public void prepare()
     {
-        System.out.println(playState);
+        
         if(playState.equals("OnePlayerState"))
           {
              addObject(message, 500, 280);
@@ -103,7 +112,7 @@ public class PlayerWait extends MSTGame
              }   
         
         
-            }
+        }
         
         
          if(playState.equals("OnePlayerState") && OnePlayerStateCounter==0)
@@ -117,9 +126,22 @@ public class PlayerWait extends MSTGame
          
          
           else if(playState.equals("TwoPlayerState"))
-           {
+         {
+             try{
+             ClientResource helloClientresource = new ClientResource( service_url+"addPlayer" );
+              Representation result = helloClientresource.get() ; 
+              String[] Players = result.getText().split(",");
+              
+                //   JSONObject jsonobject= new JSONObject(result.getText());
+                   
+                //   System.out.println(jsonobject);
+                 //    System.out.println(jsonobject.getString("users"));
+                
+             
              TwoPlayerStateCounter=1;
-             this.secondPlayer=playerName;
+             this.firstPlayer=Players[0];
+             this.secondPlayer=Players[1];
+             
              message.setMessage("Player " + this.firstPlayer + " and player " + this.secondPlayer + " Added. "  );
             timer-=6;
             if (timer%60==0) 
@@ -134,6 +156,14 @@ public class PlayerWait extends MSTGame
           
            
             }
+        }
+        
+                    catch ( Exception e ) {
+                // setMessage( e.getMessage() ) ;
+            }  
+            
+        
+        
          }
          
          
@@ -141,20 +171,41 @@ public class PlayerWait extends MSTGame
         else if( (OnePlayerStateCounter==1) && (TwoPlayerStateCounter>0))
         {
             prepare();
-            System.out.println("Start timer for Player 1");
-            message.setMessage("Player " + this.firstPlayer + " and player " + this.secondPlayer + " Added. "  );
-          timer-=6;
-        if (timer%60==0) 
-        {  
+            
+            try{
+             ClientResource helloClientresource = new ClientResource( service_url+"addPlayer" );
+              Representation result = helloClientresource.get() ; 
+              String[] Players = result.getText().split(",");
+                  // JSONObject jsonobject= new JSONObject(result.getText());
+                   
+                  // System.out.println(jsonobject);
+                  //   System.out.println(jsonobject.getString("users"));
+                     
+                     this.secondPlayer=Players[1];
+            // this.secondPlayer=result.getText();
+             message.setMessage("Player " + this.firstPlayer + " and player " + this.secondPlayer + " Added. "  );
+            timer-=6;
+            if (timer%60==0) 
+            {  
             timerText.setTime("Get Ready !! Your Game will start in : " + (timer/60) + " seconds");
-        }
-        if(timer==0)
+            }
+            if(timer==0)
             {
       
              Greenfoot.setWorld(new Level1());
           
            
             }
+          
+             
+           
+           
+             }
+                    catch ( Exception e ) {
+                // setMessage( e.getMessage() ) ;
+            }  
+            
+            
             
             
         }

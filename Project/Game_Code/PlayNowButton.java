@@ -27,6 +27,7 @@ public class PlayNowButton extends Buttons
         if(Greenfoot.mouseClicked(this))
         {
             
+           System.out.println("Button Clicked");
             String inputValue = JOptionPane.showInputDialog("enter your name");
             
            // Greenfoot.setWorld(new Level1());

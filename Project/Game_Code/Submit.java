@@ -1,11 +1,23 @@
 import greenfoot.*;
 import java.util.ArrayList;
+import org.restlet.resource.ClientResource;
+import org.restlet.representation.Representation ;
+import org.restlet.*;
+import org.json.*;
+import java.lang.String;;
+import org.json.JSONObject;
+import org.restlet.ext.json.JsonRepresentation;
+import javax.swing.JOptionPane; 
+import javax.swing.JInternalFrame;
 
 
 public class Submit extends Buttons
 {   private GifImage gif = new GifImage("submit.gif");
     private ArrayList<IEdge> selectedPath  = new ArrayList<IEdge>();
     public IEdge [] solution;
+    private final String service_url = "http://localhost:8091/restlet/" ;
+    Counter counter=new Counter();
+    Timer timer=new Timer();
    
     public void act() 
     {
@@ -13,6 +25,7 @@ public class Submit extends Buttons
         
         if(Greenfoot.mouseClicked(this))
         {
+            System.out.println(timer.getTime());
             System.out.println("Submit Button Clicked");
             System.out.println("Validating Solution");
             IEdge [] selected =  new IEdge[selectedPath.size()];
@@ -24,6 +37,48 @@ public class Submit extends Buttons
             
             Greenfoot.setWorld(new StartGameScreen());
             Level1 world = ( Level1)getWorld();
+            try {
+                    ClientResource helloClientresource = new ClientResource( service_url+"getGameState" );
+                    Representation response = helloClientresource.get();
+                    JSONObject jsonobject= new JSONObject(response.getText());
+                    JSONObject obj= new JSONObject();
+                    System.out.println(jsonobject.getString("currentGameState"));
+                    if(jsonobject.getString("currentGameState").equals("Game Started State")){
+                        obj.put("username",PlayerWait.firstPlayer);
+                        obj.put("score",String.valueOf(counter.getValue()));
+                        obj.put("time",timer.getTime());
+                    }
+                    else if(jsonobject.getString("currentGameState").equals("PlayerOneSubmiitedState")){
+                        obj.put("username",PlayerWait.secondPlayer);
+                        obj.put("score",String.valueOf(counter.getValue()));
+                        obj.put("time",timer.getTime());
+                    }
+                    
+                    //JSONObject obj= new JSONObject();
+                    //obj.put("username","navneet");
+                    
+                    helloClientresource = new ClientResource( service_url+"submitScore" );
+                    response = helloClientresource.post(obj) ;
+                    jsonobject= new JSONObject(response.getText());
+                    
+                    System.out.println(jsonobject.getString("gameState"));
+                    if(jsonobject.getString("gameState").equals("PlayerOneSubmittedScoreState")){
+                        System.out.println("Player One Submitted State. Waiting for other player");
+                    }
+                    else if(jsonobject.getString("gameState").equals("Game Finished State")){
+                        System.out.println("Player Two Submitted.Game Finished State");
+                        try{
+                            helloClientresource = new ClientResource( service_url+"getScores" );
+                            response = helloClientresource.get() ;
+                            jsonobject= new JSONObject(response.getText());
+                            System.out.println(jsonobject.getString("userWithScore"));
+                        }
+                        catch(Exception e){}
+                    }
+                    
+            } catch ( Exception e ) {
+                // setMessage( e.getMessage() ) ;
+            }   
             
            
         }

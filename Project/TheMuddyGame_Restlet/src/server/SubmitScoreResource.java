@@ -30,6 +30,8 @@ public class SubmitScoreResource extends ServerResource {
     	
     	int score = Integer.parseInt(jsonobject.getString("score"));
     	int time = Integer.parseInt(jsonobject.getString("time"));
+    	System.out.println("Int Score:"+score);
+    	System.out.println("Int Score:"+time);
     	
     	if(game.getCurrentGameState().toString() == "Game Started State"){
     		game.submitPlayerOneScore(jsonobject.getString("username"), score,time);

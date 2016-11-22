@@ -33,6 +33,9 @@ public class Counter extends Actor
         this.score=this.score-value;
    
     }
+    public int getValue(){
+        return this.score;
+    }
     
 }
 

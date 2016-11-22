@@ -13,6 +13,25 @@ import org.restlet.resource.ServerResource;
 public class AddPlayerResource extends ServerResource {
 	private static List<String> users = new ArrayList<String>();
 	private String status;
+	private static String playerName;
+	private static String FirstplayerName;
+	private static String SecondplayerName;
+	private static String Players;
+	JSONObject response = new JSONObject();
+	
+	
+	@Get
+    public String represent() {
+		Players= FirstplayerName + "," +SecondplayerName;
+		return Players;
+    }
+	
+	
+//	@Get
+//    public JsonRepresentation represent() {
+//		return (new JsonRepresentation(response));
+//    }
+	
 	
     @Post
     public JsonRepresentation represent(Representation entity) throws IOException {
@@ -27,21 +46,27 @@ public class AddPlayerResource extends ServerResource {
     	System.out.println("jsonobject.getString(username):"+jsonobject.getString("username"));
     	
     	if(game.getCurrentGameState().toString() == "NoPlayerState"){
+    		FirstplayerName=jsonobject.getString("username");
+    		playerName=jsonobject.getString("username");
     		game.addPlayerOne(jsonobject.getString("username"));
     		users.add(jsonobject.getString("username"));
         	
-        	JSONObject response = new JSONObject();
+        	//JSONObject response = new JSONObject();
+        	
         	response.put("users", users);
         	response.put("gameState", game.getCurrentGameState());
         	
             return (new JsonRepresentation(response));
     	}
     	else if(game.getCurrentGameState().toString() == "OnePlayerState"){
+    		SecondplayerName=jsonobject.getString("username");
+    		playerName=jsonobject.getString("username");
     		game.addPlayerTwo(jsonobject.getString("username"));
     		game.startGame();
     		users.add(jsonobject.getString("username"));
         	
-        	JSONObject response = new JSONObject();
+        	//JSONObject response = new JSONObject();
+        	
         	response.put("users", users);
         	response.put("gameState", "TwoPlayerState");
         	
@@ -50,10 +75,11 @@ public class AddPlayerResource extends ServerResource {
     	
     	//users.add(jsonobject.getString("username"));
     	
-    	JSONObject response = new JSONObject();
+    	//JSONObject response = new JSONObject();
     	response.put("Message", "Wrong State to add Users");
     	response.put("gameState", game.getCurrentGameState());
     	
         return (new JsonRepresentation(response));
     }
 }
+

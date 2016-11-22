@@ -8,4 +8,6 @@ comment3.params=value
 comment3.target=void\ addScore(int)
 comment4.params=value
 comment4.target=void\ deleteScore(int)
-numComments=5
+comment5.params=
+comment5.target=int\ getValue()
+numComments=6
