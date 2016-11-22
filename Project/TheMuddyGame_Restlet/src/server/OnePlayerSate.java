@@ -17,12 +17,12 @@ public class OnePlayerSate implements IState {
 	    game.setState(game.getTwoPlayerState());
 	}
 
-	public void submitPlayerOneScore(String playerName, int score, int time) {
+	public void submitPlayerOneScore(String playerName, int score, int time, String sol) {
 		System.out.println("cannot submit score, in one player added state");
 	}
 
 	@Override
-	public void submitPlayerTwoScore(String playerName, int score, int time) {
+	public void submitPlayerTwoScore(String playerName, int score, int time, String sol) {
 		System.out.println("cannot submit score, in one player added state");
 	}
 

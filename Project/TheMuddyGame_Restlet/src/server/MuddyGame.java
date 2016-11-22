@@ -16,6 +16,8 @@ public class MuddyGame implements IGame {
 	  int playerTwoScore;
 	  int playerOneTime;
 	  int playerTwoTime;
+	  String playerOneSol;
+	  String playerTwoSol;
 
 	  public MuddyGame(){
 		  noPlayerState = new NoPlayerState(this);
@@ -47,7 +49,7 @@ public class MuddyGame implements IGame {
 	  public void updatePlayerTwo(String playerName) {
 	    playerTwo = playerName;
 	  }
-
+	  
 	  public IState getOnePlayerState() {
 	    return onePlayerState;
 	  }
@@ -68,25 +70,27 @@ public class MuddyGame implements IGame {
 	    return playerTwoSubmittedScoreState;
 	  }
 
-	  public void submitPlayerOneScore(String playerName, int score, int time) {
-	    state.submitPlayerOneScore(playerName, score, time);
+	  public void submitPlayerOneScore(String playerName, int score, int time, String sol) {
+	    state.submitPlayerOneScore(playerName, score, time,sol);
 	  }
 
-	  public void updatePlayerOneScore(String playerName, int score, int time) {
+	  public void updatePlayerOneScore(String playerName, int score, int time, String sol) {
 	    playerOne = playerName;
 	    playerOneScore = score;
 	    playerOneTime = time;
+	    playerOneSol = sol;
 	  }
 
 	  @Override
-	  public void submitPlayerTwoScore(String playerName, int score, int time) {
-	    state.submitPlayerTwoScore(playerName, score, time);
+	  public void submitPlayerTwoScore(String playerName, int score, int time, String sol) {
+	    state.submitPlayerTwoScore(playerName, score, time,sol);
 	  }
 
-	  public void updatePlayerTwoScore(String playerName, int score, int time) {
+	  public void updatePlayerTwoScore(String playerName, int score, int time, String sol) {
 	    playerTwo = playerName;
 	    playerTwoScore = score;
 	    playerTwoTime = time;
+	    playerTwoSol = sol;
 	  }
 
 	  public IState getCurrentGameState() {
@@ -103,11 +107,36 @@ public class MuddyGame implements IGame {
 	  }
 
 	  @Override
-	  public String getGameScroreBoard() {
-
-	    String scoreBoard = playerOne + " - " + playerOneScore;
-	    scoreBoard += "  |  " + playerTwo + " - " + playerTwoScore;
+	  public String getGameScoreBoard() {
+		  String scoreBoard="";
+		  if(playerOneSol.equals("false")&&playerTwoSol.equals("false")){
+			  scoreBoard="None";
+		  }
+		  else if(playerOneSol.equals("true")&&playerTwoSol.equals("false")){
+			  scoreBoard=playerOne;
+		  }
+		  else if(playerOneSol.equals("false")&&playerTwoSol.equals("true")){
+			  scoreBoard=playerTwo;
+		  }
+		  else if(playerOneSol.equals("true")&&playerTwoSol.equals("true")){
+			  if(playerOneTime>playerTwoTime){
+				  scoreBoard=playerOne;
+			  }
+			  else if(playerOneTime<playerTwoTime){
+				  scoreBoard=playerTwo;  
+			  }
+			  else{
+				  scoreBoard="Tie";
+			  }
+		  }
+		  setState(noPlayerState);
 	    return scoreBoard;
+	  }
+	  @Override
+	  public String getScores(){
+		  String score=playerOne+":"+playerOneScore+":"+playerOneTime+"||"+playerTwo+":"+playerTwoScore+":"+playerTwoTime;
+		  
+		  return score;
 	  }
 
 	  public IState getGameFinishedState() {

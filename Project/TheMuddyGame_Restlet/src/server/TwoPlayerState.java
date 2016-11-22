@@ -18,12 +18,12 @@ public class TwoPlayerState implements IState{
 	  }
 
 	  @Override
-	  public void submitPlayerOneScore(String playerName, int score, int time) {
+	  public void submitPlayerOneScore(String playerName, int score, int time, String sol) {
 	    System.out.println("Game is about to start, cannot submit subscore playerone");
 	  }
 
 	  @Override
-	  public void submitPlayerTwoScore(String playerName, int score, int time) {
+	  public void submitPlayerTwoScore(String playerName, int score, int time, String sol) {
 	    System.out.println("Game is about to start, cannot submit subscore playerTwo");
 	  }
 

@@ -18,16 +18,17 @@ public class PlayerOneSubmittedScoreState implements IState {
 	  }
 
 	  @Override
-	  public void submitPlayerOneScore(String playerName, int score, int time) {
+	  public void submitPlayerOneScore(String playerName, int score, int time, String sol) {
 	    System.out.println("Cannot add player one, PlayerOne Submitted Score");
 
 	  }
 
 	  @Override
-	  public void submitPlayerTwoScore(String playerName, int score, int time) {
+	  public void submitPlayerTwoScore(String playerName, int score, int time, String sol) {
 	    System.out.println("Submitting Player two score");
-	    game.updatePlayerTwoScore(playerName, score, time);
+	    game.updatePlayerTwoScore(playerName, score, time,sol);
 	    game.setState(game.getGameFinishedState());
+	    
 	  }
 
 	  @Override

@@ -45,15 +45,19 @@ public class Submit extends Buttons
                     System.out.println(jsonobject.getString("currentGameState"));
                     if(jsonobject.getString("currentGameState").equals("Game Started State")){
                         obj.put("username",PlayerWait.firstPlayer);
-                        obj.put("score",String.valueOf(counter.getValue()));
+                        /*obj.put("score",String.valueOf(counter.getValue()));
                         obj.put("time",timer.getTime());
+                        obj.put("isSolutionMST",String.valueOf(result));*/
                     }
                     else if(jsonobject.getString("currentGameState").equals("PlayerOneSubmiitedState")){
                         obj.put("username",PlayerWait.secondPlayer);
-                        obj.put("score",String.valueOf(counter.getValue()));
+                        /*obj.put("score",String.valueOf(counter.getValue()));
                         obj.put("time",timer.getTime());
+                        obj.put("isSolutionMST",String.valueOf(result));*/
                     }
-                    
+                    obj.put("score",String.valueOf(counter.getValue()));
+                    obj.put("time",timer.getTime());
+                    obj.put("isSolutionMST",String.valueOf(result));
                     //JSONObject obj= new JSONObject();
                     //obj.put("username","navneet");
                     
@@ -71,7 +75,8 @@ public class Submit extends Buttons
                             helloClientresource = new ClientResource( service_url+"getScores" );
                             response = helloClientresource.get() ;
                             jsonobject= new JSONObject(response.getText());
-                            System.out.println(jsonobject.getString("userWithScore"));
+                            System.out.println(jsonobject.getString("Scores"));
+                            System.out.println(jsonobject.getString("Decision"));
                         }
                         catch(Exception e){}
                     }

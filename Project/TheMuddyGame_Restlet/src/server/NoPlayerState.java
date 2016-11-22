@@ -20,13 +20,13 @@ private MuddyGame game ;
         System.out.println("In NoPLayer State , have to add first player one");
     }
     
-    public void submitPlayerOneScore(String playerName, int score, int time)
+    public void submitPlayerOneScore(String playerName, int score, int time, String sol)
     {
         System.out.println("cannot submit score, in no player state");
     }
 
     @Override
-    public void submitPlayerTwoScore(String playerName, int score, int time) {
+    public void submitPlayerTwoScore(String playerName, int score, int time, String sol) {
     	System.out.println("cannot submit score, in no player state");
     }
 

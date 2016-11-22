@@ -18,13 +18,13 @@ public class GameFinishedState implements IState {
 	  }
 
 	  @Override
-	  public void submitPlayerOneScore(String playerName, int score, int time) {
+	  public void submitPlayerOneScore(String playerName, int score, int time, String sol) {
 	    System.out.println("Cannot submit playerone score,  Game Finshed state");
 
 	  }
 
 	  @Override
-	  public void submitPlayerTwoScore(String playerName, int score, int time) {
+	  public void submitPlayerTwoScore(String playerName, int score, int time, String sol) {
 	    System.out.println("Cannot submit playerone score,  Game Finshed state");
 
 	  }

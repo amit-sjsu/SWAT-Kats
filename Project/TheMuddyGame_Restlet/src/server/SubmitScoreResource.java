@@ -27,17 +27,21 @@ public class SubmitScoreResource extends ServerResource {
     	System.out.println("jsonobject.getString(username):"+jsonobject.getString("username"));
     	System.out.println("jsonobject.getString(score):"+jsonobject.getString("score"));
     	System.out.println("jsonobject.getString(time):"+jsonobject.getString("time"));
+    	System.out.println("jsonobject.getString(isSolutionMST):"+jsonobject.getString("isSolutionMST"));
     	
     	int score = Integer.parseInt(jsonobject.getString("score"));
     	int time = Integer.parseInt(jsonobject.getString("time"));
+    	//String sol=jsonobject.getString("isSolutionMST");
     	System.out.println("Int Score:"+score);
     	System.out.println("Int Score:"+time);
+    	System.out.println("isSolutionMST:"+jsonobject.getString("isSolutionMST"));
+    	
     	
     	if(game.getCurrentGameState().toString() == "Game Started State"){
-    		game.submitPlayerOneScore(jsonobject.getString("username"), score,time);
+    		game.submitPlayerOneScore(jsonobject.getString("username"), score,time,jsonobject.getString("isSolutionMST"));
     	}
     	else{
-    		game.submitPlayerTwoScore(jsonobject.getString("username"), score,time);
+    		game.submitPlayerTwoScore(jsonobject.getString("username"), score,time,jsonobject.getString("isSolutionMST"));
     	}
     	users.add(jsonobject.getString("username"));
     	
