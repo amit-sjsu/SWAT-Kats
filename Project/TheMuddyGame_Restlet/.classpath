@@ -2,16 +2,16 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
-	<classpathentry kind="lib" path="C:/Users/jainn/Documents/GitHub/SWAT-Kats/Project/TheMuddyGame_Restlet/library/jackson-annotations-2.8.3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/jainn/Documents/GitHub/SWAT-Kats/Project/TheMuddyGame_Restlet/library/jackson-core-2.8.3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/jainn/Documents/GitHub/SWAT-Kats/Project/TheMuddyGame_Restlet/library/jackson-databind-2.8.3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/jainn/Documents/GitHub/SWAT-Kats/Project/TheMuddyGame_Restlet/library/jackson-dataformat-csv-2.8.3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/jainn/Documents/GitHub/SWAT-Kats/Project/TheMuddyGame_Restlet/library/jackson-dataformat-smile-2.8.3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/jainn/Documents/GitHub/SWAT-Kats/Project/TheMuddyGame_Restlet/library/jackson-dataformat-xml-2.8.3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/jainn/Documents/GitHub/SWAT-Kats/Project/TheMuddyGame_Restlet/library/jackson-dataformat-yaml-2.8.3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/jainn/Documents/GitHub/SWAT-Kats/Project/TheMuddyGame_Restlet/library/json.jar"/>
-	<classpathentry kind="lib" path="C:/Users/jainn/Documents/GitHub/SWAT-Kats/Project/TheMuddyGame_Restlet/library/restlet.jar"/>
-	<classpathentry kind="lib" path="C:/Users/jainn/Documents/GitHub/SWAT-Kats/Project/TheMuddyGame_Restlet/library/restlet-jackson.jar"/>
-	<classpathentry kind="lib" path="C:/Users/jainn/Documents/GitHub/SWAT-Kats/Project/TheMuddyGame_Restlet/library/restlet-json.jar"/>
+	<classpathentry kind="lib" path="library/jackson-annotations-2.8.3.jar"/>
+	<classpathentry kind="lib" path="library/jackson-core-2.8.3.jar"/>
+	<classpathentry kind="lib" path="library/jackson-databind-2.8.3.jar"/>
+	<classpathentry kind="lib" path="library/jackson-dataformat-csv-2.8.3.jar"/>
+	<classpathentry kind="lib" path="library/jackson-dataformat-smile-2.8.3.jar"/>
+	<classpathentry kind="lib" path="library/jackson-dataformat-xml-2.8.3.jar"/>
+	<classpathentry kind="lib" path="library/jackson-dataformat-yaml-2.8.3.jar"/>
+	<classpathentry kind="lib" path="library/json.jar"/>
+	<classpathentry kind="lib" path="library/restlet-jackson.jar"/>
+	<classpathentry kind="lib" path="library/restlet-json.jar"/>
+	<classpathentry kind="lib" path="library/restlet.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -10,13 +10,13 @@ public class Replay extends Buttons
      */
     public void act() 
     {
-        setImage(gif.getCurrentImage());
+        //setImage(gif.getCurrentImage());
         
         if(Greenfoot.mouseClicked(this))
         {
             Greenfoot.setWorld(new StartGameScreen());
-            EndGameScreen world = (EndGameScreen)getWorld();
-            world.stopBackgroundMusic();
+          //  EndGameScreen world = (EndGameScreen)getWorld();
+          //  world.stopBackgroundMusic();
         }
     }    
 }

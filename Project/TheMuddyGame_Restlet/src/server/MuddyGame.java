@@ -108,7 +108,10 @@ public class MuddyGame implements IGame {
 
 	  @Override
 	  public String getGameScoreBoard() {
-		  String scoreBoard="";
+		  String scoreBoard="waiting";
+		  if(playerTwoSol!=null)
+		  {
+		  //String scoreBoard="waiting";
 		  if(playerOneSol.equals("false")&&playerTwoSol.equals("false")){
 			  scoreBoard="None";
 		  }
@@ -129,12 +132,14 @@ public class MuddyGame implements IGame {
 				  scoreBoard="Tie";
 			  }
 		  }
-		  setState(noPlayerState);
+		  
+		//  setState(noPlayerState);
+		  }
 	    return scoreBoard;
 	  }
 	  @Override
 	  public String getScores(){
-		  String score=playerOne+":"+playerOneScore+":"+playerOneTime+"||"+playerTwo+":"+playerTwoScore+":"+playerTwoTime;
+		  String score=playerOne+":"+playerOneScore+":"+playerOneTime+"-"+playerTwo+":"+playerTwoScore+":"+playerTwoTime;
 		  
 		  return score;
 	  }
@@ -142,5 +147,12 @@ public class MuddyGame implements IGame {
 	  public IState getGameFinishedState() {
 	    return gameFinishedState;
 	  }
+	  
+	  public IState getNoPlayerState()
+	  {
+	  return noPlayerState;
+	  
+	  }
+	  
 
 }

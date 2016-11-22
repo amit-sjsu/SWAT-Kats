@@ -44,6 +44,11 @@ public class AddPlayerResource extends ServerResource {
     	JSONObject jsonobject = represent.getJsonObject();
     	
     	System.out.println("jsonobject.getString(username):"+jsonobject.getString("username"));
+    	if(game.getCurrentGameState().toString()=="Game Finished State")
+    	{
+    		System.out.println("inside new method");
+    		game.setState(game.getNoPlayerState());
+    	}
     	
     	if(game.getCurrentGameState().toString() == "NoPlayerState"){
     		FirstplayerName=jsonobject.getString("username");

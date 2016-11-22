@@ -35,8 +35,8 @@ public class Submit extends Buttons
             boolean result = vs.validate(solution, selected);
             System.out.println("Is this a valid Solution :" + result);
             
-            Greenfoot.setWorld(new StartGameScreen());
-            Level1 world = ( Level1)getWorld();
+            Greenfoot.setWorld(new LevelChangeScreen());
+           // Level1 world = ( Level1)getWorld();
             try {
                     ClientResource helloClientresource = new ClientResource( service_url+"getGameState" );
                     Representation response = helloClientresource.get();

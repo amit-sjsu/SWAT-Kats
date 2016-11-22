@@ -26,10 +26,10 @@ public class PlayerWait extends MSTGame
     private int timer=600;
     private String playState;
     private String playerName;
-    public  static String firstPlayer;
-    public  static String secondPlayer;
-    private  static int OnePlayerStateCounter=0;
-    private  static int TwoPlayerStateCounter=0;
+    public   static String firstPlayer;
+    public   static String secondPlayer;
+    private   int OnePlayerStateCounter=0;
+    private   int TwoPlayerStateCounter=0;
     private  boolean flag=false;
     private  String state="";
     
@@ -45,16 +45,7 @@ public class PlayerWait extends MSTGame
          this.playerName=playerName;
          prepare();
     }
-    
-    
-   /* public PlayerWait(String playState, String FirstplayerName, String SecondplayerName)
-    {
-         this.playState=playState;
-         this.firstPlayer=FirstplayerName;
-         this.secondPlayer=SecondplayerName;
-         prepare();
-    }*/
-    
+  
     public void prepare()
     {
         
@@ -85,86 +76,67 @@ public class PlayerWait extends MSTGame
     public void act()
     {
         
-         System.out.println(OnePlayerStateCounter);
-          System.out.println(TwoPlayerStateCounter);
-         System.out.println("hhhhh" + state);
         
         if(flag)
         {
-         try {
+              try {
                     ClientResource helloClientresource = new ClientResource( service_url+"getGameState" );
                     Representation result = helloClientresource.get() ; 
                      JSONObject jsonobject= new JSONObject(result.getText());
-                     System.out.println(jsonobject.getString("currentGameState"));
                      state=jsonobject.getString("currentGameState");
                      if(jsonobject.getString("currentGameState").equals("Game Started State"))
                      {
                         flag=false;
-                        System.out.println("Started");
                         TwoPlayerStateCounter=1;
                      }
-                    
-                     
-                    //System.out.println(result.getText());
-                   // setMessage( result.getText() ) ;  ; 
-                     } catch ( Exception e ) {
-                // setMessage( e.getMessage() ) ;
-             }   
+
+                     } catch ( Exception e ) {  }   
         
         
-        }
+                   }
         
         
-         if(playState.equals("OnePlayerState") && OnePlayerStateCounter==0)
-         {
+              if(playState.equals("OnePlayerState") && OnePlayerStateCounter==0)
+             {
               this.firstPlayer=playerName;
               message.setMessage("Player " + firstPlayer + " Added. Waiting for second player to add"  );
               OnePlayerStateCounter =1;
               flag=true;
-         }
+            }
          
          
          
-          else if(playState.equals("TwoPlayerState"))
-         {
+             else if(playState.equals("TwoPlayerState"))
+            {
              try{
              ClientResource helloClientresource = new ClientResource( service_url+"addPlayer" );
               Representation result = helloClientresource.get() ; 
               String[] Players = result.getText().split(",");
-              
-                //   JSONObject jsonobject= new JSONObject(result.getText());
-                   
-                //   System.out.println(jsonobject);
-                 //    System.out.println(jsonobject.getString("users"));
-                
-             
              TwoPlayerStateCounter=1;
              this.firstPlayer=Players[0];
-             this.secondPlayer=Players[1];
+               this.secondPlayer=Players[1];
              
-             message.setMessage("Player " + this.firstPlayer + " and player " + this.secondPlayer + " Added. "  );
-            timer-=6;
-            if (timer%60==0) 
-            {  
-             timerText.setTime("Get Ready !! Your Game will start in : " + (timer/60) + " seconds");
-            }
-            if(timer==0)
-            {
+               message.setMessage("Player " + this.firstPlayer + " and player " + this.secondPlayer + " Added. "  );
+               timer-=6;
+                    if (timer%60==0) 
+                     {  
+                       timerText.setTime("Get Ready !! Your Game will start in : " + (timer/60) + " seconds");
+                    }
+                   if(timer==0)
+                     {
             
            
-             Greenfoot.setWorld(new Level1());
+                       Greenfoot.setWorld(new Level1());
           
            
-            }
-        }
+                      }
+                  }
         
-                    catch ( Exception e ) {
-                // setMessage( e.getMessage() ) ;
-            }  
+                    catch ( Exception e ) {}  
             
         
         
-         }
+            }
          
          
         
@@ -176,17 +148,13 @@ public class PlayerWait extends MSTGame
              ClientResource helloClientresource = new ClientResource( service_url+"addPlayer" );
               Representation result = helloClientresource.get() ; 
               String[] Players = result.getText().split(",");
-                  // JSONObject jsonobject= new JSONObject(result.getText());
-                   
-                  // System.out.println(jsonobject);
-                  //   System.out.println(jsonobject.getString("users"));
-                     
+  
                      this.secondPlayer=Players[1];
-            // this.secondPlayer=result.getText();
+          
              message.setMessage("Player " + this.firstPlayer + " and player " + this.secondPlayer + " Added. "  );
-            timer-=6;
-            if (timer%60==0) 
-            {  
+              timer-=6;
+              if (timer%60==0) 
+             {  
             timerText.setTime("Get Ready !! Your Game will start in : " + (timer/60) + " seconds");
             }
             if(timer==0)
@@ -201,9 +169,7 @@ public class PlayerWait extends MSTGame
            
            
              }
-                    catch ( Exception e ) {
-                // setMessage( e.getMessage() ) ;
-            }  
+                    catch ( Exception e ) {}  
             
             
             
