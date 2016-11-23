@@ -26,6 +26,9 @@ public class Level1 extends Level
 
     public Level1()
     {
+        GreenfootImage level = new GreenfootImage("grassBackground.jpg");
+        level.scale(getWidth(), getHeight());
+        setBackground(level);
         prepare();
         setupObjects();
 
