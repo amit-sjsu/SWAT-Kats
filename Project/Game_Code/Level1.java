@@ -19,8 +19,8 @@ public class Level1 extends Level
     private int timer=1200;
     Timer timerText = new Timer();
    
-    private House house[]= new House[7];
-    private Path path[] = new Path[7];
+    private House house[]= new House[6];
+    private Path path[] = new Path[8];
     Counter counter;
     Submit submit, submit2;
 
@@ -51,16 +51,15 @@ public class Level1 extends Level
         house[5] = new House(264, 609);
         house[5].setId(5);
         addObject(house[5], house[5].getPoint().getX(), house[5].getPoint().getY());
-        house[6] = new House(649, 693);
-        house[6].setId(6);
-        addObject(house[6], house[6].getPoint().getX(), house[6].getPoint().getY());
-        path[0] = new Path(house[3], house[1]);
+        path[0] = new Path(house[1], house[3]);
         path[1] = new Path(house[4], house[0]);
         path[2] = new Path(house[3], house[2]);
         path[3] = new Path(house[4], house[2]);
         path[4] = new Path(house[0], house[1]);
         path[5] = new Path(house[5], house[3]);
-        path[6] = new Path(house[6], house[2]);
+        path[6] = new Path(house[0], house[3]);
+        path[7] = new Path(house[5], house[4]);
+
         addObject(path[0], 0,0);
         addObject(path[1], 0,0);
         addObject(path[2], 0,0);
@@ -68,6 +67,7 @@ public class Level1 extends Level
         addObject(path[4], 0,0);
         addObject(path[5], 0,0);
         addObject(path[6], 0,0);
+        addObject(path[7], 0,0);
         
         path[0].layoutBlock();
         path[1].layoutBlock();
@@ -76,6 +76,8 @@ public class Level1 extends Level
         path[4].layoutBlock();
         path[5].layoutBlock();
         path[6].layoutBlock();
+        path[7].layoutBlock();
+
         
         int c = 0;
         System.out.println("Initial");
@@ -83,7 +85,8 @@ public class Level1 extends Level
         {
              pat.setSubmitObserver(submit2);
         }
-        Graph graph = new Graph(7, 7);
+        
+        Graph graph = new Graph(6, 8);
         graph.addEdges(path[0]);
         graph.addEdges(path[1]);
         graph.addEdges(path[2]);
@@ -91,8 +94,10 @@ public class Level1 extends Level
         graph.addEdges(path[4]);
         graph.addEdges(path[5]);
         graph.addEdges(path[6]);
+        graph.addEdges(path[7]);
+
         IEdge[] paths = graph.GetMinimalSpanningEdges();
-        Path[] selectedPaths = new Path[3]; //test path
+        //Path[] selectedPaths = new Path[3]; //test path
         int totalLen = paths.length;
         int counter = 0;
         System.out.println("minimal spanning tree" + " len: "+ paths.length );
@@ -114,10 +119,10 @@ public class Level1 extends Level
             }
             
         }*/
-        submit2.solution =  paths;
+        /*submit2.solution =  paths;
         String result= "Loose";
         if(counter == totalLen && paths.length == selectedPaths.length)
-            result = "Win";
+            result = "Win";*/
             
         
         
