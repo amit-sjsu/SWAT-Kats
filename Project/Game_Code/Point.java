@@ -71,37 +71,11 @@ public class Point
            return 2;
         else if ((startPosX > endPosX)  && (startPosY < endPosY))
            return 2;
-           /*else if ((endPosY - startPosY) == 0)
-           return 5; // parallel to Y axis;
-        else if ((endPosX - startPosX) == 0)
-           return 6; // parallel to X axis;*/
-        return 10; // point is outof the box;
+        return 3; // point is outof the box;
     }
     
-    public boolean xCondition(int quadrant, int startx, int endx){
-        if (quadrant == 1 || quadrant == 4){
-            if (startx <= endx)
-               return true;
-            return false;
-        }
-        if (startx >= endx)
-               return true;
-        return false;  
-    }
-    
-    public boolean yCondition(int quadrant, int starty, int endy){
-        if (quadrant == 1 || quadrant == 2){
-            if (starty <= endy)
-               return true;
-            return false;
-        }
-        if (starty >= endy)
-               return true;
-        return false;  
-    }
     
     public Point findPointThruExtraPolate(Point a,  Point endRange, int distance, int slope, int quadrant){
-        System.out.println("Slope: " + slope);
         Point xy = new Point();
         int endX = 0;
         int endY = a.getY();
@@ -136,15 +110,7 @@ public class Point
                 endX  = startPosX + endRange.getX();
                 endY = a.getY() + endRange.getY();
             }
-        }
-        
-        
-        System.out.println("Starting point ("+ a.getX() + "," + a.getY() +") quadrant = " + quadrant );
-        System.out.println("Calculated start point = ("+ startPosX + "," + startPosY+ ")");
-        System.out.println("Calculated end point = ("+endX + "," + endY +")");
-       
-        
-        
+        }   
         for (int startX = startPosX; startX < endX  ; startX++){
             for (int startY = startPosY;startY < endY  ; startY++ ){
                 dist = a.distance(startX, startY);

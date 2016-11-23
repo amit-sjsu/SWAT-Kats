@@ -26,9 +26,6 @@ public class Level1 extends Level
 
     public Level1()
     {
-        GreenfootImage level = new GreenfootImage("grassBackground.jpg");
-        level.scale(getWidth(), getHeight());
-        setBackground(level);
         prepare();
         setupObjects();
 
@@ -100,7 +97,6 @@ public class Level1 extends Level
         graph.addEdges(path[7]);
 
         IEdge[] paths = graph.GetMinimalSpanningEdges();
-        //Path[] selectedPaths = new Path[3]; //test path
         int totalLen = paths.length;
         int counter = 0;
         System.out.println("minimal spanning tree" + " len: "+ paths.length );
@@ -110,24 +106,6 @@ public class Level1 extends Level
              
             System.out.println("count : " + counter + " " + path.getWeight() + " id: " + path.getId());
         }
-        /*for(IEdge path : paths)
-        {
-            int src = path.getSrc();
-            int des = path.getDest();
-            for(Path selPath : selectedPaths)
-            {
-                if(src == selPath.getSrc() && des == selPath.getDest())
-                    counter++;
-                    
-            }
-            
-        }*/
-        /*submit2.solution =  paths;
-        String result= "Loose";
-        if(counter == totalLen && paths.length == selectedPaths.length)
-            result = "Win";*/
-            
-        
         
     }
     

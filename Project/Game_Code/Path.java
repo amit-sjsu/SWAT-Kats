@@ -73,7 +73,6 @@ public class Path extends Actor implements Comparable<IEdge>, IEdge, PathCompone
         pathWeight = findNoOfBlocks();
         blockDistance = blockDist(pathWeight);
         
-        
         for(int i = 0 ;i< pathWeight; i++){
             Block block = new Block(this);
             addChild(block);
