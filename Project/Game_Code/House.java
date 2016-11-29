@@ -19,6 +19,12 @@ public class House extends Actor
         point = new Point(x,y);
     }
     
+    public House(int x, int y, int id)
+    {
+        point = new Point(x,y);
+        this.id = id;
+    }
+    
     public void setId(int i)
     {
         id = i;
