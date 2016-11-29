@@ -14,7 +14,7 @@ public class Help extends Buttons
      */
     public void act() 
     {
-        
+         
         if(Greenfoot.mouseClicked(this))
         {
             System.out.println("Mouse clicked on Help");

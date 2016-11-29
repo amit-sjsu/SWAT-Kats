@@ -122,6 +122,7 @@ public class GifImage
         long delta = System.currentTimeMillis() - time;
 
         while (delta >= delay[currentIndex] && !pause) {
+            long c = delay[currentIndex];
             delta -= delay[currentIndex];
             time += delay[currentIndex];
             currentIndex = (currentIndex+1) % images.length;

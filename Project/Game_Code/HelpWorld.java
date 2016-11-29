@@ -33,7 +33,11 @@ public class HelpWorld extends MSTGame
     private void prepare()
     {
         System.out.println("Entered Help World");
-        addObject(back,839,720);
+        GreenfootImage bg = new GreenfootImage("Helpfinal.jpg");
+        bg.scale(getWidth(), getHeight());
+        
+         setBackground(bg);
+        addObject(back,739,620);
         addObject(audio,239,720);
         addObject(stop,340,720);
         addObject(pause,139,720);

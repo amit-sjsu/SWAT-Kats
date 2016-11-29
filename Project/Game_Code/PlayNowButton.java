@@ -16,13 +16,13 @@ public class PlayNowButton extends Buttons
 {   
     private final String service_url = "http://localhost:8091/restlet/" ;
 
-    private GifImage gif = new GifImage("play_button.gif");
+    private GreenfootImage img = new GreenfootImage("play!.png");
    
     
     
     public void act() 
     {
-        setImage(gif.getCurrentImage());
+        setImage(img);
         
         if(Greenfoot.mouseClicked(this))
         {

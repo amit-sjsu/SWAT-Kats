@@ -116,6 +116,10 @@ public class Level1 extends Level
      */
     private void prepare()
     {
+        GreenfootImage bg = new GreenfootImage("grassBackground.jpg");
+        bg.scale(getWidth(), getHeight());
+        
+         setBackground(bg);
         addObject(timerText, 874, 38);
         timerText.setTime("Time left: " + (timer/60));
         counter = new Counter();

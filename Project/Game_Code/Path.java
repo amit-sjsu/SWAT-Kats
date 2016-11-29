@@ -21,7 +21,7 @@ import java.util.ArrayList;
  */
 public class Path extends Actor implements Comparable<IEdge>, IEdge, PathComponent//, PathObserver
 {
-    private ArrayList<Observer> observers = new ArrayList<Observer>() ;
+    //private ArrayList<Observer> observers = new ArrayList<Observer>() ;
     private House startHouse;
     private House endHouse;
     private ArrayList<PathComponent> blocks = new ArrayList<PathComponent>();
