@@ -35,6 +35,8 @@ public class Block extends Actor implements PathComponent
           else{
               counter.addScore(path.getWeight());
               path.selectPath();
+              System.out.println("Src house"+path.getSrc());
+              System.out.println("Src house"+path.getDest());
               pathSelected = true;
           }
         }
