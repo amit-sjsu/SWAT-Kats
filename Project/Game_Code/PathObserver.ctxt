@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=PathObserver
+comment0.text=\n\ Write\ a\ description\ of\ class\ PathObserver\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=path
+comment1.target=void\ updateSelect(IEdge)
+comment2.params=path
+comment2.target=void\ updateUnSelect(IEdge)
+numComments=3

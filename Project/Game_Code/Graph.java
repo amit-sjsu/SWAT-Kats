@@ -84,7 +84,7 @@ class Graph implements IGraph
         // Allocate memory for creating V subsets
         subset subsets[] = new subset[V];
         for(i=0; i<V; ++i){
-            subsets[i]=new subset();
+            subsets[i] = new subset();
             subsets[i].parent = i;
             subsets[i].rank = 0;
         }
@@ -97,7 +97,6 @@ class Graph implements IGraph
             // Step 2: Pick the smallest edge. And increment the index
             // for next iteration
             IEdge next_edge = edge[i++];
-            System.out.println(i);
             int x = find(subsets, next_edge.getSrc());
             int y = find(subsets, next_edge.getDest());
             // If including this edge does't cause cycle, include it

@@ -23,14 +23,14 @@ public class Counter extends Actor
    
    public void addScore(int value)
     {
-       this.score= this.score+value;
+       this.score= this.score + (200 - (value *20));
   
     }
     
     public void deleteScore(int value)
     {
         
-        this.score=this.score-value;
+        this.score=this.score - (200 - (value *20));
    
     }
     public int getValue(){

@@ -19,12 +19,13 @@ import java.util.ArrayList;
  * different shapes like S or Arc or Circle or Z. * this can be done at last
  * 
  */
-public class Path extends Actor implements Comparable<IEdge>, IEdge, PathComponent//, PathObserver
+public class Path extends Actor implements Comparable<IEdge>, IEdge, PathComponent, PathSubject
 {
 
     private House startHouse;
     private House endHouse;
     private ArrayList<PathComponent> blocks = new ArrayList<PathComponent>();
+    private ArrayList<PathObserver> pathObservers = new ArrayList<PathObserver>();
     private Submit submitObserver ;
     private int pathLength = 0;
     private int blockDistance = 0;
@@ -108,13 +109,12 @@ public class Path extends Actor implements Comparable<IEdge>, IEdge, PathCompone
         return endHouse;
     }
     
-    
-    
     public void selectPath(){
         for(PathComponent block : blocks){
             block.selectPath();
         }
         submitObserver.addPath(this);
+        notifySelect();
     }
     
     public void unSelectPath(){
@@ -122,6 +122,7 @@ public class Path extends Actor implements Comparable<IEdge>, IEdge, PathCompone
             block.unSelectPath();
         }
         submitObserver.removePath(this);
+        notifyUnSelect();
     }
     
     private void addChild(PathComponent c){
@@ -142,5 +143,22 @@ public class Path extends Actor implements Comparable<IEdge>, IEdge, PathCompone
     
     public void setSubmitObserver(Submit observer){
         submitObserver = observer;
+    }
+    
+    public void attach(PathObserver pb){
+        pathObservers.add(pb);
+    }
+    public void detach(PathObserver pb){
+        pathObservers.remove(pb);
+    }
+    public void notifySelect(){
+        for (PathObserver pb : pathObservers){
+            pb.updateSelect(this);
+        }
+    }
+    public void notifyUnSelect(){
+        for (PathObserver pb : pathObservers){
+            pb.updateUnSelect(this);
+        }
     }
 }

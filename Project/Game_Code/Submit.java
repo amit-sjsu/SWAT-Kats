@@ -67,9 +67,13 @@ public class Submit extends Buttons
                         obj.put("time",timer.getTime());
                         obj.put("isSolutionMST",String.valueOf(result));*/
                     }
-                    obj.put("score",String.valueOf(counter.getValue()));
+                    
                     obj.put("time",timer.getTime());
                     obj.put("isSolutionMST",String.valueOf(result));
+                    if (result)
+                        obj.put("score",String.valueOf(counter.getValue() + 500));
+                    else
+                        obj.put("score",String.valueOf(counter.getValue()));
                     //JSONObject obj= new JSONObject();
                     //obj.put("username","navneet");
                     
