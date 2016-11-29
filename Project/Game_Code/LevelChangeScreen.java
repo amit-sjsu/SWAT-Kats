@@ -124,16 +124,16 @@ public class LevelChangeScreen extends MSTGame
                 
                 
                 
-                int timeleft = 60-Integer.parseInt(Player1Details[2]);            
+                int timeleft = 30-Integer.parseInt(Player1Details[2]);            
                 player1Name.setMessage("Player :  " +Player1Details[0]);
-                            player1Move.setMessage("Total Move :  "+Player1Details[1]);
-                            player1TimeTaken.setMessage("Time Taken :  "+ String.valueOf(timeleft));
-                            player1Solution.setMessage("Winner Is : " + decision);
-                            if(this.state.equals("PlayerOneSubmiitedState"))
+                player1Move.setMessage("Total Points :  "+Player1Details[1]);
+                player1TimeTaken.setMessage("Time Taken :  "+ String.valueOf(timeleft));
+                player1Solution.setMessage("Winner Is : " + decision);
+                if(this.state.equals("PlayerOneSubmiitedState"))
                             {
                               player2Waiting.setMessage ("Waiting for Player 2 to submit");
                             }
-                            if(this.state.equals("Game Finished State"))
+                if(this.state.equals("Game Finished State"))
                             {
                               player2Waiting.setMessage (" ");
                             }
@@ -144,9 +144,9 @@ public class LevelChangeScreen extends MSTGame
             {  
                             part=score.split("-");
                             Player2Details=part[1].split(":");
-                            int timeleft = 60-Integer.parseInt(Player2Details[2]);
+                            int timeleft = 30-Integer.parseInt(Player2Details[2]);
                             player2Name.setMessage("Player :  " +Player2Details[0]);
-                            player2Move.setMessage("Total Move :  "+Player2Details[1]);
+                            player2Move.setMessage("Total Points :  "+Player2Details[1]);
                             player2TimeTaken.setMessage("Time Taken :  "+ String.valueOf(timeleft));
                           
                             player2Solution.setMessage("Winner Is : " + decision);
