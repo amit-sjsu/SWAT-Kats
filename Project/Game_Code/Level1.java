@@ -106,7 +106,7 @@ public class Level1 extends Level
              
             System.out.println("count : " + counter + " " + path.getWeight() + " id: " + path.getId());
         }
-        
+        submit2.solution =  paths;
     }
     
 
