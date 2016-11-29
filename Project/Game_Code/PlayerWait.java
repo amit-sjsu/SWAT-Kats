@@ -23,7 +23,7 @@ public class PlayerWait extends MSTGame
     Message message= new Message();
     
   
-    private int timer=600;
+    private int timer=300;
     private String playState;
     private String playerName;
     public   static String firstPlayer;

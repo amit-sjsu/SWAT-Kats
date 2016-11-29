@@ -16,7 +16,7 @@ public class Level1 extends Level
      * Constructor for objects of class Level1.
      * 
      */
-    private int timer=1200;
+    private int timer=1800;
     Timer timerText = new Timer();
    
     private House house[]= new House[6];
@@ -135,17 +135,24 @@ public class Level1 extends Level
     }
     
     
+   
     public void act()
     {
         timer -= 6;
+        int timeleft=timer/60;
         if (timer%60 == 0)
         {
+                         if(timeleft == 0)
+                    {
+                        timerText.setTime("Time left: " + (timer/60));
+                        submit2.submit();
+                       // Greenfoot.stop();
+                        
+                    }  
+            
+            
             timerText.setTime("Time left: " + (timer/60));
         }
-        if(timer == 0)
-        {
-            Greenfoot.stop();
-        }        
+             
     }
-    
 }

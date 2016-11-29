@@ -19,12 +19,22 @@ public class Submit extends Buttons
     Counter counter=new Counter();
     Timer timer=new Timer();
    
-    public void act() 
+     public void act() 
     {
         setImage(gif.getCurrentImage());
         
         if(Greenfoot.mouseClicked(this))
         {
+            submit();
+            
+           
+        }
+    }  
+    
+    public void submit()
+    {
+          System.out.println("Hellllllllloooooooo Clicked");
+        
             System.out.println(timer.getTime());
             System.out.println("Submit Button Clicked");
             System.out.println("Validating Solution");
@@ -34,6 +44,8 @@ public class Submit extends Buttons
             ValidateSolution vs = new ValidateSolution();
             boolean result = vs.validate(solution, selected);
             System.out.println("Is this a valid Solution :" + result);
+            
+            
             
             Greenfoot.setWorld(new LevelChangeScreen());
            // Level1 world = ( Level1)getWorld();
@@ -84,10 +96,9 @@ public class Submit extends Buttons
             } catch ( Exception e ) {
                 // setMessage( e.getMessage() ) ;
             }   
-            
-           
-        }
-    }  
+        
+        
+    }
     
     public void addPath(IEdge path){
         selectedPath.add(path);
