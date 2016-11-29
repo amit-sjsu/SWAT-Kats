@@ -94,11 +94,13 @@ public class Submit extends Buttons
                             System.out.println(jsonobject.getString("Scores"));
                             System.out.println(jsonobject.getString("Decision"));
                         }
-                        catch(Exception e){}
+                        catch(Exception e){
+                            System.out.println( e.getMessage() ) ;
+                        }
                     }
                     
             } catch ( Exception e ) {
-                // setMessage( e.getMessage() ) ;
+                System.out.println( e.getMessage() ) ;
             }   
         
         

@@ -47,20 +47,31 @@ public class ValidateSolution
            
         for (IEdge pathSelected : paths){
             pathConnecting.add(new Integer []{pathSelected.getSrc(),pathSelected.getDest()});
-            for(Integer [] c : pathConnecting){
+            
+            HashSet<Integer[]> temp = (HashSet<Integer []>)pathConnecting.clone();
+            for(Integer [] c : temp){
                 if(connected.isEmpty()){
                     connected.add(c[0]);
                     connected.add(c[1]);
                     pathConnecting.remove(c);
-                    break;
                 }
                 else if (connected.contains(c[0]) || connected.contains(c[1])){
                     connected.add(c[0]);
                     connected.add(c[1]);
                     pathConnecting.remove(c);
-                    break;
                 }
             }
+        }
+        
+        for(Integer [] c : pathConnecting){
+                if(connected.isEmpty()){
+                    connected.add(c[0]);
+                    connected.add(c[1]);
+                }
+                else if (connected.contains(c[0]) || connected.contains(c[1])){
+                    connected.add(c[0]);
+                    connected.add(c[1]);
+                }
         }
         for(House house: houses){
             if(!connected.contains(house.getId())){
