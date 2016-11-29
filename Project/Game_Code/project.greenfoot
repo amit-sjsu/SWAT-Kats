@@ -1,9 +1,15 @@
 #Greenfoot properties
+<<<<<<< .merge_file_a20420
 #Mon Nov 28 19:53:50 PST 2016
 target24.type=ClassTarget
 target16.name=Path
 class.Start.superclass=greenfoot.Actor
 dependency85.to=StartGameScreen
+=======
+#Mon Nov 28 19:30:19 PST 2016
+target24.type=ClassTarget
+target16.name=HelpWorld
+>>>>>>> .merge_file_a20072
 target11.typeParameters=
 dependency58.from=Path
 dependency33.from=LevelChangeScreen
@@ -12,8 +18,13 @@ target36.height=50
 dependency19.type=UsesDependency
 class.Submit.image=submit.gif
 dependency79.to=Timer
+<<<<<<< .merge_file_a20420
 class.Level1.superclass=Level
 target34.showInterface=false
+=======
+target34.showInterface=false
+class.Level1.superclass=Level
+>>>>>>> .merge_file_a20072
 dependency46.type=UsesDependency
 dependency21.type=UsesDependency
 dependency73.type=UsesDependency
@@ -24,12 +35,17 @@ target11.type=ClassTarget
 dependency33.to=Next_level
 dependency18.from=LevelChangeScreen
 class.EndGameScreen.image=GameOver_Win.png
+<<<<<<< .merge_file_a20420
 target30.name=Replay
+=======
+target30.name=Level2
+>>>>>>> .merge_file_a20072
 dependency45.from=HelpPlayAudio
 target17.typeParameters=
 dependency20.from=Replay
 class.Level2.superclass=Level
 dependency27.to=StartGameScreen
+<<<<<<< .merge_file_a20420
 dependency80.to=LevelChangeScreen
 dependency72.from=PlayerWait
 target6.name=levelSelector
@@ -40,6 +56,17 @@ target31.showInterface=false
 target31.y=130
 target31.x=100
 dependency85.type=UsesDependency
+=======
+target6.name=levelSelector
+target37.width=130
+dependency80.to=LevelChangeScreen
+dependency72.from=PlayerWait
+class.Graph.superclass=
+target31.height=50
+target31.showInterface=false
+target31.y=190
+target31.x=110
+>>>>>>> .merge_file_a20072
 dependency74.to=Level1
 dependency60.type=UsesDependency
 target14.showInterface=false
@@ -52,18 +79,31 @@ target1.typeParameters=
 target1.type=ClassTarget
 class.HelpStopAudio.image=stop.png
 dependency35.type=UsesDependency
+<<<<<<< .merge_file_a20420
 target28.y=790
 target15.typeParameters=
 target28.x=200
+=======
+target28.y=370
+target15.typeParameters=
+target28.x=10
+>>>>>>> .merge_file_a20072
 dependency22.to=EndGameScreen
 class.Point.superclass=
 class.GifImage.superclass=
 target25.type=ClassTarget
 class.HelpWorld.superclass=MSTGame
+<<<<<<< .merge_file_a20420
 target17.name=HelpWorld
 target20.y=790
 target11.showInterface=false
 target20.x=10
+=======
+target17.name=MSTGame
+target20.y=70
+target11.showInterface=false
+target20.x=160
+>>>>>>> .merge_file_a20072
 dependency16.to=Counter
 dependency59.from=Submit
 target25.typeParameters=
@@ -71,21 +111,34 @@ dependency34.from=Submit
 dependency5.to=Block
 target19.height=50
 target4.y=550
+<<<<<<< .merge_file_a20420
 target23.width=80
 target4.x=190
 class.Start.image=back.png
 target5.showInterface=false
 target18.width=90
+=======
+target23.width=120
+target4.x=190
+target5.showInterface=false
+target18.width=80
+>>>>>>> .merge_file_a20072
 dependency63.to=HelpPlayAudio
 dependency47.type=UsesDependency
 dependency22.type=UsesDependency
 dependency74.type=UsesDependency
+<<<<<<< .merge_file_a20420
 target17.y=610
 target17.x=10
+=======
+target17.y=490
+target17.x=190
+>>>>>>> .merge_file_a20072
 target37.type=ClassTarget
 target12.type=ClassTarget
 dependency57.to=IEdge
 dependency19.from=EndGameScreen
+<<<<<<< .merge_file_a20420
 target31.name=Level2
 class.StartGameScreen.image=back.png
 dependency46.from=HelpStopAudio
@@ -94,6 +147,15 @@ dependency21.from=Replay
 dependency73.from=PlayerWait
 target14.width=80
 target7.name=Message
+=======
+target31.name=Block
+dependency46.from=HelpStopAudio
+class.smily.superclass=greenfoot.Actor
+dependency21.from=Replay
+target7.name=Message
+dependency73.from=PlayerWait
+target14.width=80
+>>>>>>> .merge_file_a20072
 target2.width=140
 dependency11.to=IEdge
 target14.height=50
@@ -102,6 +164,7 @@ target23.typeParameters=
 target37.showInterface=false
 target28.showInterface=false
 readme.height=58
+<<<<<<< .merge_file_a20420
 dependency86.type=UsesDependency
 dependency61.type=UsesDependency
 package.numTargets=38
@@ -109,6 +172,13 @@ target5.typeParameters=
 target19.typeParameters=
 dependency52.to=IEdge
 dependency85.from=levelSelector
+=======
+dependency61.type=UsesDependency
+package.numTargets=37
+target5.typeParameters=
+target19.typeParameters=
+dependency52.to=IEdge
+>>>>>>> .merge_file_a20072
 target2.type=InterfaceTarget
 dependency60.from=Submit
 dependency36.type=UsesDependency
@@ -118,6 +188,7 @@ target25.showInterface=false
 class.IButton.superclass=
 target26.type=ClassTarget
 dependency1.type=UsesDependency
+<<<<<<< .merge_file_a20420
 target18.name=MSTGame
 class.LevelChangeScreen.superclass=MSTGame
 target34.y=430
@@ -127,6 +198,16 @@ target3.typeParameters=
 dependency35.from=Submit
 target35.height=50
 dependency87.to=GifImage
+=======
+target18.name=Next_level
+class.LevelChangeScreen.superclass=MSTGame
+target34.y=490
+target34.x=10
+target20.name=House
+target3.typeParameters=
+dependency35.from=Submit
+target35.height=50
+>>>>>>> .merge_file_a20072
 target36.width=80
 target8.height=50
 target31.typeParameters=
@@ -140,9 +221,15 @@ target13.type=ClassTarget
 dependency41.to=LevelChangeScreen
 target27.typeParameters=
 world.lastInstantiated=StartGameScreen
+<<<<<<< .merge_file_a20420
 target23.y=790
 target23.x=110
 target32.name=Block
+=======
+target23.y=850
+target23.x=10
+target32.name=Level3
+>>>>>>> .merge_file_a20072
 class.Back.superclass=Buttons
 dependency47.from=HelpPauseAudio
 dependency22.from=Replay
@@ -150,6 +237,7 @@ dependency35.to=StartGameScreen
 target9.typeParameters=
 target27.height=50
 class.PathNew.superclass=greenfoot.Actor
+<<<<<<< .merge_file_a20420
 dependency74.from=PlayerWait
 target8.name=Start
 target27.width=80
@@ -159,6 +247,16 @@ target7.x=160
 target3.height=50
 dependency29.to=GifImage
 dependency87.type=UsesDependency
+=======
+target8.name=EndGameScreen
+dependency74.from=PlayerWait
+target7.y=10
+target27.width=80
+target7.x=160
+target30.height=50
+target3.height=50
+dependency29.to=GifImage
+>>>>>>> .merge_file_a20072
 dependency82.to=PlayerWait
 dependency10.type=UsesDependency
 class.Block.superclass=greenfoot.Actor
@@ -169,9 +267,14 @@ target26.naviview.expanded=true
 dependency76.to=Timer
 class.Next_level.superclass=Buttons
 class.StartGameScreen.superclass=MSTGame
+<<<<<<< .merge_file_a20420
 target12.y=430
 target12.x=10
 dependency86.from=Help
+=======
+target12.y=670
+target12.x=170
+>>>>>>> .merge_file_a20072
 target3.type=ClassTarget
 dependency61.from=HelpPlayAudio
 target22.height=50
@@ -181,11 +284,19 @@ target7.typeParameters=
 dependency30.to=StartGameScreen
 target27.type=ClassTarget
 dependency2.type=UsesDependency
+<<<<<<< .merge_file_a20420
 target19.name=Next_level
 target35.typeParameters=
 class.Help.image=help.png
 dependency24.to=StartGameScreen
 target21.name=House
+=======
+target19.name=PlayerWait
+target35.typeParameters=
+class.Help.image=Help Button.jpg
+dependency24.to=StartGameScreen
+target21.name=IGraph
+>>>>>>> .merge_file_a20072
 dependency36.from=Submit
 target18.height=50
 target13.width=80
@@ -201,6 +312,7 @@ class.Message.image=MoveCounter.png
 dependency65.to=HelpPlayAudio
 target19.showInterface=false
 target14.type=ClassTarget
+<<<<<<< .merge_file_a20420
 target37.y=130
 target33.name=Level3
 target37.x=10
@@ -223,20 +335,52 @@ target28.naviview.expanded=true
 target18.naviview.expanded=true
 dependency63.type=UsesDependency
 target38.naviview.expanded=true
+=======
+target37.y=190
+target37.x=10
+target33.name=Submit
+class.Edge.superclass=
+dependency48.from=HelpWorld
+dependency59.to=IEdge
+target34.naviview.expanded=true
+target24.naviview.expanded=true
+target14.naviview.expanded=true
+target33.typeParameters=
+dependency23.from=Next_level
+target9.name=HelpPlayAudio
+dependency75.from=PlayerWait
+dependency50.from=HelpWorld
+target13.height=50
+dependency11.type=UsesDependency
+dependency13.to=Path
+target38.naviview.expanded=true
+target28.naviview.expanded=true
+target18.naviview.expanded=true
+dependency63.type=UsesDependency
+>>>>>>> .merge_file_a20072
 target16.showInterface=false
 dependency2.to=Path
 dependency60.to=ValidateSolution
 class.Next_level.image=continue.gif
+<<<<<<< .merge_file_a20420
 target26.y=670
 target26.x=10
 dependency87.from=Help
+=======
+target26.y=250
+target26.x=10
+>>>>>>> .merge_file_a20072
 dependency10.from=House
 target4.type=ClassTarget
 dependency62.from=HelpStopAudio
 dependency38.type=UsesDependency
 dependency54.to=Graph
 editor.fx.0.height=700
+<<<<<<< .merge_file_a20420
 target28.type=ClassTarget
+=======
+target28.type=InterfaceTarget
+>>>>>>> .merge_file_a20072
 dependency3.type=UsesDependency
 class.HelpPlayAudio.image=play.png
 target13.showInterface=false
@@ -244,6 +388,7 @@ dependency48.to=Back
 target2.y=910
 target2.x=10
 class.NextLevel.superclass=Buttons
+<<<<<<< .merge_file_a20420
 target22.name=IGraph
 dependency37.from=StartGameScreen
 target31.width=80
@@ -252,11 +397,22 @@ target15.y=490
 target15.x=100
 dependency2.from=Submit
 target26.width=150
+=======
+target22.name=Point
+dependency37.from=StartGameScreen
+target31.width=80
+target34.height=50
+target15.y=250
+target15.x=120
+dependency2.from=Submit
+target26.width=80
+>>>>>>> .merge_file_a20072
 target7.height=50
 target32.naviview.expanded=true
 target22.naviview.expanded=true
 target12.naviview.expanded=true
 dependency25.type=UsesDependency
+<<<<<<< .merge_file_a20420
 dependency77.type=UsesDependency
 dependency89.to=Start
 target37.typeParameters=
@@ -266,6 +422,16 @@ target10.showInterface=false
 target6.naviview.expanded=true
 target16.naviview.expanded=true
 target34.name=Submit
+=======
+target37.typeParameters=
+dependency77.type=UsesDependency
+dependency52.type=UsesDependency
+target15.type=ClassTarget
+target6.naviview.expanded=true
+target10.showInterface=false
+target16.naviview.expanded=true
+target34.name=Buttons
+>>>>>>> .merge_file_a20072
 dependency49.from=HelpWorld
 dependency43.to=Help
 dependency24.from=Next_level
@@ -275,94 +441,159 @@ dependency76.from=Level1
 target26.height=50
 dependency51.from=HelpWorld
 target4.showInterface=false
+<<<<<<< .merge_file_a20420
 target17.width=80
+=======
+target17.width=90
+>>>>>>> .merge_file_a20072
 class.Path.superclass=greenfoot.Actor
 target5.width=80
 dependency37.to=PlayNowButton
 target2.height=50
+<<<<<<< .merge_file_a20420
 dependency89.type=UsesDependency
 dependency12.type=UsesDependency
 dependency64.type=UsesDependency
 dependency84.to=GifImage
 readme.width=47
 dependency88.from=Start
+=======
+dependency12.type=UsesDependency
+dependency64.type=UsesDependency
+readme.width=47
+>>>>>>> .merge_file_a20072
 dependency11.from=IGraph
 target5.type=InterfaceTarget
 dependency78.to=Counter
 dependency63.from=HelpStopAudio
 target1.width=160
 dependency39.type=UsesDependency
+<<<<<<< .merge_file_a20420
 target32.y=190
 target1.showInterface=false
 target32.x=110
+=======
+target32.y=130
+target1.showInterface=false
+target32.x=190
+>>>>>>> .merge_file_a20072
 target21.height=50
 target36.showInterface=false
 target10.naviview.expanded=true
 target30.naviview.expanded=true
 target20.naviview.expanded=true
+<<<<<<< .merge_file_a20420
 target29.type=InterfaceTarget
 dependency4.type=UsesDependency
 dependency32.to=smily
 class.PlayNow.image=playnow.gif
 target23.name=Point
+=======
+target29.type=ClassTarget
+dependency4.type=UsesDependency
+dependency32.to=smily
+class.PlayNow.image=playnow.gif
+target23.name=HelpPauseAudio
+>>>>>>> .merge_file_a20072
 dependency38.from=Level1
 simulation.speed=36
 dependency26.to=GifImage
 target10.typeParameters=
 target29.y=370
+<<<<<<< .merge_file_a20420
 target29.x=10
+=======
+target29.x=190
+>>>>>>> .merge_file_a20072
 target17.height=50
 dependency3.from=NextLevel
 class.PlayNowButton.superclass=Buttons
 dependency26.type=UsesDependency
+<<<<<<< .merge_file_a20420
 target21.y=70
 target33.showInterface=false
 dependency78.type=UsesDependency
 target21.x=160
+=======
+target21.y=190
+target33.showInterface=false
+dependency78.type=UsesDependency
+target21.x=200
+>>>>>>> .merge_file_a20072
 dependency73.to=StartGameScreen
 target8.naviview.expanded=true
 dependency53.type=UsesDependency
 target16.type=ClassTarget
 dependency9.to=House
 dependency80.type=UsesDependency
+<<<<<<< .merge_file_a20420
 target35.name=Buttons
 target5.y=70
 target5.x=70
 dependency67.to=IButton
 target10.name=HelpPlayAudio
+=======
+target35.name=Level
+target5.y=70
+target5.x=70
+dependency67.to=IButton
+target10.name=HelpStopAudio
+>>>>>>> .merge_file_a20072
 dependency25.from=Next_level
 class.IEdge.superclass=
 dependency77.from=Submit
 target35.width=80
 dependency52.from=Path
 class.GameOver_Lose.superclass=greenfoot.World
+<<<<<<< .merge_file_a20420
 target18.y=490
 target18.x=190
+=======
+target18.y=550
+target18.x=10
+>>>>>>> .merge_file_a20072
 target12.height=50
 dependency13.type=UsesDependency
 dependency21.to=StartGameScreen
 target30.showInterface=false
 dependency65.type=UsesDependency
+<<<<<<< .merge_file_a20420
 target10.y=730
 target10.x=160
+=======
+target10.y=850
+target10.x=140
+>>>>>>> .merge_file_a20072
 dependency40.type=UsesDependency
 class.HelpPauseAudio.superclass=Buttons
 dependency15.to=Counter
 target30.type=ClassTarget
 dependency4.to=Path
+<<<<<<< .merge_file_a20420
 dependency89.from=StartGameScreen
+=======
+>>>>>>> .merge_file_a20072
 dependency12.from=Graph
 target6.type=ClassTarget
 dependency64.from=HelpPauseAudio
 dependency62.to=IButton
 target7.showInterface=false
 class.NextLevel.image=Next.png
+<<<<<<< .merge_file_a20420
 class.PlayNowButton.image=play\!.png
 target9.width=140
 dependency5.type=UsesDependency
 target14.typeParameters=
 dependency56.to=PathComponent
 target24.name=HelpPauseAudio
+=======
+class.PlayNowButton.image=play_button.gif
+target9.width=110
+dependency5.type=UsesDependency
+target14.typeParameters=
+dependency56.to=PathComponent
+target24.name=GifImage
+>>>>>>> .merge_file_a20072
 dependency39.from=Submit
 class.House.image=house-07.png
 target21.width=80
@@ -373,6 +604,7 @@ target16.width=80
 target6.height=50
 dependency27.type=UsesDependency
 dependency79.type=UsesDependency
+<<<<<<< .merge_file_a20420
 target35.y=490
 target35.x=10
 dependency54.type=UsesDependency
@@ -381,6 +613,16 @@ dependency81.type=UsesDependency
 target36.name=Level
 class.MSTGame.superclass=greenfoot.World
 target11.name=HelpStopAudio
+=======
+target35.y=10
+target35.x=70
+dependency54.type=UsesDependency
+target17.type=ClassTarget
+dependency81.type=UsesDependency
+target36.name=Level1
+class.MSTGame.superclass=greenfoot.World
+target11.name=Counter
+>>>>>>> .merge_file_a20072
 target12.typeParameters=
 class.Timer.superclass=greenfoot.Actor
 dependency51.to=HelpPauseAudio
@@ -397,18 +639,30 @@ target1.height=50
 dependency66.type=UsesDependency
 target22.typeParameters=
 target27.showInterface=false
+<<<<<<< .merge_file_a20420
 target24.y=850
 dependency41.type=UsesDependency
 target24.x=10
+=======
+target24.y=370
+dependency41.type=UsesDependency
+target24.x=100
+>>>>>>> .merge_file_a20072
 dependency39.to=Level1
 class.levelSelector.superclass=greenfoot.Actor
 target31.type=ClassTarget
 class.Counter.superclass=greenfoot.Actor
 target4.typeParameters=
+<<<<<<< .merge_file_a20420
 target18.typeParameters=
 target8.y=310
 target8.x=140
 dependency86.to=StartGameScreen
+=======
+target8.y=730
+target18.typeParameters=
+target8.x=10
+>>>>>>> .merge_file_a20072
 dependency13.from=Block
 target7.type=ClassTarget
 dependency65.from=HelpPauseAudio
@@ -419,9 +673,15 @@ target1.name=LevelChangeScreen
 dependency6.type=UsesDependency
 target24.showInterface=false
 dependency40.to=LevelChangeScreen
+<<<<<<< .merge_file_a20420
 target13.y=670
 target13.x=170
 target25.name=GifImage
+=======
+target13.y=550
+target13.x=100
+target25.name=StartGameScreen
+>>>>>>> .merge_file_a20072
 target20.typeParameters=
 dependency34.to=GifImage
 target34.width=80
@@ -435,6 +695,7 @@ target30.typeParameters=
 dependency55.type=UsesDependency
 class.HelpPlayAudio.superclass=Buttons
 target18.type=ClassTarget
+<<<<<<< .merge_file_a20420
 editor.swing.0.height=1038
 dependency30.type=UsesDependency
 target21.showInterface=false
@@ -444,6 +705,17 @@ dependency75.to=Message
 class.Red.image=Red-path.png
 target20.type=ClassTarget
 target12.name=Counter
+=======
+editor.swing.0.height=1048
+dependency30.type=UsesDependency
+target21.showInterface=false
+dependency82.type=UsesDependency
+target37.name=PlayNowButton
+dependency75.to=Message
+class.Red.image=Red-path.png
+target20.type=ClassTarget
+target12.name=Back
+>>>>>>> .merge_file_a20072
 target26.typeParameters=
 dependency27.from=PlayNowButton
 dependency79.from=Submit
@@ -452,7 +724,11 @@ target38.height=50
 dependency54.from=Level1
 class.GameOver_Win.superclass=greenfoot.World
 dependency69.to=StartGameScreen
+<<<<<<< .merge_file_a20420
 target25.width=80
+=======
+target25.width=150
+>>>>>>> .merge_file_a20072
 target8.typeParameters=
 dependency81.from=LevelChangeScreen
 class.Replay.image=gameOver.gif
@@ -463,8 +739,13 @@ target38.y=190
 target38.x=10
 dependency23.to=GifImage
 target32.type=ClassTarget
+<<<<<<< .merge_file_a20420
 target30.y=370
 target30.x=190
+=======
+target30.y=130
+target30.x=100
+>>>>>>> .merge_file_a20072
 class.Level.superclass=MSTGame
 dependency14.from=EndGameScreen
 target8.type=ClassTarget
@@ -482,6 +763,7 @@ class.HelpPauseAudio.image=pause.png
 dependency7.type=UsesDependency
 dependency64.to=IButton
 target6.typeParameters=
+<<<<<<< .merge_file_a20420
 target26.name=StartGameScreen
 target27.y=250
 target27.x=10
@@ -492,6 +774,18 @@ target29.naviview.expanded=true
 target29.height=50
 dependency6.from=Path
 target11.width=110
+=======
+target26.name=Graph
+target27.y=790
+target27.x=200
+target34.typeParameters=
+dependency58.to=Submit
+editor.swing.0.width=1933
+target29.naviview.expanded=true
+target29.height=50
+dependency6.from=Path
+target11.width=80
+>>>>>>> .merge_file_a20072
 dependency29.type=UsesDependency
 target5.height=50
 target35.showInterface=false
@@ -503,6 +797,7 @@ target3.x=160
 target19.type=ClassTarget
 dependency31.type=UsesDependency
 dependency1.to=Message
+<<<<<<< .merge_file_a20420
 dependency83.type=UsesDependency
 target18.showInterface=false
 target38.name=PlayNowButton
@@ -512,6 +807,16 @@ target13.name=Back
 mainWindow.x=-8
 target16.y=250
 target16.x=120
+=======
+target18.showInterface=false
+target38.name=PlayNowButton
+target21.type=InterfaceTarget
+mainWindow.y=-9
+target13.name=smily
+mainWindow.x=-9
+target16.y=610
+target16.x=10
+>>>>>>> .merge_file_a20072
 dependency28.from=PlayNowButton
 dependency55.from=Level1
 target32.typeParameters=
@@ -522,7 +827,11 @@ target24.height=50
 target38.width=130
 dependency82.from=LevelChangeScreen
 dependency16.type=UsesDependency
+<<<<<<< .merge_file_a20420
 class.Back.image=backBtn.jpeg
+=======
+class.Back.image=Back button.jpg
+>>>>>>> .merge_file_a20072
 class.Player.superclass=greenfoot.Actor
 dependency68.type=UsesDependency
 target32.showInterface=false
@@ -545,30 +854,50 @@ target17.naviview.expanded=true
 class.ValidateSolution.superclass=
 readme.y=10
 target16.height=50
+<<<<<<< .merge_file_a20420
 readme.x=10
 target9.showInterface=false
 target38.typeParameters=
 dependency88.to=GifImage
+=======
+target9.showInterface=false
+readme.x=10
+target38.typeParameters=
+>>>>>>> .merge_file_a20072
 target3.name=ValidateSolution
 target29.width=80
 dependency8.type=UsesDependency
 class.Background.superclass=greenfoot.World
+<<<<<<< .merge_file_a20420
 target27.name=Graph
+=======
+target27.name=Timer
+>>>>>>> .merge_file_a20072
 target12.showInterface=false
 class.smily.image=SmileyTerrific.gif
 dependency42.to=Level1
 class.StartScreen.superclass=greenfoot.World
+<<<<<<< .merge_file_a20420
 target33.y=130
 class.Help.superclass=Buttons
 target33.x=190
 class.House.superclass=greenfoot.Actor
 dependency7.from=Path
 target24.width=120
+=======
+target33.y=430
+target33.x=130
+class.Help.superclass=Buttons
+class.House.superclass=greenfoot.Actor
+dependency7.from=Path
+target24.width=80
+>>>>>>> .merge_file_a20072
 dependency36.to=EndGameScreen
 target6.showInterface=false
 class.Block.image=path-white.png
 dependency57.type=UsesDependency
 target11.height=50
+<<<<<<< .merge_file_a20420
 target8.width=80
 dependency32.type=UsesDependency
 dependency84.type=UsesDependency
@@ -634,6 +963,70 @@ editor.swing.0.y=0
 editor.swing.0.x=85
 class.GreenColor.superclass=Color
 mainWindow.height=1038
+=======
+target8.width=140
+dependency32.type=UsesDependency
+target36.typeParameters=
+editor.fx.0.width=700
+target22.type=ClassTarget
+target14.name=NextLevel
+target31.naviview.expanded=true
+target21.naviview.expanded=true
+dependency29.from=smily
+dependency77.to=PlayerWait
+target20.width=80
+dependency56.from=Path
+target37.height=50
+class.PlayerWait.superclass=MSTGame
+dependency31.from=smily
+target22.y=790
+target22.x=110
+target15.width=80
+target3.showInterface=false
+dependency17.type=UsesDependency
+dependency69.type=UsesDependency
+target35.naviview.expanded=true
+target15.naviview.expanded=true
+target25.naviview.expanded=true
+dependency44.type=UsesDependency
+target29.showInterface=false
+target6.y=310
+target6.x=10
+dependency31.to=EndGameScreen
+package.numDependencies=82
+dependency71.type=UsesDependency
+target34.type=ClassTarget
+target9.naviview.expanded=true
+dependency16.from=Level1
+dependency25.to=EndGameScreen
+target19.naviview.expanded=true
+target19.y=790
+target19.x=10
+class.PlayNow.superclass=greenfoot.Actor
+dependency68.from=Back
+target9.height=50
+dependency43.from=StartGameScreen
+class.EndGameScreen.superclass=MSTGame
+target32.height=50
+target11.y=430
+target4.name=Help
+dependency70.from=Block
+target11.x=10
+dependency19.to=Replay
+dependency9.type=UsesDependency
+dependency72.to=Timer
+class.Replay.superclass=Buttons
+editor.fx.0.y=0
+editor.fx.0.x=0
+dependency8.to=Point
+target26.showInterface=false
+target28.name=IButton
+dependency66.to=IButton
+editor.swing.0.y=0
+editor.swing.0.x=-9
+class.GreenColor.superclass=Color
+mainWindow.height=1048
+>>>>>>> .merge_file_a20072
 dependency8.from=Path
 target28.height=50
 dependency20.to=GifImage
@@ -642,6 +1035,7 @@ class.HelpWorld.image=Instructions.png
 dependency58.type=UsesDependency
 dependency33.type=UsesDependency
 target23.showInterface=false
+<<<<<<< .merge_file_a20420
 target13.naviview.expanded=true
 target23.naviview.expanded=true
 dependency14.to=Message
@@ -656,12 +1050,32 @@ target7.naviview.expanded=true
 target36.y=10
 target36.x=70
 dependency84.from=levelSelector
+=======
+target23.naviview.expanded=true
+target13.naviview.expanded=true
+dependency14.to=Message
+target23.type=ClassTarget
+target15.name=Path
+dependency3.to=Path
+dependency57.from=ValidateSolution
+dependency61.to=IButton
+target7.naviview.expanded=true
+dependency32.from=LevelChangeScreen
+target33.width=80
+target36.y=130
+target36.x=10
+>>>>>>> .merge_file_a20072
 target23.height=50
 dependency18.type=UsesDependency
 target28.width=80
 project.charset=UTF-8
+<<<<<<< .merge_file_a20420
 dependency45.type=UsesDependency
 dependency55.to=IEdge
+=======
+dependency55.to=IEdge
+dependency45.type=UsesDependency
+>>>>>>> .merge_file_a20072
 dependency20.type=UsesDependency
 class.HelpStopAudio.superclass=Buttons
 target20.showInterface=false
@@ -674,6 +1088,7 @@ dependency17.from=LevelChangeScreen
 dependency69.from=Back
 dependency44.from=Help
 target15.height=50
+<<<<<<< .merge_file_a20420
 target25.y=370
 dependency71.from=PlayNowButton
 target5.name=IEdge
@@ -699,5 +1114,32 @@ class.BlueColor.superclass=Color
 dependency34.type=UsesDependency
 target10.height=50
 target14.y=550
+=======
+target5.name=IEdge
+dependency71.from=PlayNowButton
+target25.y=670
+target25.x=10
+target19.width=90
+target7.width=80
+class.Submit.superclass=Buttons
+target29.name=Replay
+target13.typeParameters=
+target9.y=730
+target9.x=160
+target1.naviview.expanded=true
+dependency50.to=HelpStopAudio
+target11.naviview.expanded=true
+target1.y=610
+dependency9.from=Level1
+target1.x=100
+dependency44.to=HelpWorld
+target3.width=120
+dependency59.type=UsesDependency
+target5.naviview.expanded=true
+class.BlueColor.superclass=Color
+dependency34.type=UsesDependency
+target14.y=490
+target10.height=50
+>>>>>>> .merge_file_a20072
 target14.x=100
 dependency38.to=Submit
