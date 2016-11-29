@@ -38,7 +38,7 @@ public class Submit extends Buttons
             Greenfoot.setWorld(new LevelChangeScreen());
            // Level1 world = ( Level1)getWorld();
             try {
-                    ClientResource helloClientresource = new ClientResource( service_url+"getGameState" );
+                    ClientResource helloClientresource = new ClientResource( service_url + "getGameState" );
                     Representation response = helloClientresource.get();
                     JSONObject jsonobject= new JSONObject(response.getText());
                     JSONObject obj= new JSONObject();
@@ -72,7 +72,7 @@ public class Submit extends Buttons
                     else if(jsonobject.getString("gameState").equals("Game Finished State")){
                         System.out.println("Player Two Submitted.Game Finished State");
                         try{
-                            helloClientresource = new ClientResource( service_url+"getScores" );
+                            helloClientresource = new ClientResource( service_url + "getScores" );
                             response = helloClientresource.get() ;
                             jsonobject= new JSONObject(response.getText());
                             System.out.println(jsonobject.getString("Scores"));

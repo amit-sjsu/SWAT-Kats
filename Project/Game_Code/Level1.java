@@ -106,7 +106,7 @@ public class Level1 extends Level
              
             System.out.println("count : " + counter + " " + path.getWeight() + " id: " + path.getId());
         }
-        
+        submit2.solution =  paths;
     }
     
 
@@ -137,21 +137,15 @@ public class Level1 extends Level
     
     public void act()
     {
-        timer-=6;
-        if (timer%60==0) 
+        timer -= 6;
+        if (timer%60 == 0)
         {
             timerText.setTime("Time left: " + (timer/60));
         }
-        if(timer==0)
+        if(timer == 0)
         {
-            
-           
             Greenfoot.stop();
-          
-           
-        }
-        
-        
+        }        
     }
     
 }
