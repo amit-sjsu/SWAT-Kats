@@ -21,11 +21,7 @@ import java.util.ArrayList;
  */
 public class Path extends Actor implements Comparable<IEdge>, IEdge, PathComponent//, PathObserver
 {
-<<<<<<< .merge_file_a15036
-    //private ArrayList<Observer> observers = new ArrayList<Observer>() ;
-=======
-   // private ArrayList<Observer> observers = new ArrayList<Observer>() ;
->>>>>>> .merge_file_a09648
+
     private House startHouse;
     private House endHouse;
     private ArrayList<PathComponent> blocks = new ArrayList<PathComponent>();
