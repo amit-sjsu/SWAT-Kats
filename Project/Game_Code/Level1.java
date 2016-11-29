@@ -39,7 +39,7 @@ public class Level1 extends Level
         house[1] = new House(700, 100);
         house[1].setId(1);
         addObject(house[1], house[1].getPoint().getX(), house[1].getPoint().getY());
-        house[2] = new House(830, 293);
+        house[2] = new House(900, 330);
         house[2].setId(2);
         addObject(house[2], house[2].getPoint().getX(), house[2].getPoint().getY());
         house[3] = new House(500, 488);
@@ -48,7 +48,7 @@ public class Level1 extends Level
         house[4] = new House(154, 323);
         house[4].setId(4);
         addObject(house[4], house[4].getPoint().getX(), house[4].getPoint().getY());
-        house[5] = new House(264, 609);
+        house[5] = new House(293, 470);
         house[5].setId(5);
         addObject(house[5], house[5].getPoint().getX(), house[5].getPoint().getY());
         path[0] = new Path(house[1], house[3]);
