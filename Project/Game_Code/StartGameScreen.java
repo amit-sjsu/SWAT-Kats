@@ -45,9 +45,9 @@ public class StartGameScreen extends MSTGame
     {
         GreenfootImage bg = new GreenfootImage("back.png");
         bg.scale(getWidth(), getHeight());
-        
-         setBackground(bg);
-         System.out.println("set start");
+
+        setBackground(bg);
+        System.out.println("set start");
         // rain.playLoop();
         PlayNowButton playnowbutton = new PlayNowButton();
         addObject(playnowbutton,298,495);

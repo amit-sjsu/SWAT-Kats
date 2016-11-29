@@ -153,6 +153,16 @@ public class MuddyGame implements IGame {
 	  return noPlayerState;
 	  
 	  }
-	  
+	  public void setParameters(){
+		  playerOne="";
+		  playerTwo="";
+
+		  playerOneScore=0;
+		  playerTwoScore=0;
+		  playerOneTime=0;
+		  playerTwoTime=0;
+		  playerOneSol="";
+		  playerTwoSol="";
+	  }
 
 }

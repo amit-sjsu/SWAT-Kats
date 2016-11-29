@@ -48,6 +48,7 @@ public class AddPlayerResource extends ServerResource {
     	{
     		System.out.println("inside new method");
     		game.setState(game.getNoPlayerState());
+    		game.setParameters();
     	}
     	
     	if(game.getCurrentGameState().toString() == "NoPlayerState"){

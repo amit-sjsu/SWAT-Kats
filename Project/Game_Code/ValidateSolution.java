@@ -17,6 +17,8 @@ public class ValidateSolution
     }
     
     public boolean validate(IEdge [] actualSolution, IEdge [] selectedSolution){
+        System.out.println("actualSolution.length:  "+actualSolution.length);
+        System.out.println("selectedSolution.length:  "+selectedSolution.length);
         if (actualSolution.length !=  selectedSolution.length)
             return false;
           
