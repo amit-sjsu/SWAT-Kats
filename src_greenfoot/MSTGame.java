@@ -1,24 +1,33 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-import java.awt.*;
 
 /**
- * Write a description of class MyWorld here.
+ * Write a description of class MSTGame here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-
 public class MSTGame extends World
 {
-    private Color background;
-
+    //GreenfootSound rain = new GreenfootSound("rain-03.wav");
     /**
-     * Constructor for objects of class MyWorld.
+     * Constructor for objects of class MSTGame.
      * 
      */
     public MSTGame()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+        
+        super(1000, 800, 1);
+        
+       // rain.playLoop();
+    }
+    
+    public void stopped()
+    {
+       // rain.pause();
+    }
+    
+    public void started()
+    {
+       // rain.playLoop();
     }
 }

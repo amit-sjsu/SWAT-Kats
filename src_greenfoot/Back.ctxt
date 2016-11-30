@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=Back
+comment0.text=\n\ Write\ a\ description\ of\ class\ Back\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=next
+comment1.target=void\ setNextButton(IButton)
+comment2.params=request
+comment2.target=void\ handleRequest(java.lang.String)
+numComments=3
