@@ -23,7 +23,7 @@ public class SubmitObserver implements PathObserver
     private House [] houses ;
     private Path [] paths;
     private Graph solution;
-    private final String service_url = "http://localhost:8091/restlet/" ;
+    private final String service_url = "http://52.196.47.211:8088/restlet/" ;
     Counter counter=new Counter();
     Timer timer=new Timer();
 

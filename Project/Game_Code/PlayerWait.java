@@ -158,7 +158,7 @@ public class PlayerWait extends MSTGame
                      this.secondPlayer=Players[1];
           
              message.setMessage("Player " + this.firstPlayer + " and player " + this.secondPlayer + " Added. "  );
-              timer-=6;
+              timer-=12;
               if (timer%60==0) 
              {  
             timerText.setTime("Get Ready !! Your Game will start in : " + (timer/60) + " seconds");

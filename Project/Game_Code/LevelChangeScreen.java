@@ -22,10 +22,7 @@ public class LevelChangeScreen extends MSTGame
       private String [] Player1Details;
      private String [] Player2Details;
      private String state;
-      
-      
-    private final String service_url = "http://localhost:8091/restlet/" ;
-      
+     Proxy proxy=new Proxy();
       
     public LevelChangeScreen()//int score)
     {    
@@ -63,25 +60,19 @@ public class LevelChangeScreen extends MSTGame
     public void act()
     {   try
         {
-                    ClientResource helloClientresource = new ClientResource( service_url+"getGameState" );
-                    Representation response = helloClientresource.get();
-                    JSONObject jsonobject= new JSONObject(response.getText());
-                  //  JSONObject obj= new JSONObject();
-                     this.state=jsonobject.getString("currentGameState");  
+                    JSONObject jsonobject= proxy.gamePlay();
+                    this.state=jsonobject.getString("currentGameState");  
                   
                   
                    if(jsonobject.getString("currentGameState").equals("PlayerOneSubmiitedState"))
                    {
                        try{
                             System.out.println("Inside Try");  
-                           
-                            helloClientresource = new ClientResource( service_url+"getScores" );
-                            response = helloClientresource.get();
-                            jsonobject= new JSONObject(response.getText());
-                            System.out.println(jsonobject.getString("Scores"));
-                            System.out.println(jsonobject.getString("Decision"));
+                            JSONObject jsonobj =proxy.getScore();
+                            System.out.println(jsonobj.getString("Scores"));
+                            System.out.println(jsonobj.getString("Decision"));
                             
-                            displayScorePlayer1(jsonobject.getString("Scores"),jsonobject.getString("Decision"));
+                            displayScorePlayer1(jsonobj.getString("Scores"),jsonobj.getString("Decision"));
                             
                         }
                         catch(Exception e){}
@@ -92,13 +83,11 @@ public class LevelChangeScreen extends MSTGame
                      {
                        
                         try{
-                            helloClientresource = new ClientResource( service_url+"getScores" );
-                            response = helloClientresource.get() ;
-                            jsonobject= new JSONObject(response.getText());
-                            System.out.println(jsonobject.getString("Scores"));
-                            System.out.println(jsonobject.getString("Decision"));
-                            displayScorePlayer1(jsonobject.getString("Scores"),jsonobject.getString("Decision"));
-                            displayScorePlayer2(jsonobject.getString("Scores"),jsonobject.getString("Decision"));
+                            JSONObject jsonobj =proxy.getScore();
+                            System.out.println(jsonobj.getString("Scores"));
+                            System.out.println(jsonobj.getString("Decision"));
+                            displayScorePlayer1(jsonobj.getString("Scores"),jsonobj.getString("Decision"));
+                            displayScorePlayer2(jsonobj.getString("Scores"),jsonobj.getString("Decision"));
                            
                              addObject(replay, 496, 700);
                           }

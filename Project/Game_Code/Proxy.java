@@ -18,7 +18,8 @@ import javax.swing.JInternalFrame;
  */
 public class Proxy  
 {
-    private final String service_url = "http://localhost:8091/restlet/";
+     private final String service_url = "http://52.196.47.211:8088/restlet/";
+    //private final String service_url = "http://localhost:8092/restlet/";
      Counter counter=new Counter();
      Timer timer=new Timer();
      Message message= new Message();
@@ -163,6 +164,18 @@ public class Proxy
        
        
   }
+  public JSONObject getScore(){
+      try{
+                            ClientResource helloClientresource = new ClientResource( service_url+"getScores" );
+                            Representation response = helloClientresource.get();
+                            JSONObject jsonobject= new JSONObject(response.getText());
+                            return jsonobject;
+                        }
+                        catch(Exception e)
+          { 
+             return null;
+            }
+    }
     
     
     
