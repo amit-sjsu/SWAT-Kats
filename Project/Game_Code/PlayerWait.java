@@ -18,9 +18,10 @@ import javax.swing.JInternalFrame;
 public class PlayerWait extends MSTGame
 {
     
-    private final String service_url = "http://localhost:8091/restlet/" ;
+   // private final String service_url = "http://localhost:8091/restlet/" ;
     Timer timerText = new Timer();
     Message message= new Message();
+    Proxy proxy=new Proxy();
     
   
     private int timer=300;
@@ -80,9 +81,11 @@ public class PlayerWait extends MSTGame
         if(flag)
         {
               try {
-                    ClientResource helloClientresource = new ClientResource( service_url+"getGameState" );
-                    Representation result = helloClientresource.get() ; 
-                     JSONObject jsonobject= new JSONObject(result.getText());
+                   
+                     
+                    JSONObject jsonobject= proxy.gamePlay();
+                    
+                     
                      state=jsonobject.getString("currentGameState");
                      if(jsonobject.getString("currentGameState").equals("Game Started State"))
                      {
@@ -109,11 +112,13 @@ public class PlayerWait extends MSTGame
              else if(playState.equals("TwoPlayerState"))
             {
              try{
-             ClientResource helloClientresource = new ClientResource( service_url+"addPlayer" );
-              Representation result = helloClientresource.get() ; 
-              String[] Players = result.getText().split(",");
-             TwoPlayerStateCounter=1;
-             this.firstPlayer=Players[0];
+             
+                Representation result= proxy.getPlayer();
+              
+              
+               String[] Players = result.getText().split(",");
+              TwoPlayerStateCounter=1;
+              this.firstPlayer=Players[0];
                this.secondPlayer=Players[1];
              
                message.setMessage("Player " + this.firstPlayer + " and player " + this.secondPlayer + " Added. "  );
@@ -145,9 +150,10 @@ public class PlayerWait extends MSTGame
             prepare();
             
             try{
-             ClientResource helloClientresource = new ClientResource( service_url+"addPlayer" );
-              Representation result = helloClientresource.get() ; 
-              String[] Players = result.getText().split(",");
+          
+                
+                Representation result= proxy.getPlayer();
+                 String[] Players = result.getText().split(",");
   
                      this.secondPlayer=Players[1];
           
