@@ -49,6 +49,10 @@ public class PlayerWait extends MSTGame
   
     public void prepare()
     {
+        GreenfootImage wait = new GreenfootImage("waiting.jpg");
+        wait.scale(getWidth(), getHeight());
+        
+         setBackground(wait);
         
         if(playState.equals("OnePlayerState"))
           {

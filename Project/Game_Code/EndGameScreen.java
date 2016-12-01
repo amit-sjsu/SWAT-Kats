@@ -11,7 +11,7 @@ public class EndGameScreen extends MSTGame
         int score=0; 
        
         Replay replay = new Replay();
-        addObject(replay, 750, 425);
+        addObject(replay, 800, 625);
         prepare();
     }
 
@@ -26,5 +26,9 @@ public class EndGameScreen extends MSTGame
      */
     private void prepare()
     {
+        GreenfootImage endbg = new GreenfootImage("End.jpg");
+        endbg.scale(getWidth(), getHeight());
+        setBackground(endbg);
+        
     }
 }

@@ -21,7 +21,7 @@ public class Timer extends Actor
     public void setTime(String Time)
     {
         this.time=Time;
-        setImage(new GreenfootImage(Time, 24, Color.GREEN, new Color(0, 0, 0, 0)));
+        setImage(new GreenfootImage(Time, 24, Color.BLACK, new Color(0, 0, 0, 0)));
     }
     public String getTime(){
         String[] parts = this.time.split(":");

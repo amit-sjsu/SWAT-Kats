@@ -2,7 +2,7 @@ import greenfoot.*;
 import java.util.ArrayList;
 
 public class Submit extends Buttons
-{   private GifImage gif = new GifImage("submit.gif");
+{   private GreenfootImage submit = new GreenfootImage("submitBtn.png");
     private ArrayList<IEdge> selectedPath  = new ArrayList<IEdge>();
     public IEdge [] solution;
     Counter counter=new Counter();
@@ -11,8 +11,7 @@ public class Submit extends Buttons
    
      public void act() 
     {
-        setImage(gif.getCurrentImage());
-        
+                
         if(Greenfoot.mouseClicked(this))
         {
             submit();
