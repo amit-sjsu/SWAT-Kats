@@ -17,6 +17,6 @@ public class Message extends Actor
  
     public void setMessage(String Message)
     {
-        setImage(new GreenfootImage(Message, 24, Color.GREEN, new Color(0, 0, 0, 0)));
+        setImage(new GreenfootImage(Message, 24, Color.RED, new Color(0, 0, 0, 0)));
     } 
 }

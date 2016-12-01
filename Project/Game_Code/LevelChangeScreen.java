@@ -12,7 +12,7 @@ import javax.swing.JInternalFrame;
 
 public class LevelChangeScreen extends MSTGame
 {
-    private GreenfootSound backgroundMusic = new GreenfootSound("atebrains.wav");
+    //private GreenfootSound backgroundMusic = new GreenfootSound("atebrains.wav");
      Message player1Name= new Message();Message player1TimeTaken= new Message();Message player1Move= new Message();
      Message player1Solution= new Message(); Message player2Waiting= new Message();
       Message player2Name= new Message();Message player2TimeTaken= new Message();Message player2Move= new Message();
@@ -23,20 +23,12 @@ public class LevelChangeScreen extends MSTGame
      private String [] Player2Details;
      private String state;
      Proxy proxy=new Proxy();
+     GreenfootSound backgroundMusic = new GreenfootSound("Short_triumphal_fanfare-John_Stracke-815794903.mp3");
+     GreenfootSound backgroundMusic1 = new GreenfootSound("game_end.wav");
       
     public LevelChangeScreen()//int score)
     {    
-        //backgroundMusic.play(); 
-       
-   
-       
-        
         prepare();
-    }
-
-    public void stopBackgroundMusic()
-    {
-        backgroundMusic.stop();
     }
 
     /**
@@ -72,7 +64,7 @@ public class LevelChangeScreen extends MSTGame
                    if(jsonobject.getString("currentGameState").equals("PlayerOneSubmiitedState"))
                    {
                        try{
-                            System.out.println("Inside Try");  
+                            backgroundMusic1.play();
                             JSONObject jsonobj =proxy.getScore();
                             System.out.println(jsonobj.getString("Scores"));
                             System.out.println(jsonobj.getString("Decision"));
@@ -88,6 +80,8 @@ public class LevelChangeScreen extends MSTGame
                      {
                        
                         try{
+                            backgroundMusic1.stop();
+                            backgroundMusic.play();
                             JSONObject jsonobj =proxy.getScore();
                             System.out.println(jsonobj.getString("Scores"));
                             System.out.println(jsonobj.getString("Decision"));

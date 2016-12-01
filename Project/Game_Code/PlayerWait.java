@@ -33,6 +33,7 @@ public class PlayerWait extends MSTGame
     private   int TwoPlayerStateCounter=0;
     private  boolean flag=false;
     private  String state="";
+    GreenfootSound backgroundMusic = new GreenfootSound("menu.wav");
     
     
     
@@ -45,6 +46,7 @@ public class PlayerWait extends MSTGame
          this.playState=playState;
          this.playerName=playerName;
          prepare();
+         backgroundMusic.playLoop();
     }
   
     public void prepare()
@@ -134,7 +136,7 @@ public class PlayerWait extends MSTGame
                    if(timer==0)
                      {
             
-           
+                       backgroundMusic.stop();
                        Greenfoot.setWorld(new Level1());
           
            

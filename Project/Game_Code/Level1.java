@@ -8,7 +8,7 @@ import java.util.ArrayList;
  */
 public class Level1 extends Level
 {
-    
+    GreenfootSound backgroundMusic = new GreenfootSound("Hearbeat_2-Mike_Koenig-143666461.mp3");
     private ArrayList<IEdge> selectedPath  = new ArrayList<IEdge>();
     public IEdge [] solution;
 
@@ -149,7 +149,10 @@ public class Level1 extends Level
         int timeleft=timer/60;
         if (timer%60 == 0)
         {
-                         if(timeleft == 0)
+                    if(timeleft==9){
+                        backgroundMusic.play();
+                    }
+                    if(timeleft == 0)
                     {
                         timerText.setTime("Time left: " + (timer/60));
                         submit2.submit();

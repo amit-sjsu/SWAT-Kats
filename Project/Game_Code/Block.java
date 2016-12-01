@@ -11,11 +11,13 @@ public class Block extends Actor implements PathComponent
     private Path path;
     private Boolean pathSelected = false;
     private Counter counter=new Counter();
+    GreenfootSound backgroundMusic = new GreenfootSound("Mario_Jumping-Mike_Koenig-989896458.mp3");
     /**
      * Act - do whatever the SingleBlock wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public Block(){
+        
     }
     
     public Block(Path path){
@@ -27,6 +29,7 @@ public class Block extends Actor implements PathComponent
         // Add your action code here.
         if(Greenfoot.mouseClicked(this))
         { 
+          backgroundMusic.play();  
           if (pathSelected) {
               counter.deleteScore(path.getWeight());
               path.unSelectPath();

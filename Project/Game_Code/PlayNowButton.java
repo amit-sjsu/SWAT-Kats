@@ -15,10 +15,10 @@ public class PlayNowButton extends Buttons
     public void act() 
     {
         setImage(img);
-        
+        StartGameScreen world = (StartGameScreen)getWorld();
         if(Greenfoot.mouseClicked(this))
         {
- 
+            world.stopped();
             String inputValue = JOptionPane.showInputDialog("enter your name");
             
             proxy.addPlayer(inputValue);

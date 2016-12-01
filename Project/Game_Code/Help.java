@@ -14,10 +14,10 @@ public class Help extends Buttons
      */
     public void act() 
     {
-         
+        StartGameScreen world = (StartGameScreen)getWorld(); 
         if(Greenfoot.mouseClicked(this))
         {
-            System.out.println("Mouse clicked on Help");
+            world.stopped();
             Greenfoot.setWorld(new HelpWorld());
             //HelpWorld world = (HelpWorld)getWorld();
         }// Add your action code here.
