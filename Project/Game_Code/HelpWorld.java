@@ -38,9 +38,9 @@ public class HelpWorld extends MSTGame
         
          setBackground(bg);
         addObject(back,739,620);
-        addObject(audio,239,720);
-        addObject(stop,340,720);
-        addObject(pause,139,720);
+        addObject(audio,240,620);
+        addObject(stop,340,620);
+        addObject(pause,140,620);
         audio.setNextButton(stop);
         stop.setNextButton(pause);
         pause.setNextButton(back);

@@ -2,7 +2,7 @@ import greenfoot.*;
 
 
 public class Replay extends Buttons
-{   private GifImage gif = new GifImage("gameOver.gif");
+{   private GreenfootImage replay = new GreenfootImage("replayBtn.png");
     /**
      * Act - do whatever the click wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
