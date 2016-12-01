@@ -15,8 +15,8 @@ public class smily extends Actor
         if(Greenfoot.mouseClicked(this))
         {
             Greenfoot.setWorld(new StartGameScreen());
-            EndGameScreen world = (EndGameScreen)getWorld();
-            world.stopBackgroundMusic();
+            //EndGameScreen world = (EndGameScreen)getWorld();
+           // world.stopBackgroundMusic();
         }
     }    
 }

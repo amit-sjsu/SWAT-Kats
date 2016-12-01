@@ -45,14 +45,19 @@ public class LevelChangeScreen extends MSTGame
      */
     private void prepare()
     {
+        
+         GreenfootImage wait = new GreenfootImage("End.jpg");
+          wait.scale(getWidth(), getHeight());
+        
+          setBackground(wait);
 
         addObject(player1Name, 300, 480); addObject(player1TimeTaken, 300, 510);addObject(player1Move, 300, 540);
         addObject(player1Solution,300, 580);  addObject(player2Waiting,700, 480);
         addObject(player2Name, 700, 480); addObject(player2TimeTaken, 700, 510);addObject(player2Move, 700, 540);
         addObject(player2Solution ,700,580);
-        smily smily = new smily();
-        addObject(smily,513,314);
-        smily.setLocation(496,309);
+        //smily smily = new smily();
+       // addObject(smily,513,314);
+        //smily.setLocation(496,309);
        
        
     }
