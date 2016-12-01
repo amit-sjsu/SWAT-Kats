@@ -15,7 +15,7 @@ public class HelpWorld extends MSTGame
      * Constructor for objects of class HelpWorld.
      * 
      */
-    private GreenfootSound backgroundMusic = new GreenfootSound("MuddyRoadGame.wav");
+    private GreenfootSound backgroundMusic = new GreenfootSound("MuddyRoadGame.mp3");
     private MouseInfo mouseinfo;
     private Actor actor;
     HelpPlayAudio audio;
