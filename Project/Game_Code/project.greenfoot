@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Thu Dec 01 20:03:22 PST 2016
+#Thu Dec 01 20:13:49 PST 2016
 target24.type=ClassTarget
 target16.name=Back
 class.Start.superclass=greenfoot.Actor
@@ -161,7 +161,7 @@ dependency50.type=UsesDependency
 target13.type=ClassTarget
 dependency41.to=HelpPlayAudio
 target27.typeParameters=
-world.lastInstantiated=Level1
+world.lastInstantiated=StartGameScreen
 target40.type=ClassTarget
 target23.y=550
 target23.x=10

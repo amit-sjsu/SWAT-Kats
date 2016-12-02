@@ -172,7 +172,9 @@ public class PlayerWait extends MSTGame
             if(timer==0)
             {
       
-             Greenfoot.setWorld(new Level1());
+             
+                backgroundMusic.stop();
+                Greenfoot.setWorld(new Level1());
           
            
             }
