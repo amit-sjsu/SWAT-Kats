@@ -27,7 +27,7 @@ public class StartGameScreen extends MSTGame
      */
     private void prepare()
     {
-        GreenfootImage bg = new GreenfootImage("back.png");
+        GreenfootImage bg = new GreenfootImage("startback.png");
         bg.scale(getWidth(), getHeight());
 
         setBackground(bg);
@@ -37,6 +37,10 @@ public class StartGameScreen extends MSTGame
         addObject(playnowbutton,298,495);
         Help help = new Help();
         addObject(help,639,495);
+        help.setLocation(785,557);
+        playnowbutton.setLocation(453,559);
+        playnowbutton.setLocation(511,553);
+        help.setLocation(767,552);
     }
     
     public void stopped()
