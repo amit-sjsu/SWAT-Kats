@@ -8,6 +8,7 @@ import java.util.ArrayList;
  */
 public class Level1 extends Level
 {
+    GreenfootSound backgroundMusic1 = new GreenfootSound("happy.mp3");
     GreenfootSound backgroundMusic = new GreenfootSound("Hearbeat_2-Mike_Koenig-143666461.mp3");
     private ArrayList<IEdge> selectedPath  = new ArrayList<IEdge>();
     public IEdge [] solution;
@@ -151,6 +152,7 @@ public class Level1 extends Level
      */
     private void prepare()
     {
+        backgroundMusic1.play();
         GreenfootImage bg = new GreenfootImage("grassBackground.jpg");
         bg.scale(getWidth(), getHeight());
         setBackground(bg);
@@ -185,6 +187,7 @@ public class Level1 extends Level
         if (timer%60 == 0)
         {
                     if(timeleft==9){
+                        backgroundMusic1.stop();
                         backgroundMusic.play();
                     }
                     if(timeleft == 0)
