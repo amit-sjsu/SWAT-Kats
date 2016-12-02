@@ -19,8 +19,8 @@ public class Level1 extends Level
     private int timer=1800;
     Timer timerText = new Timer();
    
-    private House house[]= new House[6];
-    private Path path[] = new Path[8];
+    private House house[]= new House[8];
+    private Path path[] = new Path[15];
     Counter counter;
     Submit submit, submit2;
 
@@ -33,32 +33,45 @@ public class Level1 extends Level
 
     public void setupObjects(){
         System.out.println("Loading Level 1:");
-        house[0] = new House(350, 235);
+        house[0] = new House(250, 100);
         house[0].setId(0);
         addObject(house[0], house[0].getPoint().getX(), house[0].getPoint().getY());
-        house[1] = new House(700, 100);
+        house[1] = new House(600, 100);
         house[1].setId(1);
         addObject(house[1], house[1].getPoint().getX(), house[1].getPoint().getY());
-        house[2] = new House(900, 330);
+        house[2] = new House(450, 250);
         house[2].setId(2);
         addObject(house[2], house[2].getPoint().getX(), house[2].getPoint().getY());
-        house[3] = new House(500, 488);
+        house[3] = new House(850, 250);
         house[3].setId(3);
         addObject(house[3], house[3].getPoint().getX(), house[3].getPoint().getY());
-        house[4] = new House(154, 323);
+        house[4] = new House(150, 450);
         house[4].setId(4);
         addObject(house[4], house[4].getPoint().getX(), house[4].getPoint().getY());
-        house[5] = new House(293, 470);
+        house[5] = new House(620, 450);
         house[5].setId(5);
         addObject(house[5], house[5].getPoint().getX(), house[5].getPoint().getY());
-        path[0] = new Path(house[1], house[3]);
-        path[1] = new Path(house[4], house[0]);
-        path[2] = new Path(house[3], house[2]);
-        path[3] = new Path(house[1], house[2]);
-        path[4] = new Path(house[0], house[1]);
-        path[5] = new Path(house[5], house[3]);
-        path[6] = new Path(house[0], house[3]);
-        path[7] = new Path(house[5], house[4]);
+		house[6] = new House(350, 600);
+        house[6].setId(6);
+        addObject(house[6], house[6].getPoint().getX(), house[6].getPoint().getY());
+		house[7] = new House(800, 600);
+        house[7].setId(7);
+        addObject(house[7], house[7].getPoint().getX(), house[7].getPoint().getY());
+        path[1] = new Path(house[0], house[1]);
+        path[2] = new Path(house[0], house[2]);
+        path[3] = new Path(house[0], house[4]);
+        path[4] = new Path(house[1], house[2]);
+        path[5] = new Path(house[1], house[3]);
+        path[6] = new Path(house[5], house[1]);
+        path[7] = new Path(house[1], house[7]);
+        path[8] = new Path(house[2], house[4]);
+        path[9] = new Path(house[2], house[5]);
+        path[10] = new Path(house[2], house[6]);
+        path[11] = new Path(house[3], house[7]);
+        path[12] = new Path(house[4], house[6]);
+        path[13] = new Path(house[5], house[6]);
+        path[14] = new Path(house[5], house[7]);
+        path[0] = new Path(house[6], house[7]);
 
         addObject(path[0], 0,0);
         addObject(path[1], 0,0);
@@ -68,6 +81,14 @@ public class Level1 extends Level
         addObject(path[5], 0,0);
         addObject(path[6], 0,0);
         addObject(path[7], 0,0);
+		addObject(path[8], 0,0);
+        addObject(path[9], 0,0);
+        addObject(path[10], 0,0);
+        addObject(path[11], 0,0);
+        addObject(path[12], 0,0);
+        addObject(path[13], 0,0);
+        addObject(path[14], 0,0);
+        
         
         path[0].layoutBlock();
         path[1].layoutBlock();
@@ -77,7 +98,14 @@ public class Level1 extends Level
         path[5].layoutBlock();
         path[6].layoutBlock();
         path[7].layoutBlock();
-
+		path[8].layoutBlock();
+        path[9].layoutBlock();
+        path[10].layoutBlock();
+        path[11].layoutBlock();
+        path[12].layoutBlock();
+        path[13].layoutBlock();
+        path[14].layoutBlock();
+        
         
         int c = 0;
         System.out.println("Initial");
@@ -86,7 +114,7 @@ public class Level1 extends Level
              pat.setSubmitObserver(submit2);
         }
         
-        Graph graph = new Graph(6, 8);
+        Graph graph = new Graph(8, 15);
         graph.addEdges(path[0]);
         graph.addEdges(path[1]);
         graph.addEdges(path[2]);
@@ -95,6 +123,13 @@ public class Level1 extends Level
         graph.addEdges(path[5]);
         graph.addEdges(path[6]);
         graph.addEdges(path[7]);
+		graph.addEdges(path[8]);
+        graph.addEdges(path[9]);
+        graph.addEdges(path[10]);
+        graph.addEdges(path[11]);
+        graph.addEdges(path[12]);
+        graph.addEdges(path[13]);
+		graph.addEdges(path[14]);
 
         IEdge[] paths = graph.GetMinimalSpanningEdges();
         int totalLen = paths.length;
