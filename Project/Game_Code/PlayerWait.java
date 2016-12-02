@@ -54,6 +54,11 @@ public class PlayerWait extends MSTGame
         GreenfootImage wait = new GreenfootImage("waiting.jpg");
         wait.scale(getWidth(), getHeight());
         
+        
+        hour time = new hour();
+       addObject(time,513,450);
+        
+        
          setBackground(wait);
         
         if(playState.equals("OnePlayerState"))
