@@ -56,7 +56,7 @@ public class PlayerWait extends MSTGame
         
         
         hour time = new hour();
-       addObject(time,513,420);
+       addObject(time,513,450);
         
         
          setBackground(wait);
