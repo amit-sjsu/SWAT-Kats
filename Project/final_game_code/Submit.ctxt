@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Submit
+comment1.params=
+comment1.target=void\ act()
+comment2.params=
+comment2.target=void\ submit()
+comment3.params=path
+comment3.target=void\ addPath(IEdge)
+comment4.params=path
+comment4.target=void\ removePath(IEdge)
+comment5.params=t
+comment5.target=void\ setTimer(Timer)
+comment6.params=s
+comment6.target=void\ setScore(Score)
+numComments=7

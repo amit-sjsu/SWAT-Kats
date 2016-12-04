@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Proxy
+comment0.text=\n\ Write\ a\ description\ of\ class\ MagicianClient\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=Proxy()
+comment2.params=userName
+comment2.target=void\ addPlayer(java.lang.String)
+comment3.params=result\ time\ score
+comment3.target=void\ submitSolution(boolean,\ int,\ int)
+comment4.params=
+comment4.target=org.json.JSONObject\ gamePlay()
+comment5.params=
+comment5.target=org.restlet.representation.Representation\ getPlayer()
+comment6.params=
+comment6.target=org.json.JSONObject\ getScore()
+numComments=7
