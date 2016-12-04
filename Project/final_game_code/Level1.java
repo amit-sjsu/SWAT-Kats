@@ -65,9 +65,10 @@ public class Level1 extends Level
         for (int i = 0; i < path.length; i++){
            addObject(path[i], -200,0);
            path[i].layoutBlock();
+           path[i].attach(score);
            path[i].setSubmitObserver(submit);
            path[i].attach(submitObserver);
-           path[i].attach(score);
+
            graph.addEdges(path[i]);
         }
         submit.solution =  graph.GetMinimalSpanningEdges();;
