@@ -15,7 +15,7 @@ import javax.swing.JInternalFrame;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class PlayerWait extends MSTGame implements TimeObserver
+public class PlayerWait extends MSTGame
 {
 
     // private final String service_url = "http://localhost:8091/restlet/" ;
@@ -41,8 +41,8 @@ public class PlayerWait extends MSTGame implements TimeObserver
      */
     public PlayerWait(String playState, String playerName)
     {
-        this.playState = playState;
-        this.playerName = playerName;
+        this.playState=playState;
+        this.playerName=playerName;
         prepare();
         backgroundMusic.playLoop();
     }
@@ -101,7 +101,7 @@ public class PlayerWait extends MSTGame implements TimeObserver
         
         if(playState.equals("OnePlayerState") && OnePlayerStateCounter==0)
         {
-            this.firstPlayer = playerName;
+            this.firstPlayer=playerName;
             message.setMessage("Player " + firstPlayer + " Added. Waiting for second player to add"  );
             OnePlayerStateCounter =1;
             flag=true;
@@ -120,7 +120,6 @@ public class PlayerWait extends MSTGame implements TimeObserver
                 this.secondPlayer=Players[1];
 
                 message.setMessage("Player " + this.firstPlayer + " and player " + this.secondPlayer + " Added. "  );
-                timerText = new Timer(5, false);
                 timer-=12;
                 if (timer%60==0) 
                 {  
@@ -174,9 +173,5 @@ public class PlayerWait extends MSTGame implements TimeObserver
         }
     }
     
-    public void submitSolution(){
-        backgroundMusic.stop();
-        Greenfoot.setWorld(new Level1());
-    }
 }
 
