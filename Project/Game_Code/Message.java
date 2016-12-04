@@ -18,10 +18,10 @@ public class Message extends Actor
  
     public void setMessage(String Message)
     {
-       GreenfootImage img =new GreenfootImage(Message, 34, Color.RED, new Color(0, 0, 0, 0));
+       GreenfootImage img =new GreenfootImage(Message, 32, Color.RED, new Color(0, 0, 0, 0));
        
        // setImage(new GreenfootImage(Message, 24, Color.RED, new Color(0, 0, 0, 0)));
-        img.setFont(new java.awt.Font("Comic Sans", java.awt.Font.PLAIN,34));
+        img.setFont(new java.awt.Font("Comic Sans", java.awt.Font.PLAIN,32));
         setImage(img);
     } 
 }

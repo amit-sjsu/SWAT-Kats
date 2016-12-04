@@ -55,8 +55,8 @@ public class PlayerWait extends MSTGame
         wait.scale(getWidth(), getHeight());
 
 
-        hour time = new hour();
-       addObject(time,513,450);
+       hour time = new hour();
+       addObject(time,513,420);
 
 
          setBackground(wait);
