@@ -10,6 +10,8 @@ public class Timer extends Actor implements TimeSubject
     private long curTime, prevTime;
     private static final long DELAY_TIME = 1000; // in milliseconds
     TimeObserver tb ;
+    //Level1 level=new Level1();
+    GreenfootSound backgroundMusic = new GreenfootSound("Hearbeat_2-Mike_Koenig-143666461.mp3");
     
     public Timer()
     {
@@ -59,6 +61,10 @@ public class Timer extends Actor implements TimeSubject
                     prevTime = curTime;
                     secs = secs - 1;
                     setImage(new GreenfootImage("Time left: " + secs , 24, Color.GREEN, new Color(0, 0, 0, 0)));
+                    if(secs == 9){
+                        Level1.stopMusic();
+                        backgroundMusic.play();
+                    }    
                     if (secs == 0)
                        notifySubmit();
                }     

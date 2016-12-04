@@ -8,8 +8,8 @@ import java.util.ArrayList;
  */
 public class Level1 extends Level
 {
-    GreenfootSound backgroundMusic1 = new GreenfootSound("happy.mp3");
-    GreenfootSound backgroundMusic = new GreenfootSound("Hearbeat_2-Mike_Koenig-143666461.mp3");
+    static GreenfootSound backgroundMusic1 = new GreenfootSound("happy.mp3");
+    //GreenfootSound backgroundMusic = new GreenfootSound("Hearbeat_2-Mike_Koenig-143666461.mp3");
     Timer timerText;
     Score score;
     Submit submit;
@@ -65,9 +65,10 @@ public class Level1 extends Level
         for (int i = 0; i < path.length; i++){
            addObject(path[i], -200,0);
            path[i].layoutBlock();
+           path[i].attach(score);
            path[i].setSubmitObserver(submit);
            path[i].attach(submitObserver);
-           path[i].attach(score);
+
            graph.addEdges(path[i]);
         }
         submit.solution =  graph.GetMinimalSpanningEdges();;
@@ -93,6 +94,9 @@ public class Level1 extends Level
         submit = new Submit();
         addObject(submit,869,729);
       
+    }
+    public static void stopMusic(){
+        backgroundMusic1.stop();
     }
     
 }
