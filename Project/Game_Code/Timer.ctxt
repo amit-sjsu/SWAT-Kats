@@ -2,8 +2,8 @@
 comment0.target=Timer
 comment1.params=
 comment1.target=Timer()
-comment2.params=secs
-comment2.target=Timer(int)
+comment2.params=secs\ gameTime
+comment2.target=Timer(int,\ boolean)
 comment3.params=Time
 comment3.target=Timer(java.lang.String)
 comment4.params=Time

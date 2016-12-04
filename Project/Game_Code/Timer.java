@@ -6,6 +6,7 @@ public class Timer extends Actor implements TimeSubject
 {
     private static String time;
     private int secs = 0;
+    private boolean gameTime;
     private long curTime, prevTime;
     private static final long DELAY_TIME = 1000; // in milliseconds
     TimeObserver tb ;
@@ -14,12 +15,14 @@ public class Timer extends Actor implements TimeSubject
     {
         //this("");
         this.time="";
+        this.gameTime = false;
     }
     
-    public Timer(int secs)
+    public Timer(int secs, boolean gameTime)
     {
         //this("");
         this.secs = secs;
+        this.gameTime = gameTime;
     }
  
     public Timer(String Time)
@@ -38,18 +41,24 @@ public class Timer extends Actor implements TimeSubject
     
     public void act()
     {
-        curTime = System.currentTimeMillis();
-        if (prevTime +DELAY_TIME > curTime) {
-              return;
-        } else {
-           if (secs >= 0){
-               prevTime = curTime;
-               secs = secs - 1;
-               setImage(new GreenfootImage("Time left: " + secs , 24, Color.GREEN, new Color(0, 0, 0, 0)));
-               if (secs == 0)
-                  notifySubmit();
-           }     
-        }     
+        
+        if (gameTime){
+            curTime = System.currentTimeMillis();
+            if (prevTime +DELAY_TIME > curTime) {
+                  return;
+            } else {
+               if (secs >= 0){
+                   prevTime = curTime;
+                   secs = secs - 1;
+                   if(gameTime)
+                       setImage(new GreenfootImage("Time left: " + secs , 24, Color.GREEN, new Color(0, 0, 0, 0)));
+                   else
+                   if (secs == 0)
+                         notifySubmit();
+               
+               }     
+            }     
+        }
     }
     
     public void attach(TimeObserver tb){
