@@ -35,7 +35,15 @@ public class Timer extends Actor implements TimeSubject
         this.time = Time;
         setImage(new GreenfootImage(Time, 24, Color.GREEN, new Color(0, 0, 0, 0)));
     }
-    public int getTime(){
+    
+    public String getTime(){
+        String[] parts = this.time.split(":");
+        System.out.println(parts[1].trim());
+        return parts[1].trim();
+    }
+
+    
+    public int getTimeSecs(){
         return secs;
     }
     

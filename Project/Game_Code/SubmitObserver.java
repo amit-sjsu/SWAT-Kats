@@ -15,7 +15,7 @@ import javax.swing.JInternalFrame;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class SubmitObserver implements PathObserver
+public class SubmitObserver implements PathObserver,  TimeObserver
 {
     // instance variables - replace the example below with your own
     private ArrayList<IEdge> selectedPath  = new ArrayList<IEdge>();
@@ -25,7 +25,10 @@ public class SubmitObserver implements PathObserver
     private Graph solution;
     private final String service_url = "http://52.196.47.211:8088/restlet/" ;
     Counter counter=new Counter();
-    Timer timer=new Timer();
+    //Timer timer=new Timer();
+    Score score;
+    Timer timer;
+
 
     /**
      * Constructor for objects of class SubmitObserver
@@ -39,66 +42,13 @@ public class SubmitObserver implements PathObserver
     
     public void submitSolution(){
         System.out.println("Submitting solution");
-        IEdge [] selected =  new IEdge[selectedPath.size()];
-        selectedPath.toArray(selected);
-        boolean result = vs.validate(solution.GetMinimalSpanningEdges(), selected);
+        IEdge [] selectedEdges =  new IEdge[selectedPath.size()];
+        selectedPath.toArray(selectedEdges);
+        boolean result = vs.validate(solution.GetMinimalSpanningEdges(), selectedEdges);
         System.out.println("Is solution correct ?? : " + result);
-        
-        Greenfoot.setWorld(new LevelChangeScreen());
-           // Level1 world = ( Level1)getWorld();
-        try {
-            ClientResource helloClientresource = new ClientResource( service_url + "getGameState" );
-            Representation response = helloClientresource.get();
-            JSONObject jsonobject= new JSONObject(response.getText());
-            JSONObject obj= new JSONObject();
-            System.out.println(jsonobject.getString("currentGameState"));
-            if(jsonobject.getString("currentGameState").equals("Game Started State")){
-                obj.put("username",PlayerWait.firstPlayer);
-                /*obj.put("score",String.valueOf(counter.getValue()));
-                obj.put("time",timer.getTime());
-                obj.put("isSolutionMST",String.valueOf(result));*/
-            }
-            else if(jsonobject.getString("currentGameState").equals("PlayerOneSubmiitedState")){
-                obj.put("username",PlayerWait.secondPlayer);
-                /*obj.put("score",String.valueOf(counter.getValue()));
-                obj.put("time",timer.getTime());
-                obj.put("isSolutionMST",String.valueOf(result));*/
-            }
-            
-            obj.put("time",timer.getTime());
-            obj.put("isSolutionMST",String.valueOf(result));
-            if (result)
-                obj.put("score",String.valueOf(counter.getValue() + 500));
-            else
-                obj.put("score",String.valueOf(counter.getValue()));
-            //JSONObject obj= new JSONObject();
-            //obj.put("username","navneet");
-            
-            helloClientresource = new ClientResource( service_url+"submitScore" );
-            response = helloClientresource.post(obj) ;
-            jsonobject= new JSONObject(response.getText());
-            
-            System.out.println(jsonobject.getString("gameState"));
-            if(jsonobject.getString("gameState").equals("PlayerOneSubmittedScoreState")){
-                System.out.println("Player One Submitted State. Waiting for other player");
-            }
-            else if(jsonobject.getString("gameState").equals("Game Finished State")){
-                System.out.println("Player Two Submitted.Game Finished State");
-                try{
-                    helloClientresource = new ClientResource( service_url + "getScores" );
-                    response = helloClientresource.get() ;
-                    jsonobject= new JSONObject(response.getText());
-                    System.out.println(jsonobject.getString("Scores"));
-                    System.out.println(jsonobject.getString("Decision"));
-                }
-                catch(Exception e){
-                    System.out.println( e.getMessage() ) ;
-                }
-            }
-            
-        } catch ( Exception e ) {
-            System.out.println( e.getMessage() ) ;
-        }
+        Proxy proxy = new Proxy();
+        proxy.submitSolution(result, timer.getTimeSecs(), score.getScore());
+        //Greenfoot.setWorld(new LevelChangeScreen());   
         
     }
 
@@ -119,5 +69,14 @@ public class SubmitObserver implements PathObserver
             System.out.println("are all house connected???");
         }
     }
+    
+    public void setTimer(Timer t){
+        timer = t;
+    }
+    
+    public void setScore(Score s){
+        score = s;
+    }
+
     
 }

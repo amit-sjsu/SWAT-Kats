@@ -21,6 +21,13 @@ public class Level1 extends Level
     {
         prepare();
         setupObjects();
+        timerText = new Timer(45, true);
+        addObject(timerText, 874, 38);
+        timerText.attach(submitObserver);
+        submitObserver.setTimer(timerText);
+        submitObserver.setScore(score);
+        submit.setTimer(timerText);
+        submit.setScore(score);  
     }
 
     public void setupObjects(){
