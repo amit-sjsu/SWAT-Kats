@@ -6,24 +6,24 @@ import org.json.*;
 import java.lang.String;;
 import org.json.JSONObject;
 import org.restlet.ext.json.JsonRepresentation;
-import javax.swing.JOptionPane; 
+import javax.swing.JOptionPane;
 import javax.swing.JInternalFrame;
 
 /**
  * Write a description of class IntermediatePage here.
- * 
- * @author (your name) 
+ *
+ * @author (your name)
  * @version (a version number or a date)
  */
 public class PlayerWait extends MSTGame
 {
-    
+
    // private final String service_url = "http://localhost:8091/restlet/" ;
     Timer timerText = new Timer();
     Message message= new Message();
     Proxy proxy=new Proxy();
-    
-  
+
+
     private int timer=300;
     private String playState;
     private String playerName;
@@ -34,12 +34,12 @@ public class PlayerWait extends MSTGame
     private  boolean flag=false;
     private  String state="";
     GreenfootSound backgroundMusic = new GreenfootSound("menu.wav");
-    
-    
-    
+
+
+
     /**
      * Constructor for objects of class IntermediatePage.
-     * 
+     *
      */
     public PlayerWait(String playState, String playerName)
     {
@@ -48,55 +48,55 @@ public class PlayerWait extends MSTGame
          prepare();
          backgroundMusic.playLoop();
     }
-  
+
     public void prepare()
     {
         GreenfootImage wait = new GreenfootImage("waiting.jpg");
         wait.scale(getWidth(), getHeight());
-        
-        
+
+
         hour time = new hour();
        addObject(time,513,450);
-        
-        
+
+
          setBackground(wait);
-        
+
         if(playState.equals("OnePlayerState"))
           {
              addObject(message, 500, 280);
-            
+
           }
-        
+
         else if(playState.equals("TwoPlayerState"))
          {
-         addObject(message, 500, 280);  
+         addObject(message, 500, 280);
          addObject(timerText, 500, 580);
          timerText.setTime("Get Ready !! Your Game will start in : " + (timer/60) + " seconds");
          }
-         
-         
+
+
          if((OnePlayerStateCounter==1) && (TwoPlayerStateCounter>0))
          {
-             
-         addObject(message, 500, 280);  
+
+         addObject(message, 500, 280);
          addObject(timerText, 500, 580);
          timerText.setTime("Get Ready !! Your Game will start in : " + (timer/60) + " seconds");
-             
+
          }
     }
-    
+
     public void act()
     {
-        
-        
+
+
         if(flag)
         {
               try {
-                   
-                     
+
+
                     JSONObject jsonobject= proxy.gamePlay();
-                    
-                     
+
+
                      state=jsonobject.getString("currentGameState");
                      if(jsonobject.getString("currentGameState").equals("Game Started State"))
                      {
@@ -104,12 +104,12 @@ public class PlayerWait extends MSTGame
                         TwoPlayerStateCounter=1;
                      }
 
-                     } catch ( Exception e ) {  }   
-        
-        
+                     } catch ( Exception e ) {  }
+
+
                    }
-        
-        
+
+
               if(playState.equals("OnePlayerState") && OnePlayerStateCounter==0)
              {
               this.firstPlayer=playerName;
@@ -117,84 +117,94 @@ public class PlayerWait extends MSTGame
               OnePlayerStateCounter =1;
               flag=true;
             }
-         
-         
-         
+
+
+
              else if(playState.equals("TwoPlayerState"))
             {
              try{
-             
+
                 Representation result= proxy.getPlayer();
-              
-              
+
+
                String[] Players = result.getText().split(",");
               TwoPlayerStateCounter=1;
               this.firstPlayer=Players[0];
                this.secondPlayer=Players[1];
-             
+
                message.setMessage("Player " + this.firstPlayer + " and player " + this.secondPlayer + " Added. "  );
                timer-=12;
-                    if (timer%60==0) 
-                     {  
+                    if (timer%60==0)
+                     {
                        timerText.setTime("Get Ready !! Your Game will start in : " + (timer/60) + " seconds");
                     }
                    if(timer==0)
                      {
-            
+
                        backgroundMusic.stop();
                        Greenfoot.setWorld(new Level1());
-          
-           
+
+
                       }
                   }
-        
-                    catch ( Exception e ) {}  
-            
-        
-        
+
+                    catch ( Exception e ) {}
+
+
+
             }
-         
-         
-        
+
+
+
         else if( (OnePlayerStateCounter==1) && (TwoPlayerStateCounter>0))
         {
             prepare();
-            
+
             try{
-          
-                
+
+
                 Representation result= proxy.getPlayer();
                  String[] Players = result.getText().split(",");
-  
+
                      this.secondPlayer=Players[1];
-          
+
              message.setMessage("Player " + this.firstPlayer + " and player " + this.secondPlayer + " Added. "  );
               timer-=12;
-              if (timer%60==0) 
-             {  
+              if (timer%60==0)
+             {
             timerText.setTime("Get Ready !! Your Game will start in : " + (timer/60) + " seconds");
             }
             if(timer==0)
             {
-      
-             
+
+
                 backgroundMusic.stop();
                 Greenfoot.setWorld(new Level1());
-          
-           
+
+
             }
-          
-             
-           
-           
+
+
+
+
              }
-                    catch ( Exception e ) {}  
-            
-            
-            
-            
+                    catch ( Exception e ) {}
+
+
+
+
+
+
         }
-        
+          System.out.println("Player state" + playState);
+        System.out.println("one player counter state" + OnePlayerStateCounter);
+        System.out.println("two player counter state" + TwoPlayerStateCounter);
+
+        System.out.println("Timer: " + timer) ;
+
+
+
+
+
        }
     }
-

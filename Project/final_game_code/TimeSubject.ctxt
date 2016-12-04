@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=TimeSubject
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ TimeSubject\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=pb
+comment1.target=void\ attach(TimeObserver)
+comment2.params=
+comment2.target=void\ detach()
+comment3.params=
+comment3.target=void\ notifySubmit()
+numComments=4

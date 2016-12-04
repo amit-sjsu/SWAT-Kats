@@ -1,0 +1,40 @@
+User Story (Draft)
+
+As a Customer
+• with the Starbucks card mobile app.
+
+I can ...
+• View and reload your Starbucks card balance,
+• and even check your My Starbucks Rewards Stars.
+• Just scan and go.
+
+So that...
+• Create a little extra time in your day
+• It's the fastest way to pay for your drink.
+• So now you'll have more time to relax.
+• Get to work, walk the dog
+
+User Story:
+
+Story: Help the City connect all the roads between the houses that use the least inventory
+
+As a player, I want to help the city connect all the roads between the houses using the least possible inventory so that I reconnect the transportation system.
+
+
+BDD Specifications:
+
+As a user, when I open the application I should see a game description and an option to start the game, so that I can read the game description and understand what the game is before I start playing it.
+
+As a user, when I start the game, I should be able to see a bunch of houses that need to be connected so that I intuitively know what to connect.
+
+As a user, when I build a path between two houses, I should see the score board updating to indicate the length of path covered so that I can keep a track on the minimal path to cover.
+
+As a user, when I should be able to compete with another player so that I have fun and competition while playing the game.
+
+As a user, when I compete against another player and submit my solution, I must see a message indicating the winner and our scores.
+
+As a user, if I trace the shortest path that connects all the houses and the competing player does not, then I would be declared as the winner and the competing player as the loser.
+
+As a user, if I trace the shortest path that connects all the houses and the competing player does so too, then the result would be declared as a tie.
+
+As a user, I have limited time to play the game and trace the shortest path. Incase, I do not submit my solution, the game should automatically submit my solution and release the results.
