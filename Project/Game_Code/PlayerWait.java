@@ -103,7 +103,7 @@ public class PlayerWait extends MSTGame
         {
             this.firstPlayer=playerName;
             message.setMessage("Player " + firstPlayer + " Added. Waiting for second player to add"  );
-            OnePlayerStateCounter =1;
+            OnePlayerStateCounter = 1;
             flag=true;
         }
 
@@ -120,7 +120,7 @@ public class PlayerWait extends MSTGame
                 this.secondPlayer=Players[1];
 
                 message.setMessage("Player " + this.firstPlayer + " and player " + this.secondPlayer + " Added. "  );
-                timer-=12;
+                timer -= 12;
                 if (timer%60==0) 
                 {  
                     timerText.setTime("Get Ready !! Your Game will start in : " + (timer/60) + " seconds");
@@ -140,7 +140,7 @@ public class PlayerWait extends MSTGame
         }
 
         
-        else if( (OnePlayerStateCounter==1) && (TwoPlayerStateCounter>0))
+        else if( (OnePlayerStateCounter == 1) && (TwoPlayerStateCounter>0))
         {
             prepare();
 

@@ -56,14 +56,11 @@ public class Timer extends Actor implements TimeSubject
                   return;
             } else {
                if (secs >= 0){
-                   prevTime = curTime;
-                   secs = secs - 1;
-                   if(gameTime)
-                       setImage(new GreenfootImage("Time left: " + secs , 24, Color.GREEN, new Color(0, 0, 0, 0)));
-                   else
-                   if (secs == 0)
-                         notifySubmit();
-               
+                    prevTime = curTime;
+                    secs = secs - 1;
+                    setImage(new GreenfootImage("Time left: " + secs , 24, Color.GREEN, new Color(0, 0, 0, 0)));
+                    if (secs == 0)
+                       notifySubmit();
                }     
             }     
         }
