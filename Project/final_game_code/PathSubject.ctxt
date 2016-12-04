@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=PathSubject
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ PathSubect\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=pb
+comment1.target=void\ attach(PathObserver)
+comment2.params=pb
+comment2.target=void\ detach(PathObserver)
+comment3.params=
+comment3.target=void\ notifySelect()
+comment4.params=
+comment4.target=void\ notifyUnSelect()
+numComments=5
