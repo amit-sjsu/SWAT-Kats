@@ -15,17 +15,14 @@ public class HelpPlayAudio extends Buttons implements IButton
      */
     private IButton nextButton;
     public void setNextButton(IButton next){
-        System.out.println("set next in HelpPlay Audio");
         this.nextButton=next;
     }
     public void handleRequest(String request){
         HelpWorld world = (HelpWorld)getWorld();
         if(request=="Play"){
-            System.out.println("if in HelpPlay Audio");
             world.startHelpSound();
         }
         else{
-            System.out.println("else in HelpPlay Audio");
             nextButton.handleRequest(request);
         }
         

@@ -55,8 +55,8 @@ public class PlayerWait extends MSTGame
         wait.scale(getWidth(), getHeight());
         
         
-        hour time = new hour();
-       addObject(time,513,450);
+       hour time = new hour();
+       addObject(time,513,420);
         
         
          setBackground(wait);
@@ -132,7 +132,7 @@ public class PlayerWait extends MSTGame
               this.firstPlayer=Players[0];
                this.secondPlayer=Players[1];
              
-               message.setMessage("Player " + this.firstPlayer + " and player " + this.secondPlayer + " Added. "  );
+               message.setMessage("Player " + this.firstPlayer + " and player " + this.secondPlayer + " added"  );
                timer-=12;
                     if (timer%60==0) 
                      {  
@@ -168,7 +168,7 @@ public class PlayerWait extends MSTGame
   
                      this.secondPlayer=Players[1];
           
-             message.setMessage("Player " + this.firstPlayer + " and player " + this.secondPlayer + " Added. "  );
+             message.setMessage("Player " + this.firstPlayer + " and player " + this.secondPlayer + " added"  );
               timer-=12;
               if (timer%60==0) 
              {  

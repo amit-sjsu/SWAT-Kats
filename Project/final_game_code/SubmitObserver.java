@@ -41,11 +41,9 @@ public class SubmitObserver implements PathObserver,  TimeObserver
     }
     
     public void submitSolution(){
-        System.out.println("Submitting solution");
         IEdge [] selectedEdges =  new IEdge[selectedPath.size()];
         selectedPath.toArray(selectedEdges);
         boolean result = vs.validate(solution.GetMinimalSpanningEdges(), selectedEdges);
-        System.out.println("Is solution correct ?? : " + result);
         if (result){
         Proxy proxy = new Proxy();
         proxy.submitSolution(result, timer.getTimeSecs(), score.getScore());
@@ -54,7 +52,6 @@ public class SubmitObserver implements PathObserver,  TimeObserver
         
     }
     public void submitTimeExpire(){
-        System.out.println("Submitting solution");
         IEdge [] selectedEdges =  new IEdge[selectedPath.size()];
         selectedPath.toArray(selectedEdges);
         boolean result = vs.validate(solution.GetMinimalSpanningEdges(), selectedEdges);
@@ -64,21 +61,17 @@ public class SubmitObserver implements PathObserver,  TimeObserver
     }
 
     public void updateSelect(IEdge path){
-        System.out.println("Path selected  " + path.getId());
         selectedPath.add(path);
         if (vs.allHouseConnected(houses, selectedPath)){
             //vs.
-            System.out.println("are all house connected???");
             submitSolution();
         }
     }
     public void updateUnSelect(IEdge path){
-        System.out.println("Path un selected  " + path.getId());
         selectedPath.remove(path);
          if (vs.allHouseConnected(houses, selectedPath)){
             //vs.
-            System.out.println("are all house connected???");
-        }
+          }
     }
     
     public void setTimer(Timer t){

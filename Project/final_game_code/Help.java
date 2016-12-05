@@ -19,7 +19,6 @@ public class Help extends Buttons
         {
             world.stopped();
             Greenfoot.setWorld(new HelpWorld());
-            //HelpWorld world = (HelpWorld)getWorld();
         }// Add your action code here.
     }    
 }

@@ -56,13 +56,11 @@ public class Proxy
                     else if(jsonobject.getString("gameState").equals("TwoPlayerState"))
                     {
 
-                        System.out.println("Player 2 Added");
                         Greenfoot.setWorld(new PlayerWait("TwoPlayerState",userName));
                         
                     }
                     
                     else{
-                        System.out.println("Cannot Add new Player");
                         JOptionPane.showMessageDialog(new JInternalFrame(), 
                         "Game has been started with 2 players","Game Started", JOptionPane.INFORMATION_MESSAGE);
 
@@ -112,13 +110,11 @@ public class Proxy
             }
             else if(jsonobject.getString("gameState").equals("Game Finished State"))
             {
-                System.out.println("Player Two Submitted.Game Finished State");
                 try{
                     helloClientresource = new ClientResource( service_url + "getScores" );
                     response = helloClientresource.get() ;
                     jsonobject= new JSONObject(response.getText());
-                    System.out.println(jsonobject.getString("Scores"));
-                    System.out.println(jsonobject.getString("Decision"));
+                    
                 }
                 catch(Exception e){
                     System.out.println( e.getMessage() ) ;

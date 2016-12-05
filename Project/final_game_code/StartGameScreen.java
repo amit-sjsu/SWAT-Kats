@@ -1,3 +1,4 @@
+
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
@@ -31,8 +32,6 @@ public class StartGameScreen extends MSTGame
         bg.scale(getWidth(), getHeight());
 
         setBackground(bg);
-        System.out.println("set start");
-        // rain.playLoop();
         PlayNowButton playnowbutton = new PlayNowButton();
         addObject(playnowbutton,298,495);
         Help help = new Help();

@@ -44,7 +44,7 @@ public class LevelChangeScreen extends MSTGame
           setBackground(wait);
 
         addObject(player1Name, 300, 380); addObject(player1TimeTaken, 300, 410);addObject(player1Move, 300, 440);
-        addObject(player1Solution,300, 580);  addObject(player2Waiting,700, 480);
+        addObject(player1Solution,300, 580);  addObject(player2Waiting,700, 580);
         addObject(player2Name, 700, 380); addObject(player2TimeTaken, 700, 410);addObject(player2Move, 700, 440);
         addObject(player2Solution ,700,580);
         //smily smily = new smily();
@@ -66,9 +66,7 @@ public class LevelChangeScreen extends MSTGame
                        try{
                             backgroundMusic1.play();
                             JSONObject jsonobj =proxy.getScore();
-                            System.out.println(jsonobj.getString("Scores"));
-                            System.out.println(jsonobj.getString("Decision"));
-                            
+                           
                             displayScorePlayer1(jsonobj.getString("Scores"),jsonobj.getString("Decision"));
                             
                         }
@@ -83,8 +81,6 @@ public class LevelChangeScreen extends MSTGame
                             backgroundMusic1.stop();
                             backgroundMusic.play();
                             JSONObject jsonobj =proxy.getScore();
-                            System.out.println(jsonobj.getString("Scores"));
-                            System.out.println(jsonobj.getString("Decision"));
                             displayScorePlayer1(jsonobj.getString("Scores"),jsonobj.getString("Decision"));
                             displayScorePlayer2(jsonobj.getString("Scores"),jsonobj.getString("Decision"));
                            
@@ -105,13 +101,8 @@ public class LevelChangeScreen extends MSTGame
                 String [] part; String pa;
                 part=score.split("-");
                 
-                System.out.println(part[0]);
-                
-                
                 Player1Details=part[0].split(":");
-                
-                
-                
+
                 int timeleft = 45-Integer.parseInt(Player1Details[2]);            
                 player1Name.setMessage("Player :  " +Player1Details[0]);
                 player1Move.setMessage("Total Points :  "+Player1Details[1]);

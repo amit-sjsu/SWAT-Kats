@@ -19,7 +19,7 @@ public class PlayNowButton extends Buttons
         if(Greenfoot.mouseClicked(this))
         {
             world.stopped();
-            String inputValue = JOptionPane.showInputDialog("enter your name");
+            String inputValue = JOptionPane.showInputDialog("Enter Name");
             
             proxy.addPlayer(inputValue);
         

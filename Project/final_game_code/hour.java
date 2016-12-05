@@ -9,11 +9,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class hour extends Actor
 {  
     
-    private GifImage gif = new GifImage("hour.gif");
+    private GreenfootImage hour = new GreenfootImage("hrglss.png");
     
     
     public void act() 
     {
-         setImage(gif.getCurrentImage());
+         turn(12);
     }    
 }

@@ -62,7 +62,7 @@ public class Point
     
     public static int findQuadrant(int startPosX, int startPosY, int endPosX, int endPosY){
         
-        System.out.println("Start point : (" + startPosX + "," + startPosY + ")" + " : End point : (" + endPosX + "," + endPosY + ")");
+        
         if ((startPosX > endPosX)  && (startPosY > endPosY))
            return 1;
         else if ((startPosX < endPosX)  && (startPosY > endPosY))

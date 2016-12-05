@@ -28,7 +28,6 @@ public class HelpWorld extends MSTGame
     }
     private void prepare()
     {
-        System.out.println("Entered Help World");
         GreenfootImage bg = new GreenfootImage("Helpfinal.jpg");
         bg.scale(getWidth(), getHeight());
         
@@ -46,19 +45,18 @@ public class HelpWorld extends MSTGame
     public void act() 
     {
         if(Greenfoot.mouseClicked(audio)){
-            System.out.println("Play Audio");
             audio.handleRequest("Play");
         }
         else if(Greenfoot.mouseClicked(stop)){
-            System.out.println("Stop Audio");
             audio.handleRequest("Stop");
         }
         else if(Greenfoot.mouseClicked(pause)){
-            System.out.println("Pause Audio");
+
             audio.handleRequest("Pause");
         }
         else if(Greenfoot.mouseClicked(back)){
-            System.out.println("Back pressed");
+
+
             audio.handleRequest("Back");
         }
     } 

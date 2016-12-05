@@ -15,17 +15,14 @@ public class HelpPauseAudio extends Buttons implements IButton
      */
     private IButton nextButton;
     public void setNextButton(IButton next){
-        System.out.println("set next in HelpPause Audio");
         this.nextButton=next;
     }
     public void handleRequest(String request){
         HelpWorld world = (HelpWorld)getWorld();
         if(request=="Pause"){
-            System.out.println("if in HelpPause Audio");
             world.pauseHelpSound(); 
         }
         else{
-            System.out.println("else in HelpPause Audio");
             nextButton.handleRequest(request);
         }
         

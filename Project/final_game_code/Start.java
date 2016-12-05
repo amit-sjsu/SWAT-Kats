@@ -16,9 +16,6 @@ public class Start extends Actor
     public void act() 
     {
 
-        System.out.println("image is acting");
-        // Add your action code here.
-        
-        System.out.println("image is done acting");
+
     }    
 }

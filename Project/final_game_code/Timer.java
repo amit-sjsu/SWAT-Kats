@@ -40,7 +40,6 @@ public class Timer extends Actor implements TimeSubject
     
     public String getTime(){
         String[] parts = this.time.split(":");
-        System.out.println(parts[1].trim());
         return parts[1].trim();
     }
 
