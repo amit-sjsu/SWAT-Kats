@@ -28,6 +28,7 @@ public class LevelChangeScreen extends MSTGame
       
     public LevelChangeScreen()//int score)
     {    
+        Level1.stopMusic();
         prepare();
     }
 

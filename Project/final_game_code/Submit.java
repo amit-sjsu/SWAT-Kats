@@ -16,6 +16,7 @@ public class Submit extends Buttons
 
         if(Greenfoot.mouseClicked(this))
         {
+            Level1.stopMusic();
             submit();
 
         }
