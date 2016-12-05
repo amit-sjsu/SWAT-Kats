@@ -17,7 +17,7 @@ public class Score extends Actor implements PathObserver
     
    public void act()
    {
-          setImage(new GreenfootImage("Score : " + score , 24 , Color.GREEN , Color.WHITE ));
+          setImage(new GreenfootImage("Score : " + score , 24 , Color.BLACK , Color.ORANGE ));
    }
    
    public void updateSelect(IEdge path){

@@ -9,9 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class hour extends Actor
 {  
     
-    private GreenfootImage hour = new GreenfootImage("hrglss.png");
-    
-    
+
     public void act() 
     {
          turn(12);
