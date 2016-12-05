@@ -25,6 +25,7 @@ public class LevelChangeScreen extends MSTGame
      Proxy proxy=new Proxy();
      public static GreenfootSound backgroundMusic = new GreenfootSound("Short_triumphal_fanfare-John_Stracke-815794903.mp3");
      GreenfootSound backgroundMusic1 = new GreenfootSound("game_end.wav");
+     private boolean flag=true;
       
     public LevelChangeScreen()
     {    
@@ -58,7 +59,8 @@ public class LevelChangeScreen extends MSTGame
     }
     
     public void act()
-    {   try
+    {   if(flag){
+        try
         {
                     JSONObject jsonobject= proxy.gamePlay();
                     this.state=jsonobject.getString("currentGameState");  
@@ -88,6 +90,7 @@ public class LevelChangeScreen extends MSTGame
                             displayScorePlayer2(jsonobj.getString("Scores"),jsonobj.getString("Decision"));
                            
                              addObject(replay, 496, 700);
+                             flag=false;
                           }
                         catch(Exception e){}
                       }
@@ -96,7 +99,8 @@ public class LevelChangeScreen extends MSTGame
                  }
                     catch ( Exception e ) {
                 // setMessage( e.getMessage() ) ;
-            }  
+            }
+        }
         
         }
             public void displayScorePlayer1(String score, String decision)
