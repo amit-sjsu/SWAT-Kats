@@ -14,6 +14,7 @@ public class Replay extends Buttons
         
         if(Greenfoot.mouseClicked(this))
         {
+            LevelChangeScreen.stopSound();
             Greenfoot.setWorld(new StartGameScreen());
           //  EndGameScreen world = (EndGameScreen)getWorld();
           //  world.stopBackgroundMusic();

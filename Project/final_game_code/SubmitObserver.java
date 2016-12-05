@@ -57,6 +57,7 @@ public class SubmitObserver implements PathObserver,  TimeObserver
         boolean result = vs.validate(solution.GetMinimalSpanningEdges(), selectedEdges);
         Proxy proxy = new Proxy();
         proxy.submitSolution(result, timer.getTimeSecs(), score.getScore());
+        Timer.stopSound();
         Greenfoot.setWorld(new LevelChangeScreen());
     }
 

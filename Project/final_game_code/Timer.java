@@ -11,7 +11,10 @@ public class Timer extends Actor implements TimeSubject
     private static final long DELAY_TIME = 1000; // in milliseconds
     TimeObserver tb ;
     //Level1 level=new Level1();
-    GreenfootSound backgroundMusic = new GreenfootSound("Hearbeat_2-Mike_Koenig-143666461.mp3");
+    public static GreenfootSound backgroundMusic = new GreenfootSound("Hearbeat_2-Mike_Koenig-143666461.mp3");
+    public static void stopSound(){
+        backgroundMusic.stop();
+    }
     
     public Timer()
     {

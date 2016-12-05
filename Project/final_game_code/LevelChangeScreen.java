@@ -23,15 +23,17 @@ public class LevelChangeScreen extends MSTGame
      private String [] Player2Details;
      private String state;
      Proxy proxy=new Proxy();
-     GreenfootSound backgroundMusic = new GreenfootSound("Short_triumphal_fanfare-John_Stracke-815794903.mp3");
+     public static GreenfootSound backgroundMusic = new GreenfootSound("Short_triumphal_fanfare-John_Stracke-815794903.mp3");
      GreenfootSound backgroundMusic1 = new GreenfootSound("game_end.wav");
       
-    public LevelChangeScreen()//int score)
+    public LevelChangeScreen()
     {    
         Level1.stopMusic();
         prepare();
     }
-
+    public static void stopSound(){
+        backgroundMusic.stop();
+    }
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.

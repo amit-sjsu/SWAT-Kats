@@ -11,6 +11,7 @@ public class StartGameScreen extends MSTGame
 {
     GreenfootSound backgroundMusic = new GreenfootSound("Rain-sound-mp3.mp3");
     GreenfootSound backgroundMusic1 = new GreenfootSound("Instructions.mp3");
+    public int i=1;
     //GreenfootSound rain=new GreenfootSound("rain-03.wav");
     /**
      * Constructor for objects of class StartGameScreen. Add Comments
@@ -20,6 +21,7 @@ public class StartGameScreen extends MSTGame
     {
         //backgroundMusic.playLoop();
         prepare();
+
     }
 
     /**
@@ -49,7 +51,10 @@ public class StartGameScreen extends MSTGame
     }
     public void act(){
         backgroundMusic.playLoop();    
-        backgroundMusic1.play();    
+        if(i==1){
+            backgroundMusic1.play();
+            i++;
+        }
     }
    
 }
