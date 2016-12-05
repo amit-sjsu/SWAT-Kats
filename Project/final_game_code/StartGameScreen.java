@@ -10,7 +10,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class StartGameScreen extends MSTGame
 {
     GreenfootSound backgroundMusic = new GreenfootSound("Rain-sound-mp3.mp3");
-    //GreenfootSound backgroundMusic = new GreenfootSound("musicFilename.mp3");
+    GreenfootSound backgroundMusic1 = new GreenfootSound("Instructions.mp3");
     //GreenfootSound rain=new GreenfootSound("rain-03.wav");
     /**
      * Constructor for objects of class StartGameScreen. Add Comments
@@ -18,7 +18,7 @@ public class StartGameScreen extends MSTGame
      */
     public StartGameScreen()
     {
-        backgroundMusic.playLoop();
+        //backgroundMusic.playLoop();
         prepare();
     }
 
@@ -45,6 +45,11 @@ public class StartGameScreen extends MSTGame
     public void stopped()
     {
         backgroundMusic.stop();
+        backgroundMusic1.stop();
+    }
+    public void act(){
+        backgroundMusic.playLoop();    
+        backgroundMusic1.play();    
     }
    
 }
