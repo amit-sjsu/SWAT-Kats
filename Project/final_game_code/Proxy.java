@@ -84,12 +84,12 @@ public class Proxy
 
             if(jsonobject.getString("currentGameState").equals("Game Started State"))
             {
-                obj.put("username",PlayerWait.firstPlayer);
+                obj.put("username",PlayNowButton.name);
 
             }
             else if(jsonobject.getString("currentGameState").equals("PlayerOneSubmiitedState"))
             {
-                obj.put("username",PlayerWait.secondPlayer);
+                obj.put("username",PlayNowButton.name);
 
             }
 

@@ -9,6 +9,7 @@ public class PlayNowButton extends Buttons
    
     Proxy proxy=new Proxy();
     private GreenfootImage img = new GreenfootImage("play!.png");
+    public static String name;
    
     
     
@@ -19,7 +20,7 @@ public class PlayNowButton extends Buttons
         {
             StartGameScreen.stopSound();
             String inputValue = JOptionPane.showInputDialog("Enter Name");
-            
+            name=inputValue;
             proxy.addPlayer(inputValue);
         
         }
