@@ -43,9 +43,9 @@ public class LevelChangeScreen extends MSTGame
         
           setBackground(wait);
 
-        addObject(player1Name, 300, 480); addObject(player1TimeTaken, 300, 510);addObject(player1Move, 300, 540);
+        addObject(player1Name, 300, 380); addObject(player1TimeTaken, 300, 410);addObject(player1Move, 300, 440);
         addObject(player1Solution,300, 580);  addObject(player2Waiting,700, 480);
-        addObject(player2Name, 700, 480); addObject(player2TimeTaken, 700, 510);addObject(player2Move, 700, 540);
+        addObject(player2Name, 700, 380); addObject(player2TimeTaken, 700, 410);addObject(player2Move, 700, 440);
         addObject(player2Solution ,700,580);
         //smily smily = new smily();
        // addObject(smily,513,314);
